@@ -71,35 +71,6 @@ bind_setting(child = 82) {
     player.setVarp(Varps.NPC_ATTACK_PRIORITY_VARP, slot)
 }
 
-
-/**
- * This should be moved to a new class.
- * ['Bond_interface'] or something alike
- */
-bind_setting(child = OptionsTab.BOND_BUTTON_ID) {
-    with (player) {
-        openInterface(interfaceId = 65, dest = InterfaceDestination.MAIN_SCREEN)
-        runClientScript(2498, 1, 0, 0)
-        runClientScript(2524, -1, -1)
-        setComponentText(interfaceId = 65, component = 25, text = "Redeem bonds for packages of <col=ffffff>14, 29 or 45 days</col>, or<br>up to <col=ffffff>a year</col> of Premier Membership.")
-        runClientScript(3650, 0)
-        runClientScript(733, 0,0,0,0,0,0,0,0)
-    }
-}
-on_button(65, 90) {
-    player.setVarbit(Varbits.BOND_INTERFACE_FOCUS_TAB, 0)
-}
-on_button(65, 89) {
-    player.setVarbit(Varbits.BOND_INTERFACE_FOCUS_TAB, 1)
-}
-
-val withDrawFromPouch = setOf(103, 99, 95, 110)
-withDrawFromPouch.forEach {
-    on_button(65, it) {
-        player.message("This should say: Your inventory doesn't contain any of those bonds. But i'd would love to tell u fuck you.")
-    }
-}
-
 /**
  * Toggle run mode
  */
@@ -176,4 +147,15 @@ on_button(OptionsTab.OPTIONS_INTERFACE_ID, 111) {
 }
 on_button(OptionsTab.OPTIONS_INTERFACE_ID, 112) {
     player.setVarbit(Varbits.SETTINGS_TAB_FOCUS, 2)
+}
+
+/**
+ * House tab settings
+ * @@TODO Add to own interface plugin
+ */
+on_button(OptionsTab.OPTIONS_INTERFACE_ID, 74) {
+    player.openInterface(interfaceId = 370, dest = gg.rsmod.plugins.api.InterfaceDestination.SETTINGS)
+}
+on_button(370, 21) {
+    player.openInterface(interfaceId = OptionsTab.OPTIONS_INTERFACE_ID, dest = gg.rsmod.plugins.api.InterfaceDestination.SETTINGS)
 }

@@ -1,5 +1,6 @@
 package gg.rsmod.plugins.content.area.world_chats.banker
 
+import gg.rsmod.game.message.impl.ResumePauseButtonMessage
 import gg.rsmod.plugins.content.inter.bank.openBank
 
 
@@ -31,11 +32,20 @@ suspend fun QueueTask.dialog() {
     }
 }
 
-// TODO: 7/26/2022 add in more slots interface
+// TODO: 7/26/2022 add working bank slots
 suspend fun QueueTask.more_bank_slots() {
     chatPlayer("I'd like to buy more bank slots.")
     chatNpc("I can sell you up to 360 additional bank slots in sets of<br>40. How many are you interested in buying?", animation = 568)
-    chatPlayer("Actually, I've changed my mind.", animation = 554)
+    player.setInterfaceUnderlay(color = -1, transparency = -1)
+    player.openInterface(interfaceId = 187, dest = InterfaceDestination.MAIN_SCREEN)
+    player.runClientScript(217,"How many do you wish to purchase?", "40 slots (1,000,000 coins)|80 slots (3,000,000 coins)|120 slots (8,000,000 coins)|160 slots (18,000,000 coins)|200 slots (38,000,000 coins)|240 slots (88,000,000 coins)|280 slots (188,000,000 coins)|320 slots (388,000,000 coins)|360 slots (888,000,000 coins)|(Cancel)")
+    player.setInterfaceEvents(interfaceId = 187, component = 3, 0,9, setting = 1)
+    //chatPlayer("Actually, I've changed my mind.", animation = 554)
+    waitReturnValue()
+
+    val choice = (requestReturnValue as ResumePauseButtonMessage).slot
+    player.message("you chose: $choice")
+
 }
 
 fun open_collect(p: Player) {

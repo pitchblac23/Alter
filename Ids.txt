@@ -1,0 +1,15 @@
+House settings = 370 interface
+
+report player button = 553 interface
+report bug = 156 interface
+
+toggle report on player varbit 1334
+
+varbit for clan tab changes 13071 0-4
+0 - chat channel
+1 - your clan
+2 - another clan
+3 - grouping
+4 - iron group
+
+ironman group setting interface 730 
