@@ -25,5 +25,5 @@ Bones.values.forEach { bones ->
             Offer.OfferBones(player, bones, 3)
 
         }
-    }**/
+    }*/
 }

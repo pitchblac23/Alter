@@ -5,6 +5,7 @@ import gg.rsmod.game.model.Graphic
 import gg.rsmod.game.model.queue.QueueTask
 import gg.rsmod.plugins.api.EquipmentType
 import gg.rsmod.plugins.api.Skills
+import gg.rsmod.plugins.api.cfg.Animation
 import gg.rsmod.plugins.api.cfg.Items
 import gg.rsmod.plugins.api.ext.*
 
@@ -14,11 +15,6 @@ import gg.rsmod.plugins.api.ext.*
  * Handles the action of crafting runes at an altar
  */
 object RunecraftAction {
-
-    /**
-     * The animation played when crafting a rune
-     */
-    private const val RUNECRAFT_ANIM = 791
 
     /**
      * The number of ticks between playing the animation, and receiving the runes
@@ -45,7 +41,7 @@ object RunecraftAction {
 
         player.lock()
 
-        player.animate(RUNECRAFT_ANIM)
+        player.animate(Animation.RUNECRAFTING_CRAFT_RUNES)
         player.graphic(RUNECRAFT_GRAPHIC)
         player.playSound(RUNECRAFT_SOUND)
 

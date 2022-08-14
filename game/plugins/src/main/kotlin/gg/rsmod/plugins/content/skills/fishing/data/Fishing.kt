@@ -5,9 +5,15 @@ import gg.rsmod.game.model.queue.QueueTask
 import gg.rsmod.plugins.api.Skills
 import gg.rsmod.plugins.api.ext.interpolate
 import gg.rsmod.plugins.api.ext.message
+import kotlin.random.Random
 
 /**
  * @author Fritz <frikkipafi@gmail.com>
+ */
+
+/**TODO:
+ * make bignet options & give random items
+ * make message say lowest fish to be caught not highest
  */
 
 class Fishing(val player: Player, val spot: FishingSpots) {
@@ -49,6 +55,20 @@ class Fishing(val player: Player, val spot: FishingSpots) {
         return spot.getFish().filter { player.getSkills().getBaseLevel(Skills.FISHING) >= it.level }.random()
     }
 
+    //added from other files.
+    /*private fun reward(p: Player, option: FishingOption): Fish {
+        if (option.equals(FishingOption.BIG_NET)) {
+            when (Random.nextInt(0, 100)) {
+                0 -> Fish.OYSTER
+                50 -> Fish.CASKET
+                90 -> Fish.SEAWEED
+            }
+        }
+        if (option.equals(FishingOption.LURE) && p.inventory.contains(10087)) {
+            return Fish.RAINBOW_FISH
+        }
+        return option.fishType.filter { p.getSkills().getMaxLevel(Skills.FISHING) >= it.levelReq }.random()
+    }*/
 
     private fun canFish(): Boolean {
         if(!hasLevel()) {

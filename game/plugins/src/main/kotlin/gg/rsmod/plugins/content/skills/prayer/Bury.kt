@@ -15,16 +15,12 @@ object Bury {
     fun Bury(p: Player, bones: Bones) {
             p.queue {
                 p.lock()
+                p.message("You dig a hole in the ground...")
                 p.addXp(Skills.PRAYER, bones.xp)
                 p.animate(Animation.BURY_BONE_ANIM)
                 wait(3)
+                p.message("You bury the bones.")
                 p.unlock()
             }
-        val boneName = p.world.definitions.get(ItemDef::class.java, bones.id).name
-        when(bones){
-            else -> {
-                p.message("You bury a ${boneName.toLowerCase()}")
-            }
-        }
     }
 }

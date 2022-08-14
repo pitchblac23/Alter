@@ -9,6 +9,10 @@ import gg.rsmod.plugins.api.ext.message
 /**
  * @author Fritz <frikkipafi@gmail.com>
  */
+
+/**TODO:
+ * correct message when offering to altar
+ */
 object Offer {
 
     fun canOffer(p: Player, bones: Bones): Boolean = true

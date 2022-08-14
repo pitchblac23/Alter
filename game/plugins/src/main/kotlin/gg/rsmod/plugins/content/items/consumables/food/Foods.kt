@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.items.food
+package gg.rsmod.plugins.content.items.consumables.food
 
 import gg.rsmod.game.fs.def.ItemDef
 import gg.rsmod.game.model.entity.Player
@@ -13,6 +13,7 @@ import gg.rsmod.plugins.api.ext.hasEquipped
 import gg.rsmod.plugins.api.ext.heal
 import gg.rsmod.plugins.api.ext.message
 import gg.rsmod.plugins.api.ext.playSound
+import gg.rsmod.plugins.content.items.food.Food
 
 /**
  * @author Tom <rspsmods@gmail.com>

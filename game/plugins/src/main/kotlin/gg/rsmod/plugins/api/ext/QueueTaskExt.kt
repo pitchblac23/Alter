@@ -66,6 +66,18 @@ inline val QueueTask.player: Player get() = ctx as Player
  */
 inline val QueueTask.npc: Npc get() = ctx as Npc
 
+suspend fun QueueTask.interfaceOptions(vararg options: String, title: String): Int {
+    player.openInterface(187, InterfaceDestination.MAIN_SCREEN)
+    player.runClientScript(217, title, options.joinToString("|"))
+    player.setInterfaceEvents(interfaceId = 187, component = 3, from = 0, to = options.size, setting = 1)
+
+    terminateAction = closeDialog
+    waitReturnValue()
+    terminateAction!!(this)
+
+    return (requestReturnValue as? ResumePauseButtonMessage)?.slot ?: -1
+}
+
 /**
  * Prompts the player with options.
  *
@@ -285,6 +297,15 @@ suspend fun QueueTask.itemMessageBox(message: String, item: Int, amountOrZoom: I
     terminateAction!!(this)
 }
 
+suspend fun QueueTask.itemMessage(message: String, item: Int, amountOrZoom: Int = 1, wait: Int = 1) {
+    player.openInterface(parent = 162, child = CHATBOX_CHILD, interfaceId = 193)
+    player.setInterfaceEvents(interfaceId = 193, component = 0, range = 0..1, setting = 1)
+    player.setComponentItem(interfaceId = 193, component = 1, item = item, amountOrZoom = amountOrZoom)
+    player.setComponentText(interfaceId = 193, component = 2, text = message)
+
+    wait(wait)
+}//able to set wait
+
 suspend fun QueueTask.doubleItemMessageBox(message: String, item1: Int, item2: Int, amount1: Int = 1, amount2: Int = 1) {
     player.setComponentItem(interfaceId = 11, component = 1, item = item1, amountOrZoom = amount1)
     player.setComponentText(interfaceId = 11, component = 2, text = message)
@@ -412,7 +433,7 @@ suspend fun QueueTask.produceItemBox(vararg items: Int, type: Int = 0, title: St
 
     player.sendTempVarbit(5983, 1)
     player.openInterface(parent = 162, child = CHATBOX_CHILD, interfaceId = 270)
-    player.runClientScript(2046, 0, "$title${nameArray.joinToString("")}", maxProducable, *itemArray)
+    player.runClientScript(2046, type, "$title${nameArray.joinToString("")}", maxProducable, *itemArray)
 
     terminateAction = closeDialog
     waitReturnValue()

@@ -1,5 +1,7 @@
 package gg.rsmod.plugins.content.items.food
 
+import gg.rsmod.plugins.content.items.consumables.food.Foods
+
 Food.values.forEach { food ->
     on_item_option(item = food.item, option = "eat") {
         if (!Foods.canEat(player, food)) {

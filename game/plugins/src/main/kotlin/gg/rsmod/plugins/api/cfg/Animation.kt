@@ -18,8 +18,9 @@ object Animation {
     /**
      * Cooking Animations
      */
-    const val COOKING_ON_FIRE = 883
-    const val COOKING_ON_RANGE = 897
+    const val COOKING_ON_FIRE = 897
+    const val COOKING_ON_FIRESPIT = 883
+    const val COOKING_ON_RANGE = 896
     /**
      * Runecrafting Animations
      */
@@ -46,6 +47,7 @@ object Animation {
     const val WOODCUTTING_STEEL_AXE = 875
     const val WOODCUTTING_BLACK_AXE = 873
     const val WOODCUTTING_MITHRIL_AXE = 871
+    const val WOODCUTTING_BLESSED_AXE = 5383
     const val WOODCUTTING_ADAMANT_AXE = 869
     const val WOODCUTTING_RUNE_AXE = 867
     const val WOODCUTTING_DRAGON_AXE = 2846

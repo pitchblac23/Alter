@@ -6,13 +6,30 @@ import gg.rsmod.game.model.entity.DynamicObject
 import gg.rsmod.game.model.entity.GameObject
 import gg.rsmod.game.model.entity.Player
 import gg.rsmod.game.model.queue.QueueTask
+import gg.rsmod.plugins.api.EquipmentType
 import gg.rsmod.plugins.api.Skills
 import gg.rsmod.plugins.api.cfg.Items
 import gg.rsmod.plugins.api.ext.*
 
 /**
  * @author Tom <rspsmods@gmail.com>
+ *
+ * Thanks to Stuart2
+ * for the better axe usage
+ *
+ * Thanks to Hoax
+ * for making the Infernal Axe work
+ *
+ * Thanks to Darkk98
+ * for info on player attributes
  */
+
+/**TODO:
+ * fix for picking up charged axe doesn't use charges from axe if charges = 0.
+ * add in player.message("") for if charges is under amount to keep from checking all the time
+ * add in not burning juniper logs with infernal axe
+ */
+
 object Woodcutting {
 
     val infernalAxe = AttributeKey<Int>("Infernal Axe Charges")
@@ -27,7 +44,8 @@ object Woodcutting {
         }
 
         val logName = p.world.definitions.get(ItemDef::class.java, tree.log).name
-        val axe = AxeType.values.firstOrNull { p.getSkills().getBaseLevel(Skills.WOODCUTTING) >= it.level && (p.equipment.contains(it.item) || p.inventory.contains(it.item)) }!!
+        //val axe = AxeType.values.firstOrNull { p.getSkills().getBaseLevel(Skills.WOODCUTTING) >= it.level && (p.equipment.contains(it.item) || p.inventory.contains(it.item)) }!!
+        val axe = AxeType.values.filter { p.getSkills().getBaseLevel(Skills.WOODCUTTING) >= it.level && (p.equipment.contains(it.item) || p.inventory.contains(it.item)) }.sortedBy { it.level }.last()
 
         p.filterableMessage("You swing your axe at the tree.")
         while (true) {
@@ -41,10 +59,32 @@ object Woodcutting {
 
             val level = p.getSkills().getCurrentLevel(Skills.WOODCUTTING)
             if (level.interpolate(minChance = 60, maxChance = 190, minLvl = 1, maxLvl = 99, cap = 255)) {
-                p.filterableMessage("You get some ${logName.pluralSuffix(2)}.")
+                p.filterableMessage("You get some ${logName.pluralSuffix(2).toLowerCase()}.")
                 p.playSound(3600)
                 p.inventory.add(tree.log)
                 p.addXp(Skills.WOODCUTTING, tree.xp)
+
+                val chanceOfBurningLogOnCut = (1..3).random()
+                if (axe.item == Items.INFERNAL_AXE && chanceOfBurningLogOnCut == 3 && p.attr.get(infernalAxe)!! > 0) {
+                    p.inventory.remove(tree.log)
+                    p.attr[infernalAxe] = p.attr.get(infernalAxe)!!.minus(1)
+                    if (p.attr.get(infernalAxe) == 0) {
+                        if (p.hasEquipped(EquipmentType.WEAPON, Items.INFERNAL_AXE)) {
+                            p.equipment.remove(Items.INFERNAL_AXE)
+                            p.inventory.add(Items.INFERNAL_AXE_UNCHARGED)
+                        } else {
+                            val removeAxe = p.inventory.remove(Items.INFERNAL_AXE, 1)
+                            if (removeAxe.hasSucceeded()) {
+                                p.inventory.add(Items.INFERNAL_AXE_UNCHARGED)
+                            }
+                        }
+                        if (p.inventory.contains(Items.INFERNAL_AXE)) {
+                            p.attr.put(infernalAxe, 5000)
+                        }
+                    }
+                    it.player.graphic(id = 86, height = 2)
+                    p.addXp(Skills.FIREMAKING, tree.burnXp)
+                }
 
                 if (p.world.random(tree.depleteChance) == 0) {
                     p.animate(-1)

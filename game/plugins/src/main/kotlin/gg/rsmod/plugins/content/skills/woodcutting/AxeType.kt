@@ -12,6 +12,7 @@ enum class AxeType(val item: Int, val level: Int, val animation: Int) {
     STEEL(item = Items.STEEL_AXE, level = 6, animation = Animation.WOODCUTTING_STEEL_AXE),
     BLACK(item = Items.BLACK_AXE, level = 11, animation = Animation.WOODCUTTING_BLACK_AXE),
     MITHRIL(item = Items.MITHRIL_AXE, level = 21, animation = Animation.WOODCUTTING_MITHRIL_AXE),
+    BLESSED(item = Items.BLESSED_AXE, level = 21, animation = Animation.WOODCUTTING_BLESSED_AXE),
     ADAMANT(item = Items.ADAMANT_AXE, level = 31, animation = Animation.WOODCUTTING_ADAMANT_AXE),
     RUNE(item = Items.RUNE_AXE, level = 41, animation = Animation.WOODCUTTING_RUNE_AXE),
     DRAGON(item = Items.DRAGON_AXE, level = 61, animation = Animation.WOODCUTTING_DRAGON_AXE),

@@ -14,8 +14,7 @@ import java.util.*
  */
 class SimplePathFindingStrategy(collision: CollisionManager) : PathFindingStrategy(collision) {
 
-    // TODO(Tom): redo this whole strategy (used for npcs). Fucking hate how
-    // it is atm (jan 27 2019).
+    // TODO(Tom): redo this whole strategy (used for npcs). Fucking hate how it is atm (jan 27 2019)
 
     override fun calculateRoute(request: PathRequest): Route {
         val start = request.start

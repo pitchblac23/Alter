@@ -14,6 +14,9 @@ import gg.rsmod.plugins.api.ext.filterableMessage
 import gg.rsmod.plugins.api.ext.interpolate
 import gg.rsmod.plugins.api.ext.player
 
+/**TODO:
+ * add in pyromancer outfit set 2.5% xp burn
+ */
 object Firemaking {
 
 
