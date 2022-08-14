@@ -56,7 +56,7 @@ enum class CookingFood(val raw_item: Int, val cooked_item: Int, val burnt_item: 
     JUBBLY(Items.RAW_JUBBLY, Items.COOKED_JUBBLY, Items.BURNT_JUBBLY, 160.0, 41, 99, true),// burn rate unknown also need splitroast
     CHOMPY(Items.RAW_CHOMPY, Items.COOKED_CHOMPY, Items.BURNT_CHOMPY, 100.0, 30, 99, true),// needs splitroast
     KARAMBWAN(Items.RAW_KARAMBWAN, Items.COOKED_KARAMBWAN, Items.BURNT_KARAMBWAN, 190.0, 30, 99, false),
-    POISON_KARAMBAWN(Items.RAW_KARAMBWAN, Items.POISON_KARAMBWAN, Items.BURNT_KARAMBWAN, 90.0, 1, 99, false),
+    //POISON_KARAMBAWN(Items.RAW_KARAMBWAN, Items.POISON_KARAMBWAN, Items.BURNT_KARAMBWAN, 90.0, 1, 99, false), // fix for making posion vs cooked
     ROAST_BEAST(Items.SKEWERED_BEAST, Items.ROAST_BEAST_MEAT, Items.BURNT_BEAST_MEAT, 82.5, 21, 99, false),
     ROAST_BIRD(Items.SKEWERED_BIRD_MEAT, Items.ROAST_BEAST_MEAT, Items.BURNT_BIRD_MEAT, 60.0, 11, 99, false),
     ROAST_RABBIT(Items.SKEWERED_RABBIT, Items.ROAST_RABBIT, Items.BURNT_RABBIT, 70.0, 16, 99, false),
@@ -98,6 +98,7 @@ enum class CookingFood(val raw_item: Int, val cooked_item: Int, val burnt_item: 
     CURRY(Items.UNCOOKED_CURRY, Items.CURRY, Items.BURNT_CURRY, 280.0, 60, 74, false),
     FRIED_ONIONS(Items.CHOPPED_ONION, Items.FRIED_ONIONS, Items.BURNT_ONION, 60.0, 42, 77, false),
     FIRED_MUSHROOMS(Items.SLICED_MUSHROOMS, Items.FRIED_MUSHROOMS, Items.BURNT_MUSHROOM, 60.0, 46, 90, false);
+
 
     companion object {
         val values = enumValues<CookingFood>()
