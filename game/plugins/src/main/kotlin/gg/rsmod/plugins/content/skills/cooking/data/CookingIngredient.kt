@@ -73,3 +73,4 @@ enum class CookingIngredient(val item1: Int, val item2: Int, val usedItem1: Int,
     PART_SUMMER_1(Items.PIE_SHELL,Items.STRAWBERRY,95, 0.0 ,intArrayOf(Items.PART_SUMMER_PIE),false),
     PART_SUMMER_2(Items.PART_SUMMER_PIE,Items.WATERMELON,95, 0.0 ,intArrayOf(Items.PART_SUMMER_PIE_7214),false),
     RAW_SUMMER_PIE(Items.PART_SUMMER_PIE_7214,Items.COOKING_APPLE,95, 0.0 ,intArrayOf(Items.RAW_SUMMER_PIE),false);
+ */

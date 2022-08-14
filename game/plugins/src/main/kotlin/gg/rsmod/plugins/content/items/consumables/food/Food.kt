@@ -91,8 +91,6 @@ enum class Food(val item: Int, val heal: Int = 0, val overheal: Boolean = false,
      */
     ONION(item = Items.ONION, heal = 1),
     CHOC_ICE(item = Items.CHOCICE, heal = 7),
-    PINEAPPLE_PUNCH(item = Items.PINEAPPLE_PUNCH, heal = 9),
-    JUG_OF_WINE(item = Items.JUG_OF_WINE, heal = 11),
     POTATO_BUTTER(item = Items.POTATO_WITH_BUTTER, heal = 14),
     POTATO_CHEESE(item = Items.POTATO_WITH_CHEESE, heal = 16),
     POTATO_MUSHROOM(item = Items.MUSHROOM_POTATO, heal = 20),
