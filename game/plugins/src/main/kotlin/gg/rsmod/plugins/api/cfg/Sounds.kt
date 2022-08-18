@@ -13,12 +13,13 @@ object Sounds {
     const val CLOSE_DOOR_SFX = 60
     const val STUCK_DOOR_SFX = 61
     const val OPEN_DOOR_SFX = 62
+
+    const val ALTAR_PRAY = 2674
     /**
 
     Tree once cut to a stump: 2734
     Mining ore: 3600
     Smelting: 2725
-    restoring prayer at altar: 2674
     1018: rock cake
     Digging spade: 1470
     Runecrafting: 2710

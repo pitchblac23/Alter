@@ -261,14 +261,26 @@ abstract class KotlinPlugin(private val r: PluginRepository, val world: World, v
         val slot = def.options.indexOfFirst {
             it?.toLowerCase() == opt
         }
-        if (slot < 1) {
+        if (slot == -1) {
             return false
         }
         return true
     }
 
-
-
+    /**
+     * Checks if a [NPC] has [option]
+     */
+    fun if_npc_has_option(npc: Int, option: String) : Boolean {
+        val opt = option.toLowerCase()
+        val def = world.definitions.get(NpcDef::class.java, npc)
+        val slot = def.options.indexOfFirst {
+            it?.toLowerCase() == opt
+        }
+        if (slot == -1) {
+            return false
+        }
+        return true
+    }
 
     /**
      * Invoke [logic] when the [option] option is clicked on an [Npc].

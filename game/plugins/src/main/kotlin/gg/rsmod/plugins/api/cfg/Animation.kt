@@ -9,8 +9,9 @@ object Animation {
     /**
      * Prayer Animations
      */
+    const val PRAY_AT_ALTAR_ANIM = 645
     const val BURY_BONE_ANIM = 827
-    const val ALTAR_ANIM = 896;
+    const val OFFER_BONES_TO_ALTER_ANIM = 896;
     /**
      * Firemaking Animations
      */
