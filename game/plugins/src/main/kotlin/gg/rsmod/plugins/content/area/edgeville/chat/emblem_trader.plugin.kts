@@ -1,8 +1,10 @@
 package gg.rsmod.plugins.content.area.edgeville.chat
 /**
- * @TODO fix the chat for limiting targets & add coffer
+ * @TODO
+ * fix the chat for limiting targets & add coffer
  * Emblem trader "real" npc has an id of 308, this npc then changes appearance
  * based on its varbit state for each player.
+ * based on osrs from my acc will make shop better later
  */
 
 spawn_npc(npc = Npcs.EMBLEM_TRADER, x = 3096, z = 3504, walkRadius = 2)
@@ -20,6 +22,8 @@ val SKULL_LONG_DURATION = 2000
         player.queue { chatNpc(" I'm afraid I've retired my shop. I hurt my back lifting<br><br>bounty crates and I can't do it anymore.") }
     }
 
+    //on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") { open_shop(player) }
+
     on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Coffer") {
         player.queue {
             coffer_option()
@@ -36,6 +40,10 @@ val SKULL_LONG_DURATION = 2000
         }
     }
 
+/*fun open_shop(p: Player) {
+    p.openShop("Emblem Trader")
+}*/
+
 suspend fun QueueTask.chat() {
     chatNpc("Don't suppose you've come across any strange...<br>emblems or artefacts along your journey? Ancient<br>artifacts?", animation = 588)
     chatNpc("Nothing to report now.", animation = 589)
@@ -48,6 +56,7 @@ suspend fun QueueTask.options() {
         1 -> {
             chatPlayer("Let's trade for rewards.", animation = 554)
             chatNpc(" I'm afraid I've retired my shop. I hurt my back lifting<br><br>bounty crates and I can't do it anymore.")
+          //open_shop(player)
         }
         2 -> pk_skull()
         3 -> limit_targets()

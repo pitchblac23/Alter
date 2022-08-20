@@ -18,13 +18,14 @@ import gg.rsmod.game.model.item.Item
 import gg.rsmod.game.model.priv.Privilege
 import gg.rsmod.game.model.queue.QueueTask
 import gg.rsmod.game.model.skill.SkillSet
+import gg.rsmod.game.model.social.Social
 import gg.rsmod.game.model.timer.ACTIVE_COMBAT_TIMER
 import gg.rsmod.game.model.timer.FORCE_DISCONNECTION_TIMER
 import gg.rsmod.game.model.varp.VarpSet
 import gg.rsmod.game.service.log.LoggerService
 import gg.rsmod.game.sync.block.UpdateBlockType
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
-import java.util.Arrays
+import java.util.*
 
 /**
  * A [Pawn] that represents a player.
@@ -35,6 +36,7 @@ open class Player(world: World) : Pawn(world) {
 
     /**
      * Bounty hunter points
+     * @CloudS3c : This will reset every time. Use player.attr[]
      */
     var bountypoints = 0
     fun getBHP(): Int {
@@ -58,7 +60,7 @@ open class Player(world: World) : Pawn(world) {
     lateinit var uid: PlayerUID
 
     /**
-     * The display name that will show on the player while in-game.
+     * The name that was used when the player logged into the game.
      */
     var username = ""
 
@@ -74,7 +76,7 @@ open class Player(world: World) : Pawn(world) {
     var lastKnownRegionBase: Coordinate? = null
 
     /**
-     * A flag that indicates whether or not the [login] method has been executed.
+     * A flag that indicates whether the [login] method has been executed.
      * This is currently used so that we don't send player updates when the player
      * hasn't been fully initialized. We can test later to see if this is even
      * necessary.
@@ -133,7 +135,7 @@ open class Player(world: World) : Pawn(world) {
     val options = Array<String?>(10) { null }
 
     /**
-     * Flag that indicates whether or not to refresh the shop the player currently
+     * Flag that indicates whether to refresh the shop the player currently
      * has open.
      */
     var shopDirty = false
@@ -455,6 +457,7 @@ open class Player(world: World) : Pawn(world) {
 
         initiated = true
         world.plugins.executeLogin(this)
+        social.updateStatus(this)
     }
 
     /**
@@ -479,6 +482,7 @@ open class Player(world: World) : Pawn(world) {
         world.instanceAllocator.logout(this)
         world.plugins.executeLogout(this)
         world.unregister(this)
+        social.updateStatus(this)
     }
 
     fun calculateWeight() {
@@ -620,4 +624,7 @@ open class Player(world: World) : Pawn(world) {
          */
         const val TILE_VIEW_DISTANCE = 32
     }
+
+    var social = Social()
+
 }

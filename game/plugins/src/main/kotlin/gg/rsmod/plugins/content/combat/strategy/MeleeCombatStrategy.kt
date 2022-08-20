@@ -36,6 +36,7 @@ object MeleeCombatStrategy : CombatStrategy {
         val animation = CombatConfigs.getAttackAnimation(pawn)
         pawn.animate(animation)
 
+        // @TODO
         val formula = MeleeCombatFormula
         val accuracy = formula.getAccuracy(pawn, target)
         val maxHit = formula.getMaxHit(pawn, target)

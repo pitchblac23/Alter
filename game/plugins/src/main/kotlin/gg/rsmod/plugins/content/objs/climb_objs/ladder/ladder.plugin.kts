@@ -1,6 +1,7 @@
 package gg.rsmod.plugins.content.objs.climb_objs.ladder
 
 /**Climbing up a ladder.*/
+
 arrayOf(Objs.LADDER_12964, Objs.LADDER_12965, Objs.LADDER_16683).forEach { ladder_up ->
     on_obj_option(obj = ladder_up, option = "climb-up") {
         climbupladder(player)
