@@ -165,4 +165,8 @@ object Animation {
     const val AGILITY_PIPE_CRAWL = 749
     const val AGILITY_PIPE_EXIT = 748
 
+    /**Ladder Animations*/
+    const val CLIMB_LADDER = 828
+    const val CLIMB_DOWN = 827
+
 }
