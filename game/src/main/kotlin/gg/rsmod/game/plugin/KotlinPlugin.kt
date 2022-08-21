@@ -156,7 +156,8 @@ abstract class KotlinPlugin(private val r: PluginRepository, val world: World, v
         n.respawns = true
         n.walkRadius = walkRadius
         n.lastFacingDirection = direction
-        world.spawn(n)
+        r.npcSpawns.add(n)
+        //world.spawn(n)
     }
 
     /**
@@ -167,7 +168,8 @@ abstract class KotlinPlugin(private val r: PluginRepository, val world: World, v
         n.respawns = true
         n.walkRadius = walkRadius
         n.lastFacingDirection = direction
-        world.spawn(n)
+        r.npcSpawns.add(n)
+        //world.spawn(n)
     }
 
     /**
