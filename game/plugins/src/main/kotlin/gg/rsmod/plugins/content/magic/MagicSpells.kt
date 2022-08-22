@@ -42,9 +42,10 @@ object MagicSpells {
     private const val TELEPORT_SPELL_TYPE = 2
 
     private val STAFF_ITEMS = arrayOf(
-            Items.IBANS_STAFF, Items.IBANS_STAFF_U,
+            Items.STAFF_OF_AIR, Items.IBANS_STAFF, Items.IBANS_STAFF_U,
             Items.SLAYERS_STAFF, Items.SLAYERS_STAFF_E,
-            Items.SARADOMIN_STAFF, Items.GUTHIX_STAFF, Items.ZAMORAK_STAFF
+            Items.SARADOMIN_STAFF, Items.GUTHIX_STAFF,
+            Items.ZAMORAK_STAFF
     )
 
     private val metadata = Int2ObjectOpenHashMap<SpellMetadata>()
@@ -62,6 +63,7 @@ object MagicSpells {
             p.message("Your Magic level is not high enough for this spell.")
             return false
         }
+        //TODO: if staff's equipped then should have inf runes
         if (p.getVarbit(INF_RUNES_VARBIT) == 0) {
             for (item in items) {
                 if (p.inventory.getItemCount(item.id) < item.amount && p.equipment.getItemCount(item.id) < item.amount) {

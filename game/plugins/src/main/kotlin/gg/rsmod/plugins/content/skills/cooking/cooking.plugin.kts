@@ -61,17 +61,19 @@ objs.forEach { obj ->
             val cookableFoods = findCookableFoods(player)
             player.queue(TaskPriority.WEAK) { cookingMessageBox(*cookableFoods, title = "What would you like to cook?", obj = obj, logic = ::cookFoodOnRange)}
         }
-        /*on_obj_option(114, option = "cook") {
-            player.queue {
-                if (player.getVarp(29) < 1) {
-                    chatNpc("Hey, who said you could use that?", 4626)
-                } else {
-                    val cookableFoods = findCookableFoods(player)
-                    player.queue(TaskPriority.WEAK) { cookingMessageBox(*cookableFoods, title = "What would you like to cook?", obj = obj, logic = ::cookFoodOnRange)}
-                }
-            }
-        }*/
     }
+
+//TODO: bound to a plugin??
+    /*on_obj_option(114, option = "cook") {
+        player.queue {
+            if (player.getVarp(29) < 1) {
+                chatNpc("Hey, who said you could use that?", 4626)
+            } else {
+                val cookableFoods = findCookableFoods(player)
+                player.queue(TaskPriority.WEAK) { cookingMessageBox(*cookableFoods, title = "What would you like to cook?", obj = obj, logic = ::cookFoodOnRange)}
+            }
+        }
+    }*/
 
     foods.forEach { food ->
         on_item_on_obj(obj.objId, food.raw_item) {
@@ -98,7 +100,6 @@ objs.forEach { obj ->
             }
             objListenHashes[hash] = true
         }
-
     }
 }
 

@@ -1,7 +1,6 @@
 package gg.rsmod.plugins.content.area.lumbridge.spawns
 
 /**Citizens*/
-spawn_npc(npc = Npcs.COOK_4626, x = 3208, z = 3215, direction = Direction.SOUTH)
 spawn_npc(npc = Npcs.PERDU, x = 3230, z = 3215, direction = Direction.SOUTH)
 spawn_npc(npc = Npcs.DONIE, x = 3228, z = 3222, direction = Direction.SOUTH)
 spawn_npc(npc = Npcs.HANS, x = 3221, z = 3219, direction = Direction.EAST)

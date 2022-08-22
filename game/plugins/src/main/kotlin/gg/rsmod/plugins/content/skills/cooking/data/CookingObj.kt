@@ -13,7 +13,7 @@ package gg.rsmod.plugins.content.skills.cooking.data
 
 enum class CookingObj(val objId: Int, val animation: Int = 896, val isRange: Boolean = true, val sound: Int = 2577) {
     TUTORIAL_ISLAND_RANGE(objId = 9736, isRange = true),
-    LUMBRIDGE_CASTLE_RANGE(objId = 114, isRange = true),
+    //LUMBRIDGE_CASTLE_RANGE(objId = 114, isRange = true),
     ALKHARID_RANGE(objId = 26181, isRange = true),
     VARROCK_RANGE(objId = 7183, isRange = true),
     VARROCK_OVEN(objId = 7421, isRange = true),

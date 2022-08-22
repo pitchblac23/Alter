@@ -46,7 +46,7 @@ object GroundItemPathAction {
         if (p.tile.sameAs(item.tile) || p.tile.isNextTo(item.tile)) {
             if (p.tile.isNextTo(item.tile)) {
                 p.faceTile(item.tile)
-                p.animate(832)
+                //p.animate(832)
                 handleAction(p, item, opt)
             } else if (p.tile.sameAs(item.tile)) {
                 handleAction(p, item, opt)
@@ -78,7 +78,7 @@ object GroundItemPathAction {
             if (p.tile.sameAs(item.tile) || p.tile.isNextTo(item.tile)) {
                 if (p.tile.isNextTo(item.tile)) {
                     p.faceTile(item.tile)
-                    p.animate(832)
+                    //p.animate(832)
                     handleAction(p, item, opt)
                 } else if (p.tile.sameAs(item.tile)) {
                     handleAction(p, item, opt)

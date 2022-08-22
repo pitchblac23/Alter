@@ -6,6 +6,8 @@ import gg.rsmod.plugins.content.inter.attack.AttackTab.DISABLE_AUTO_RETALIATE_VA
 import gg.rsmod.plugins.content.inter.attack.AttackTab.SPECIAL_ATTACK_VARP
 import gg.rsmod.plugins.content.inter.attack.AttackTab.setEnergy
 import gg.rsmod.game.model.attr.NEW_ACCOUNT_ATTR
+import gg.rsmod.plugins.content.combat.Combat
+import gg.rsmod.plugins.content.inter.attack.autocasts.AutoCasting
 
 /**
  * First log-in logic (when accounts have just been made).
@@ -40,6 +42,21 @@ on_button(interfaceId = ATTACK_TAB_INTERFACE_ID, component = 12) {
 
 on_button(interfaceId = ATTACK_TAB_INTERFACE_ID, component = 16) {
     player.setVarp(ATTACK_STYLE_VARP, 3)
+}
+
+/**
+ * Toggle Magic-Defensive attackstyle
+ */
+on_button(interfaceId = 593, component = 21) {
+    player.setVarbit(Combat.DEFENSIVE_MAGIC_CAST_VARBIT, 1)
+    AutoCasting.openAutoCastSpellsList(player)
+}
+/**
+ * Toggle Magic-Aggressive attackstyle
+ */
+on_button(interfaceId = 593, component = 26) {
+    player.setVarbit(Combat.DEFENSIVE_MAGIC_CAST_VARBIT, 0)
+    AutoCasting.openAutoCastSpellsList(player)
 }
 
 /**
