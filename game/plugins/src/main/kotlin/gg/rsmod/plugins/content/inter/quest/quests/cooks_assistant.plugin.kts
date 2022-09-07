@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.inter.quest_tab.quests
+package gg.rsmod.plugins.content.inter.quest.quests
 
 spawn_npc(Npcs.COOK_4626, 3210, 3216, 0, 4, Direction.WEST)
 

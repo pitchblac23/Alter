@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.inter.quest_tab.quests
+package gg.rsmod.plugins.content.inter.quest.quests
 
 /**
  * Thanks to kai for the quest Cooks assistant

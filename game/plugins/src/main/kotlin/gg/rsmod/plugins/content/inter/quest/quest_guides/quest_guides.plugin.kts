@@ -1,11 +1,12 @@
-package gg.rsmod.plugins.content.inter.quest_tab.quest_guides
+package gg.rsmod.plugins.content.inter.quest.quest_guides
 
 /**
- * On making a quest guide need to make sure you set
+ * On making a quest guide make sure to always set if one is unavailable
  * player.setComponentText(interfaceId = 119, component = 7, text = "")
- * if the quest doesnt already have a componet 7 till a better fix
- * due to sheepshearer having on open well leak through other guides if not set
- **/
+ * TODO: would like to have guides in own files
+ */
+
+
 
 on_button(interfaceId = 399, component = 7) {
     val slot = player.getInteractingSlot()

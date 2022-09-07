@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.inter.quest_tab.quests
+package gg.rsmod.plugins.content.inter.quest.quests
 
 /**
  * Thanks to kai for the quest Cooks assistant
@@ -6,30 +6,6 @@ package gg.rsmod.plugins.content.inter.quest_tab.quests
  * */
 
 var ballsNeeded = 20
-
-on_obj_option(12982, "climb-over") {
-    val stile = player.getInteractingGameObj()
-    val endTile: Tile
-    val directionAngle: Int
-    val southOfStile = player.tile.z < stile.tile.z
-
-    if (southOfStile) {
-        endTile = stile.tile.step(Direction.NORTH, 2)
-        directionAngle = Direction.NORTH.angle
-    } else {
-        endTile = stile.tile.step(Direction.SOUTH, 1)
-        directionAngle = Direction.SOUTH.angle
-    }
-    val movement = ForcedMovement.of(player.tile, endTile, clientDuration1 = 33, clientDuration2 = 60, directionAngle = directionAngle)
-    player.jumpStile(movement)
-}
-
-fun Player.jumpStile(movement: ForcedMovement) {
-    queue {
-        animate(839)
-        forceMove(this, movement)
-    }
-}
 
 spawn_npc(Npcs.FRED_THE_FARMER, 3187, 3272, 0, 4, Direction.EAST)
 spawn_item(item = Items.SHEARS, amount = 1, x = 3192, z = 3272)
