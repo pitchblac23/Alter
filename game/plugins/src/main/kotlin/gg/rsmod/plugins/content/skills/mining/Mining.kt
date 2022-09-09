@@ -110,7 +110,7 @@ object Mining {
                         p.addXp(Skills.MINING, ore.xp)
                     }
                 }
-
+                    //p.animate(-1) // reset animation
                     val world = p.world
 
                 if(emptyOreId != 0) {

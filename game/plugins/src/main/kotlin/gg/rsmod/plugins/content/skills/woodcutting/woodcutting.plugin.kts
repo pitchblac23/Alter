@@ -34,6 +34,14 @@ private val TREES = setOf(
 
     Tree(TreeType.OAK, obj = 1751, trunk = 1356),
     Tree(TreeType.OAK, obj = 10820, trunk = 1356),
+    Tree(TreeType.OAK, obj = 4533, trunk = 8468),
+    Tree(TreeType.OAK, obj = 4540, trunk = 8468),
+    Tree(TreeType.OAK, obj = 9734, trunk = 8468),
+    Tree(TreeType.OAK, obj = 8463, trunk = 8468),
+    Tree(TreeType.OAK, obj = 8464, trunk = 8468),
+    Tree(TreeType.OAK, obj = 8465, trunk = 8468),
+    Tree(TreeType.OAK, obj = 8466, trunk = 8468),
+    Tree(TreeType.OAK, obj = 8467, trunk = 8468),
 
     Tree(TreeType.WILLOW, obj = 1750, trunk = 9711),
     Tree(TreeType.WILLOW, obj = 1756, trunk = 9471),
@@ -52,6 +60,23 @@ private val TREES = setOf(
     Tree(TreeType.MAPLE, obj = 1759, trunk = 9712),
     Tree(TreeType.MAPLE, obj = 4674, trunk = 9712),
     Tree(TreeType.MAPLE, obj = 10832, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 5126, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8435, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8436, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8437, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8438, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8439, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8440, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8441, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8442, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8443, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8444, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 8445, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 36681, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 36682, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 40754, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 40755, trunk = 9712),
+    Tree(TreeType.MAPLE, obj = 4535, trunk = 9712),
 
     Tree(TreeType.HOLLOW, obj = 1752, trunk = 2310),
     Tree(TreeType.HOLLOW, obj = 1757, trunk = 4061),
@@ -59,6 +84,8 @@ private val TREES = setOf(
     Tree(TreeType.HOLLOW, obj = 10830, trunk = 4061),
 
     Tree(TreeType.MAHOGANY, obj = 9034, trunk = 9035),
+
+    Tree(TreeType.TEAK, obj = 9036, trunk = 9037), //Teak
 
     Tree(TreeType.ARCTIC_PINE, obj = 3037, trunk = 21274),
 

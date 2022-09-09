@@ -1,6 +1,11 @@
-package gg.rsmod.plugins.content.objs.climb_objs
+package gg.rsmod.plugins.content.objs
 
 /**This is for testing objects without having to have a file*/
+//TODO: add some of this to main files
+
+on_obj_option(obj = Objs.CELL_DOOR_9563, option = "Open") {
+    player.message("The door is securely locked.")
+}
 
 arrayOf(Objs.STILE_7527, Objs.STILE_12982, Objs.STILE, Objs.STILE_19222).forEach { stile ->
     on_obj_option(obj = stile, option = "climb-over") {
@@ -37,4 +42,4 @@ fun Player.jumpStile(movement: ForcedMovement) {
         animate(839)
         forceMove(this, movement)
     }
-}
+}*/

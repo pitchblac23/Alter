@@ -7,6 +7,14 @@
     "closed": {
       "hinge": 1558,
       "extension": 1560
+    },
+    "opened": {
+      "hinge": 1563,
+      "extension": 1564
+    },
+    "closed": {
+      "hinge": 1561,
+      "extension": 1562
     }
   }
 ]

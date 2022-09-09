@@ -6,6 +6,8 @@ object Animation {
     const val USE_ITEM_ON_OBJECT_THAT_CAN_STORE_OBJECTS = 832
     const val LOOK_AT_MINIMAP_WHEN_FULLSCREEN = 5354
     const val DIG_WITH_SPADE = 831
+    const val OPEN_CONTAINER = 536
+    const val CLOSE_CONTAINER = 535
     /**
      * Prayer Animations
      */
@@ -165,7 +167,9 @@ object Animation {
     const val AGILITY_PIPE_CRAWL = 749
     const val AGILITY_PIPE_EXIT = 748
 
-    /**Ladder Animations*/
+    /**
+     * Ladder Animations
+     */
     const val CLIMB_LADDER = 828
     const val CLIMB_DOWN = 827
 
