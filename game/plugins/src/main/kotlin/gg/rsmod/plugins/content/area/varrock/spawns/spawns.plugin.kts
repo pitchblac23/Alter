@@ -15,3 +15,10 @@ spawn_item(Items.BODY_RUNE, 1, 3226,9910,0,100)
 //spawn_item(Items.RED_SPIDERS_EGGS, 1, 3179,9881,0,100)
 //spawn_item(Items.RED_SPIDERS_EGGS, 1, 3177,9880,0,100)
 //spawn_item(Items.EARTH_RUNE, 6, 3185,9888,0,100)
+
+/**Objects*/
+//rot 0 = south, 1 = west, 2 = north, 3 = east, 4 = south-west, 5 north-west, 6 = north-east, 7 = south-east
+spawn_obj(Objs.BANK_DEPOSIT_BOX, x = 3174, z = 3493, rot = 1)
+spawn_obj(Objs.GROUP_STORAGE, x = 3160, z = 3498, rot = 0)
+
+

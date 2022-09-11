@@ -1,25 +1,20 @@
 package gg.rsmod.plugins.content.area.lumbridge.chat.shops
 
-val SHOP_KEEPERS = intArrayOf(Npcs.SHOP_KEEPER, Npcs.SHOP_ASSISTANT)
+arrayOf(Npcs.SHOP_KEEPER, Npcs.SHOP_ASSISTANT).forEach { shop ->
+    on_npc_option(shop, "trade") { player.openShop("Lumbridge General Store") }
 
-SHOP_KEEPERS.forEach { npc ->
-    on_npc_option(npc, "trade") {
-        player.openShop("Lumbridge General Store")
-    }
+    on_npc_option(shop, "talk-to") { player.queue { dialog() } }
+}
 
-    on_npc_option(npc, "talk-to") {
-        player.queue {
-            this.chatNpc(npc = npc, title = "Shop keeper", message = "Can I help you at all?")
-            when(this.options("Yes please. What are you selling?", "No thanks.", title = "Select an Option")) {
-                1 -> {
-                    this.chatPlayer("Yeas please. What are you selling?")
-                    this.player.openShop("Lumbridge General Store")
-                }
-
-                2 -> {
-                    this.chatPlayer("No thanks.")
-                }
-            }
+suspend fun QueueTask.dialog() {
+    chatNpc("Can I help you at all?")
+    when (options("Yes please. What are you selling?", "No thanks.")) {
+        1 -> {
+            chatPlayer("Yeas please. What are you selling?")
+            player.openShop("Lumbridge General Store")
+        }
+        2 -> {
+            chatPlayer("No thanks.")
         }
     }
 }

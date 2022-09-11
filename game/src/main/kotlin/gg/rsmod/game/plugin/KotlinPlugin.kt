@@ -172,6 +172,7 @@ abstract class KotlinPlugin(private val r: PluginRepository, val world: World, v
 
     /**
      * Spawn a [DynamicObject] on the given coordinates.
+     * rot 0 = south, 1 = west, 2 = north, 3 = east, 4 = south-west, 5 north-west, 6 = north-east, 7 = south-east
      */
     fun spawn_obj(obj: Int, x: Int, z: Int, height: Int = 0, type: Int = 10, rot: Int = 0) {
         val o = DynamicObject(obj, type, rot, Tile(x, z, height))

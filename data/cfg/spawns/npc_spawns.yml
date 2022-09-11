@@ -142,7 +142,7 @@
   z: 3446
   height: 0
   wander: 0
-  facing: 4
+  facing: 1
 - id: 1633
   name: "Banker"
   x: 3163
@@ -96921,11 +96921,15 @@
   x: 3141
   z: 3472
   height: 0
+  wander: 0
+  facing: 2
 - id: 10732
   name: "Zamorakian recruiter"
   x: 3143
   z: 3470
   height: 0
+  wander: 0
+  facing: 1
 - id: 10733
   name: "Meredith"
   x: 3143
@@ -96966,6 +96970,8 @@
   x: 3185
   z: 3516
   height: 0
+  wander: 0
+  facing: 3
 - id: 6708
   name: "Guard"
   x: 3193
@@ -96976,16 +96982,21 @@
   x: 3152
   z: 3489
   height: 0
+  wander: 0
+  facing: 2
 - id: 5449
   name: "Bob Barter (herbs)"
   x: 3156
   z: 3481
   height: 0
+  wander: 0
+  facing: 2
 - id: 5452
   name: "Hofuthand (weapons and armour)"
   x: 3156
   z: 3498
   height: 0
+  wander: 0
 - id: 2149
   name: "Grand Exchange Clerk"
   x: 3164
@@ -97004,6 +97015,8 @@
   x: 3165
   z: 3477
   height: 0
+  wander: 0
+  facing: 1
 - id: 2148
   name: "Grand Exchange Clerk"
   x: 3165
@@ -97022,11 +97035,14 @@
   x: 3173
   z: 3481
   height: 0
+  wander: 0
+  facing: 4
 - id: 3115
   name: "Farid Morrisane (ores and bars)"
   x: 3173
   z: 3498
   height: 0
+  wander: 0
 - id: 2845
   name: "Snake"
   x: 2881

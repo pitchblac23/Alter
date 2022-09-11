@@ -1,7 +1,5 @@
 package gg.rsmod.plugins.content.inter.quest.quests
 
-spawn_npc(Npcs.COOK_4626, 3210, 3216, 0, 4, Direction.WEST)
-
 var asked = 0
 var takenItems = 0
 var takenFlour = 0

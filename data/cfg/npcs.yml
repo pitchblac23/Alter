@@ -2522,9 +2522,9 @@
 - id: 1305
   examine: "Anyone fancy a trim?"
 - id: 1306
-  examine: "Master of the mystical make-over."
+  examine: "Master of the mystical makeover."
 - id: 1307
-  examine: "Master of the mystical make-over."
+  examine: "Master of the mystical makeover."
 - id: 1308
   examine: "He smells funny."
 - id: 1309
@@ -3097,6 +3097,8 @@
   examine: "He kills in the name of Saradomin."
 - id: 1612
   examine: "He kills in the name of Guthix."
+- id: 1613
+  examine: "He can look after my money."
 - id: 1614
   examine: "A banknote exchange merchant."
 - id: 1615
@@ -3105,6 +3107,8 @@
   examine: "The tribe leader."
 - id: 1617
   examine: "She offers sacrifices to Zulrah on behalf of the tribe."
+- id: 1618
+  examine: "Good with money."
 - id: 1619
   examine: "A fully grown feline."
 - id: 1620
@@ -3133,6 +3137,10 @@
   examine: "A friendly not so little pet."
 - id: 1632
   examine: "A hellish not-so-little pet."
+- id: 1633
+  examine: "She can look after my money."
+- id: 1634
+  examine: "She can look after my money."
 - id: 1635
   examine: "An impling baby. Aaah..."
 - id: 1636
@@ -5845,7 +5853,7 @@
 - id: 3088
   examine: "He grows the crops in this area."
 - id: 3089
-  examine: "Farming."
+  examine: "He can look after my money."
 - id: 3090
   examine: "Farming."
 - id: 3091
@@ -13439,7 +13447,7 @@
 - id: 7312
   examine: "He's playing both sides!"
 - id: 7316
-  examine: "Looks like she's seen her fair share of battle."
+  examine: "A mysterious mage in search for the best fighters."
 - id: 7317
   examine: "Looks like she's seen her fair share of battle."
 - id: 7318
@@ -14977,7 +14985,7 @@
 - id: 8189
   examine: "It's a Grave digger"
 - id: 8193
-  examine: "It's a James"
+  examine: "The master of all bonds."
 - id: 8194
   examine: "It's a Growthling"
 - id: 8195
@@ -15295,7 +15303,7 @@
 - id: 8367
   examine: "It's a Blood spawn"
 - id: 8368
-  examine: "It's a Abigaila"
+  examine: "She's not from around here originally."
 - id: 8369
   examine: "It's a Verzik Vitur"
 - id: 8370
@@ -15726,5 +15734,47 @@
   examine: "It's a Seaman Morris"
 - id: 8634
   examine: "It's a Alchemical Hydra"
+- id: 8644
+  examine: "A castle wars recruiter."
+- id: 8721
+  examine: "Appears to have a while host of things to trade."
 - id: 9855
   examine: "Death, the inexorable, comes to us all. When he's not doing that, he sits here."
+- id: 10370
+  examine: "Haunted by the sound of trees falling in empty forests."
+- id: 10373
+  examine: "He seems to get a lot of enjoyment from sending people to their deaths."
+- id: 10377
+  examine: "A wanderer who's made his home in the depths of the wilderness."
+- id: 10378
+  examine: "Pledged to protect Ferox Enclave."
+- id: 10379
+  examine: "Seeking knowledge and answers."
+- id: 10380
+  examine: "Seeking knowledge and answers."
+- id: 10381
+  examine: "Seeking knowledge and answers."
+- id: 10382
+  examine: "Looks after the wilderness Loot Chest."
+- id: 10383
+  examine: "Trying to live a life in these savage lands."
+- id: 10385
+  examine: "Trying to live a life in these savage lands."
+- id: 10386
+  examine: "Let's hope she doesn't have arachnophobia."
+- id: 10387
+  examine: "Said to have gone toe to toe with Callisto with just his bear hands."
+- id: 10388
+  examine: "Vanquisher of evil and breaker of bones."
+- id: 10389
+  examine: "He can look after my money - I hope."
+- id: 10390
+  examine: "Hired by the bank of Gielinor."
+- id: 10392
+  examine: "Owner of the Old Nite pub."
+- id: 10732
+  examine: "A castle wars recruiter."
+- id: 10733
+  examine: "She can tell you how to play board games."
+- id: 10759
+  examine: "A man of the people."

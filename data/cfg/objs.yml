@@ -12163,7 +12163,7 @@
 - id: 10352
   examine: "Try not to belly-flop."
 - id: 10355
-  examine: "Maybe I could swing on this hanging cable."
+  examine: "The bank teller will serve you from here."
 - id: 10356
   examine: "A zip line"
 - id: 10357
@@ -12345,7 +12345,7 @@
 - id: 10527
   examine: "A zip line"
 - id: 10528
-  examine: "A zip line"
+  examine: "This booth is closed."
 - id: 10529
   examine: "A zip line"
 - id: 10530
@@ -35731,7 +35731,7 @@
 - id: 33614
   examine: "It's a Boaty"
 - id: 33638
-  examine: "It's a Bush"
+  examine: "A small bushy plant."
 - id: 33639
   examine: "It's a Seed Stall"
 - id: 33640
@@ -37320,3 +37320,11 @@
   examine: "Plenty of old books here."
 - id: 40937
   examine: "A tall Trollweiss Spruce. An engraving on the trunk reads:<br>'Name: Snowflake. Location: Weiss. Likes Hiking. Seeking gentleman'."
+- id: 41724
+  examine: "The entrance to clan halls."
+- id: 41728
+  examine: "Wanna join a clan?"
+- id: 41730
+  examine: "Wanna join a clan?"
+- id: 43492
+  examine: "To store your group's most valuable possessions... potentially."

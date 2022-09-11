@@ -1,87 +1,38 @@
 package gg.rsmod.plugins.content.objs.climb_objs.ladder
 
 /**Climbing up a ladder.*/
-arrayOf(Objs.LADDER_9558, Objs.LADDER_12964, Objs.LADDER_12965, Objs.LADDER_16683, Objs.LADDER_16684, Objs.LADDER_60, Objs.LADDER_24070).forEach { ladder_up ->
-    on_obj_option(obj = ladder_up, option = "climb-up") {
+arrayOf(Objs.LADDER_9558, Objs.LADDER_12964, Objs.LADDER_12965,
+        Objs.LADDER_16683, Objs.LADDER_16684, Objs.LADDER_60,
+        Objs.LADDER_24070, Objs.LADDER_25938).forEach { ladder_up ->
+    on_obj_option(obj = ladder_up, option = "Climb-up") {
         climbupladder(player)
     }
 }
 
-arrayOf(Objs.LADDER_24082, Objs.LADDER_24083).forEach { multi_ladder_up ->
-    on_obj_option(obj = multi_ladder_up, option = "climb-up") {
+arrayOf(Objs.LADDER_24082, Objs.LADDER_24083, Objs.LADDER_6436,
+        Objs.LADDER_2148, Objs.LADDER_17387, Objs.LADDER_11806,
+        Objs.LADDER_17385).forEach { up ->
+    on_obj_option(obj = up, option = "Climb-up") {
         player.queue {
+            wait(2)
             player.animate(828)
             player.lock()
-            wait(2)
-            if (player.tile.x == 3035 && player.tile.z == 3345 ||
-                player.tile.x == 2947 && player.tile.z == 3363) {
-                player.moveTo(player.tile.x, player.tile.z, player.tile.height +1)
+            wait(1)
+            if (player.getInteractingGameObj().tile == Tile(3118, 9643)) { player.moveTo(3118, 3243) }
+            if (player.getInteractingGameObj().tile == Tile(3103, 9576)) { player.moveTo(3105, 3162) }
+            if (player.getInteractingGameObj().tile == Tile(3019, 9850)) { player.moveTo(3018, 3450) }
+            if (player.getInteractingGameObj().tile == Tile(3237, 9858)) { player.moveTo(3236, 3458) }
+            if (player.getInteractingGameObj().tile == Tile(3209, 9616)) { player.moveTo(player.tile.x, player.tile.z -6400) }
+            if (player.getInteractingGameObj().tile == Tile(3035, 3344)) { player.moveTo(3035, 3345, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2946, 3363)) { player.moveTo(2947, 3363, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2954, 3389)) { player.moveTo(2954, 3388, 1) }
 
-            } else if (player.tile.x == 2954 && player.tile.z == 3388 && player.tile.height == 2) {
-                player.moveTo(player.tile.x, player.tile.z + 2, player.tile.height +1)
+            //Height 1
+            if (player.getInteractingGameObj().tile == Tile(2954, 3390, 1)) { player.moveTo(2953, 3390, 2) }
 
-            } else if (player.tile.x == 2955 && player.tile.z == 3390 && player.tile.height == 1) {
-                player.moveTo(player.tile.x -2, player.tile.z, player.tile.height +1)
-
-            } else {
-                player.moveTo(player.tile.x, player.tile.z -2, player.tile.height +1)
-            }
+            //Height 2
+            if (player.getInteractingGameObj().tile == Tile(2954, 3389, 2)) { player.moveTo(2954, 3390, 3) }
             player.unlock()
-        }
-    }
-}
-
-//TODO: may need fix in future for different loc's
-on_obj_option(Objs.LADDER_17385, option = "climb-up") {
-    player.queue {
-        player.animate(828)
-        player.lock()
-        wait(2)
-        player.moveTo(player.tile.x, player.tile.z -6400)
-        player.unlock()
-    }
-}
-
-on_obj_option(obj = Objs.LADDER_6436, option = "climb-up") {
-    player.queue {
-        player.animate(828)
-        player.lock()
-        wait(2)
-        player.moveTo(3118, 3243)
-        player.unlock()
-    }
-}
-
-on_obj_option(obj = Objs.LADDER_2148, option = "climb-up") {
-    player.queue {
-        player.animate(828)
-        player.lock()
-        wait(2)
-        player.moveTo(3105, 3162)
-        player.unlock()
-    }
-}
-
-//TODO: added from old files will fix later
-on_obj_option(Objs.LADDER_17387, "climb-up") {
-    if (player.tile.x == 3018 && player.tile.z == 9850) {
-        player.queue {
-            wait(2)
-            player.animate(828)
-            wait(1)
-            player.moveTo(3018, 3450)
-        }
-    }
-}
-
-/**Varrock manhole*/
-on_obj_option(Objs.LADDER_11806, option = "climb-up") {
-    if (player.tile.x == 3236 && player.tile.z == 9858) {
-        player.queue {
-            wait(2)
-            player.animate(828)
-            wait(1)
-            player.moveTo(3236, 3458)
         }
     }
 }
@@ -99,33 +50,34 @@ arrayOf(Objs.LADDER_12965, Objs.LADDER_16684).forEach { ladder ->
 }
 
 /**Climbing down a ladder.*/
-arrayOf(Objs.LADDER_9559, Objs.LADDER_12965, Objs.LADDER_12966, Objs.LADDER_16684, Objs.LADDER_24085, Objs.LADDER_24071).forEach { ladder_down ->
+arrayOf(Objs.LADDER_9559, Objs.LADDER_12965, Objs.LADDER_12966,
+        Objs.LADDER_16684, Objs.LADDER_24085, Objs.LADDER_24071).forEach { ladder_down ->
     on_obj_option(obj = ladder_down, option = "climb-down") {
         climbdownladder(player)
     }
 }
 
-arrayOf(Objs.LADDER_16679).forEach { down_ladder ->
+arrayOf(Objs.LADDER_16679, Objs.LADDER_25939).forEach { down_ladder ->
     on_obj_option(obj = down_ladder, option = "climb-down") {
         climbladderdown(player)
     }
 }
 
-arrayOf(Objs.LADDER_24084).forEach { multi_ladder_down ->
-    on_obj_option(obj = multi_ladder_down, option = "climb-down") {
+arrayOf(Objs.LADDER_24084).forEach { down ->
+    on_obj_option(obj = down, option = "Climb-down") {
         player.queue {
+            wait(2)
             player.animate(828)
             player.lock()
             wait(2)
-            if (player.tile.x == 2954 && player.tile.z == 3390 && player.tile.height == 3) {
-                player.moveTo(player.tile.x, player.tile.z -2, player.tile.height -1)
+            //Height 1
+            if (player.getInteractingGameObj().tile == Tile(2954, 3389, 1)) { player.moveTo(2954, 3390) }
 
-            } else if (player.tile.x == 2953 && player.tile.z == 3390 && player.tile.height == 2) {
-                player.moveTo(player.tile.x +2, player.tile.z, player.tile.height -1)
+            //Height 2
+            if (player.getInteractingGameObj().tile == Tile(2954, 3390, 2)) { player.moveTo(2955, 3390, 1) }
 
-            } else {
-                player.moveTo(player.tile.x, player.tile.z +2, player.tile.height -1)
-            }
+            //Height 3
+            if (player.getInteractingGameObj().tile == Tile(2954, 3389, 3)) { player.moveTo(2954, 3388, 2) }
             player.unlock()
         }
     }
@@ -147,6 +99,7 @@ on_obj_option(obj = Objs.LADDER_30367, option ="climb-down") {
         }
     } else
     player.queue {
+        wait(2)
         player.animate(828)
         player.lock()
         wait(2)
@@ -157,6 +110,7 @@ on_obj_option(obj = Objs.LADDER_30367, option ="climb-down") {
 
 on_obj_option(obj = Objs.LADDER_2147, option = "climb-down") {
     player.queue {
+        wait(2)
         player.animate(827)
         player.lock()
         wait(2)
@@ -189,8 +143,9 @@ fun climbdownladder(player : Player) {
 
 fun climbladderdown(player : Player) {
     player.queue {
-        player.animate(827)
         player.lock()
+        wait(2)
+        player.animate(827)
         wait(2)
         player.moveTo(player.tile.x, player.tile.z, player.tile.height - 1)
         player.unlock()
