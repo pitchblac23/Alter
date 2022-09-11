@@ -1,10 +1,8 @@
 package gg.rsmod.plugins.content.area.dwarven_mines.chats
 
-spawn_npc(Npcs.DROGO_DWARF, 3040, 9847, 0, walkRadius = 15)
+on_npc_option(Npcs.DROGO_DWARF, option = "talk-to") { player.queue { dialog() } }
 
-    on_npc_option(Npcs.DROGO_DWARF, option = "talk-to") { player.queue { dialog() } }
-
-    on_npc_option(Npcs.DROGO_DWARF, option = "trade") { open_shop(player) }
+on_npc_option(Npcs.DROGO_DWARF, option = "trade") { open_shop(player) }
 
 suspend fun QueueTask.dialog() {
     chatNpc("'Ello, welcome to my Mining shop, friend!", animation = 567)

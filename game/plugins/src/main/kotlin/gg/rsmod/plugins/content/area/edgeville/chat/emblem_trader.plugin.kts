@@ -7,38 +7,36 @@ package gg.rsmod.plugins.content.area.edgeville.chat
  * based on osrs from my acc will make shop better later
  */
 
-spawn_npc(npc = Npcs.EMBLEM_TRADER, x = 3096, z = 3504, walkRadius = 2)
-
 val HIDE_STREAK_VARBIT = 1621
 val LIMIT_TARGETS_VARBIT = 6503
 val SKULL_SHORT_DURATION = 500
 val SKULL_LONG_DURATION = 2000
 
-    on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Talk-to") {
-        player.queue { chat() }
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Talk-to") {
+    player.queue { chat() }
+}
+
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") {
+    player.queue { chatNpc(" I'm afraid I've retired my shop. I hurt my back lifting<br><br>bounty crates and I can't do it anymore.") }
+}
+
+//on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") { open_shop(player) }
+
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Coffer") {
+    player.queue {
+        coffer_option()
     }
+}
 
-    on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") {
-        player.queue { chatNpc(" I'm afraid I've retired my shop. I hurt my back lifting<br><br>bounty crates and I can't do it anymore.") }
-    }
-
-    //on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") { open_shop(player) }
-
-    on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Coffer") {
-        player.queue {
-            coffer_option()
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "skull") {
+    player.queue {
+        if (player.hasSkullIcon(SkullIcon.NONE)) {
+            give_pk_skull()
+        } else {
+            extend_pk_skull()
         }
     }
-
-    on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "skull") {
-        player.queue {
-            if (player.hasSkullIcon(SkullIcon.NONE)) {
-                give_pk_skull()
-            } else {
-                extend_pk_skull()
-            }
-        }
-    }
+}
 
 /*fun open_shop(p: Player) {
     p.openShop("Emblem Trader")

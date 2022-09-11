@@ -2,18 +2,12 @@ package gg.rsmod.plugins.content.area.world_chats.bank_tutor
 
 import gg.rsmod.plugins.content.inter.bank.openBank
 
-spawn_npc(Npcs.BANKER_TUTOR, x = 3208, z = 3222, height = 2, direction = Direction.SOUTH)
-
 arrayOf(Npcs.BANKER_TUTOR).forEach { bankerTutor ->
-    on_npc_option(npc = bankerTutor, option = "talk-to", lineOfSightDistance = 2) {
-        player.queue { dialogTutor() }
-    }
-    on_npc_option(npc = bankerTutor, option = "bank", lineOfSightDistance = 2) {
-        player.openBank()
-    }
-    on_npc_option(npc = bankerTutor, option = "collect", lineOfSightDistance = 2) {
-        open_collect(player)
-    }
+    on_npc_option(npc = bankerTutor, option = "talk-to", lineOfSightDistance = 2) { player.queue { dialogTutor() } }
+
+    on_npc_option(npc = bankerTutor, option = "bank", lineOfSightDistance = 2) { player.openBank() }
+
+    on_npc_option(npc = bankerTutor, option = "collect", lineOfSightDistance = 2) { open_collect(player) }
 }
 
 suspend fun QueueTask.dialogTutor() {

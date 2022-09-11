@@ -1,10 +1,8 @@
 package gg.rsmod.plugins.content.area.dwarven_mines.chats
 
-spawn_npc(Npcs.NURMOF, 2998, 9849, 0, walkRadius = 17)
+on_npc_option(Npcs.NURMOF, option = "talk-to") { player.queue { dialog() } }
 
-    on_npc_option(Npcs.NURMOF, option = "talk-to") { player.queue { dialog() } }
-
-    on_npc_option(Npcs.NURMOF, option = "trade") { open_shop(player) }
+on_npc_option(Npcs.NURMOF, option = "trade") { open_shop(player) }
 
 suspend fun QueueTask.dialog() {
     chatNpc("Greetings and welcome to my pickaxe shop. Do you<br>want to buy my premium quality pickaxes?")

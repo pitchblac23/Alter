@@ -1,10 +1,6 @@
 package gg.rsmod.plugins.content.area.lumbridge.chat
 
-spawn_npc(Npcs.CRAFTING_TUTOR, x = 3211, z = 3212,1,1, Direction.WEST)
-
-on_npc_option(npc = Npcs.CRAFTING_TUTOR, option = "talk-to") {
-    player.queue { dialog() }
-}
+on_npc_option(npc = Npcs.CRAFTING_TUTOR, option = "talk-to") { player.queue { dialog() } }
 
 suspend fun QueueTask.dialog() {
     chatPlayer("Can you teach me the basics of crafting please?", animation = 554)

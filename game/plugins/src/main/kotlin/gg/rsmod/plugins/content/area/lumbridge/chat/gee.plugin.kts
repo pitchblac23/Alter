@@ -1,11 +1,6 @@
 package gg.rsmod.plugins.content.area.lumbridge.chat
 
-spawn_npc(Npcs.GEE, x = 3223, z = 3229, walkRadius = 19, direction = Direction.SOUTH)
-spawn_npc(Npcs.GEE, 3243, 3265, walkRadius = 22)
-
-on_npc_option(Npcs.GEE, option = "talk-to") {
-    player.queue { dialog() }
-}
+on_npc_option(Npcs.GEE, option = "talk-to") { player.queue { dialog() } }
 
 suspend fun QueueTask.dialog() {
     chatNpc("Hello there, can I help you?", animation = 591)

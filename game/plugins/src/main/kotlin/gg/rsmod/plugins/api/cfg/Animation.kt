@@ -6,8 +6,11 @@ object Animation {
     const val USE_ITEM_ON_OBJECT_THAT_CAN_STORE_OBJECTS = 832
     const val LOOK_AT_MINIMAP_WHEN_FULLSCREEN = 5354
     const val DIG_WITH_SPADE = 831
+
     const val OPEN_CONTAINER = 536
     const val CLOSE_CONTAINER = 535
+    const val OPEN_WARDROBE = 545
+
     /**
      * Prayer Animations
      */

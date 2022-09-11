@@ -1,7 +1,5 @@
 package gg.rsmod.plugins.content.area.dwarven_mines.chats
 
-spawn_npc(npc = Npcs.DWARF_7712, x = 3045, z = 9758, walkRadius = 3)
-
 on_npc_option(Npcs.DWARF_7712, option = "talk-to") { player.queue { dialog() } }
 
 suspend fun QueueTask.dialog() {

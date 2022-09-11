@@ -3,17 +3,14 @@ package gg.rsmod.plugins.content.area.world_chats.banker
 import gg.rsmod.game.message.impl.ResumePauseButtonMessage
 import gg.rsmod.plugins.content.inter.bank.openBank
 
+arrayOf(Npcs.BANKER_2897, Npcs.BANKER_2898, Npcs.BANKER_1633, Npcs.BANKER_1634,
+        Npcs.BANKER_1613, Npcs.BANKER_1618).forEach { banker ->
 
-arrayOf(Npcs.BANKER_2897, Npcs.BANKER_2898, Npcs.BANKER_1633, Npcs.BANKER_1634, Npcs.BANKER_1613, Npcs.BANKER_1618).forEach { banker ->
-    on_npc_option(npc = banker, option = "talk-to", lineOfSightDistance = 2) {
-        player.queue { dialog() }
-    }
-    on_npc_option(npc = banker, option = "bank", lineOfSightDistance = 2) {
-        player.openBank()
-    }
-    on_npc_option(npc = banker, option = "collect", lineOfSightDistance = 2) {
-        open_collect(player)
-    }
+    on_npc_option(npc = banker, option = "talk-to", lineOfSightDistance = 2) { player.queue { dialog() } }
+
+    on_npc_option(npc = banker, option = "bank", lineOfSightDistance = 2) { player.openBank() }
+
+    on_npc_option(npc = banker, option = "collect", lineOfSightDistance = 2) { open_collect(player) }
 }
 
 suspend fun QueueTask.dialog() {
@@ -45,7 +42,6 @@ suspend fun QueueTask.more_bank_slots() {
 
     val choice = (requestReturnValue as ResumePauseButtonMessage).slot
     player.message("you chose: $choice")
-
 }
 
 fun open_collect(p: Player) {

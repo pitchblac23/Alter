@@ -1,7 +1,5 @@
 package gg.rsmod.plugins.content.area.varrock.chat
 
-spawn_npc(Npcs.AUBURY_11435, 3253, 3402, 0, 2)
-
 arrayOf(Npcs.AUBURY_11435).forEach { aubury ->
     on_npc_option(npc = aubury, option = "trade", lineOfSightDistance = 1) { open_shop(player) }
 

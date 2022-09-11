@@ -1,50 +1,28 @@
 package gg.rsmod.plugins.content.area.edgeville.spawns
 
-/**Sheep*/
-spawn_npc(npc = Npcs.RAM_1265, x = 3049, z = 3515, walkRadius = 6)
-spawn_npc(npc = Npcs.SHEEP_2788, x = 3052, z = 3518, walkRadius = 6)
-spawn_npc(npc = Npcs.SHEEP_2789, x = 3057, z = 3518, walkRadius = 6)
-spawn_npc(npc = Npcs.SHEEP_2789, x = 3056, z = 3515, walkRadius = 6)
-
-/**Doris*/
-spawn_npc(npc = Npcs.DORIS, x = 3079, z = 3493, walkRadius = 4)
-
-/**Skeletons*/
-spawn_npc(npc = Npcs.SKELETON, x = 3072, z = 3529, walkRadius = 12)
-spawn_npc(npc = Npcs.SKELETON_73, x = 3076, z = 3533, walkRadius = 12)
-spawn_npc(npc = Npcs.SKELETON, x = 3110, z = 3533, walkRadius = 12)
-spawn_npc(npc = Npcs.SKELETON_71, x = 3119, z = 3526, walkRadius = 12)
-spawn_npc(npc = Npcs.SKELETON_72, x = 3108, z = 3526, walkRadius = 12)
-spawn_npc(npc = Npcs.SKELETON_73, x = 3116, z = 3531, walkRadius = 12)
-
-/**Oziach*/
-spawn_npc(npc = Npcs.OZIACH, x = 3069, z = 3517, walkRadius = 2)
-
-/**Men*/
-spawn_npc(npc = Npcs.MAN_3106, x = 3094, z = 3511, walkRadius = 3)
-spawn_npc(npc = Npcs.MAN_3106, x = 3097, z = 3511, walkRadius = 3)
-spawn_npc(npc = Npcs.MAN_3107, x = 3097, z = 3508, walkRadius = 3)
-spawn_npc(npc = Npcs.MAN_3107, x = 3092, z = 3508, walkRadius = 3)
-spawn_npc(npc = Npcs.MAN_3108, x = 3105, z = 3510, walkRadius = 10)
-spawn_npc(npc = Npcs.MAN_3108, x = 3103, z = 3515, walkRadius = 10)
-spawn_npc(npc = Npcs.MAN_3108, x = 3103, z = 3509, walkRadius = 10)
-
-/**Krystilia*/
-spawn_npc(npc = Npcs.KRYSTILIA, x = 3109, z = 3516, direction = Direction.SOUTH)
-
-/**Bankers*/
-spawn_npc(npc = Npcs.BANKER_1618, x = 3096, z = 3492, direction = Direction.NORTH)
-spawn_npc(npc = Npcs.BANKER_1618, x = 3096, z = 3491, direction = Direction.WEST)
-spawn_npc(npc = Npcs.BANKER_1613, x = 3098, z = 3492, direction = Direction.NORTH)
-spawn_npc(npc = Npcs.BANKER_1613, x = 3096, z = 3489, direction = Direction.WEST)
-
-/**Guards*/
-spawn_npc(npc = Npcs.GUARD_3254, x = 3108, z = 3513, walkRadius = 5)
-spawn_npc(npc = Npcs.GUARD_3254, x = 3110, z = 3515, walkRadius = 5)
-spawn_npc(npc = Npcs.GUARD_3254, x = 3114, z = 3513, walkRadius = 5)
-spawn_npc(npc = Npcs.GUARD_3254, x = 3114, z = 3517, walkRadius = 5)
-spawn_npc(npc = Npcs.GUARD_3254, x = 3094, z = 3518, walkRadius = 5)
-spawn_npc(npc = Npcs.GUARD_3254, x = 3085, z = 3519, walkRadius = 5)
-
-/**Item Spawns*/
+/**Items*/
+spawn_item(item = Items.BONES, amount = 1, x = 3101, z = 9825)
+spawn_item(item = Items.BONES, amount = 1, x = 3107, z = 9823)
+spawn_item(item = Items.BONES, amount = 1, x = 3109, z = 9823)
+spawn_item(item = Items.BONES, amount = 1, x = 3110, z = 9825)
+spawn_item(item = Items.BONES, amount = 1, x = 3094, z = 9906)
+spawn_item(item = Items.BONES, amount = 1, x = 3097, z = 9901)
+spawn_item(item = Items.BONES, amount = 1, x = 3098, z = 9886)
+spawn_item(item = Items.BONES, amount = 1, x = 3093, z = 9884)
+spawn_item(item = Items.BONES, amount = 1, x = 3093, z = 9879)
+spawn_item(item = Items.BONES, amount = 1, x = 3116, z = 9891)
+spawn_item(item = Items.BONES, amount = 1, x = 3119, z = 9894)
+spawn_item(item = Items.BONES, amount = 1, x = 3120, z = 9894)
+spawn_item(item = Items.BONES, amount = 1, x = 3122, z = 9891)
+//spawn_item(item = Items.BONES, amount = 1, x = 3143, z = 9878)
+//spawn_item(item = Items.BONES, amount = 1, x = 3142, z = 9880)
+//spawn_item(item = Items.BONES, amount = 1, x = 3141, z = 9879)
+//spawn_item(item = Items.BONES, amount = 1, x = 3138, z = 9880)
+spawn_item(item = Items.COINS_995, amount = 1, x = 3091, z = 9899)
+spawn_item(item = Items.COINS_995, amount = 1, x = 3088, z = 9899)
+spawn_item(item = Items.COINS_995, amount = 4, x = 3088, z = 9898)
+spawn_item(item = Items.BRONZE_ARROW, amount = 3, x = 3130, z = 9903)
+spawn_item(item = Items.BRONZE_ARROW, amount = 1, x = 3135, z = 9916)
+spawn_item(item = Items.BRASS_NECKLACE, amount = 1, x = 3122, z = 9881)
+spawn_item(item = Items.BRASS_KEY, amount = 1, x = 3131, z = 9862)
 spawn_item(item = Items.IRON_MACE, amount = 1, x = 3111, z = 3517)

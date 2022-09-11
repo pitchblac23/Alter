@@ -1,10 +1,6 @@
 package gg.rsmod.plugins.content.area.edgeville.chat
 
-spawn_npc(npc = Npcs.ABBOT_LANGLEY, x = 3058, z = 3484, walkRadius = 2)
-
-on_npc_option(npc = Npcs.ABBOT_LANGLEY, option = "talk-to") {
-    player.queue { dialog() }
-}
+on_npc_option(npc = Npcs.ABBOT_LANGLEY, option = "talk-to") {player.queue { dialog() } }
 
 suspend fun QueueTask.dialog() {
     chatNpc("Greetings traveller.", animation = 588)

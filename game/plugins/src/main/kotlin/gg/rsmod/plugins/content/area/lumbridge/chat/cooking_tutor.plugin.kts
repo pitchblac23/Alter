@@ -1,10 +1,6 @@
 package gg.rsmod.plugins.content.area.lumbridge.chat
 
-spawn_npc(Npcs.COOKING_TUTOR, x = 3233, z = 3195, walkRadius = 3, height = 0)
-
-on_npc_option(Npcs.COOKING_TUTOR, option = "talk-to") {
-    player.queue { menu() }
-}
+on_npc_option(Npcs.COOKING_TUTOR, option = "talk-to") { player.queue { menu() } }
 
 suspend fun QueueTask.menu() {
     when (options("Can you teach me the basics of cooking please?", "Tell me about different food I can make.", "Goodbye.")) {

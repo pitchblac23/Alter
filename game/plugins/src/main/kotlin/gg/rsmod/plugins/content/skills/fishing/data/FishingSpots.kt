@@ -13,6 +13,8 @@ val BIG_NET = arrayOf(Npcs.FISHING_SPOT_1511, Npcs.FISHING_SPOT_1520)
 val FISHING_ROD1 = arrayOf(Npcs.FISHING_SPOT_1530, Npcs.ROD_FISHING_SPOT_1527, Npcs.ROD_FISHING_SPOT_1526)
 val FLYFISHING_ROD = arrayOf(Npcs.ROD_FISHING_SPOT_1527, Npcs.ROD_FISHING_SPOT_1526)
 
+//fishing spot 1523
+
 enum class FishingSpots(val spotEntityId: Int, val option: String, val toolId: Int, val baitId: Int, val animation: Int, vararg fish: Fish) {
     TUTORIAL_NET(Npcs.FISHING_SPOT_3317, "net", Items.SMALL_FISHING_NET, -1, 621, Fish.SHRIMP),
     NET(Npcs.FISHING_SPOT_1530, "net", Items.SMALL_FISHING_NET, -1, 621, Fish.SHRIMP, Fish.ANCHOVIES),

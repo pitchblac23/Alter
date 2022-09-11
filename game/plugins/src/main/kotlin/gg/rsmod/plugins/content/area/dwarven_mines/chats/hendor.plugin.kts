@@ -1,10 +1,8 @@
 package gg.rsmod.plugins.content.area.dwarven_mines.chats
 
-spawn_npc(npc = Npcs.HENDOR, x = 3031, z = 9747, walkRadius = 3, direction = Direction.SOUTH)
+on_npc_option(Npcs.HENDOR, option = "talk-to") { player.queue { dialog() } }
 
-    on_npc_option(Npcs.HENDOR, option = "talk-to") { player.queue { dialog() } }
-
-    on_npc_option(Npcs.HENDOR, option = "trade") { open_shop(player) }
+on_npc_option(Npcs.HENDOR, option = "trade") { open_shop(player) }
 
 suspend fun QueueTask.dialog() {
     chatNpc("Hello there! If you have any ore to trade I'm always<br>buying.")

@@ -1,7 +1,5 @@
 package gg.rsmod.plugins.content.area.lumbridge.chat
 
-spawn_npc(Npcs.ARTHUR_THE_CLUE_HUNTER, x = 3229, z = 3236, direction = Direction.NORTH)
-
 val YELL_DELAY = TimerKey()
 
 on_npc_option(Npcs.ARTHUR_THE_CLUE_HUNTER, option = "talk-to") {
