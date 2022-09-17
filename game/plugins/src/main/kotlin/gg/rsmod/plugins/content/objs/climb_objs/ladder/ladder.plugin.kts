@@ -39,7 +39,7 @@ arrayOf(Objs.LADDER_24082, Objs.LADDER_24083, Objs.LADDER_6436,
 
 /**Interacting with multilevel ladder*/
 arrayOf(Objs.LADDER_12965, Objs.LADDER_16684).forEach { ladder ->
-    on_obj_option(obj = ladder, option = "climb") {
+    on_obj_option(obj = ladder, option = "Climb") {
         player.queue {
             when (options("Climb Up.", "Climb Down.", title = "Climb up or down the ladder?")) {
                 1 -> climbupladder(player)

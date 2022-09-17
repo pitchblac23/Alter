@@ -1,5 +1,9 @@
 package gg.rsmod.plugins.content.objs.canoestation
 
+import gg.rsmod.plugins.content.inter.equipstats.EquipmentStats
+import gg.rsmod.plugins.content.skills.woodcutting.Woodcutting
+import kotlinx.coroutines.delay
+
 /**Thanks to Ingot
  * for helping me get the face direction
  * and for making the functions
@@ -12,7 +16,6 @@ package gg.rsmod.plugins.content.objs.canoestation
  * make the sinking canoes spawn
  * add in fading interface and blackout minimap
  * add proper sounds
- * make Champ guild work
  * add in Camera settings
  * */
 
@@ -24,63 +27,94 @@ package gg.rsmod.plugins.content.objs.canoestation
 //player.playSound(id = 2731, volume = 1, delay = 0) //canoe in water
 //player.playSound(id = 2728, volume = 16, delay = 0) //rowing canoe scene
 
+//varbit 1846 1 lumby
+//varbit 1844 1 when cutting 0 after
+
+
 on_obj_option(Objs.CANOE_STATION, "Chop-down") {
     val obj = player.getInteractingGameObj()
-    player.walkTo(obj.tile.x+2, obj.tile.z)
-    player.lock()
+    if (player.getSkills().getBaseLevel(Skills.WOODCUTTING) <= 11) {
+        player.message("You need to have at least 12 woodcutting to use canoes.")
+    } else
 
     player.queue {
-        wait(3)
-        faceWest(player)
-        player.animate(875)
-        wait(3)
-        if (player.tile.x == 3243 && player.tile.z == 3235) {
-            player.setVarp(674, 9)
-        }
-        if (player.tile.x == 3202 && player.tile.z == 3343) {
-            player.setVarp(674, 2304)
-        }
-        if (player.tile.x == 3112 && player.tile.z == 3409) {
-            player.setVarp(674, 589824)
-        }
-        if (player.tile.x == 3132 && player.tile.z == 3508) {
-            player.setVarp(674, 150994944)
-        }
-        player.animate(-1)
+        player.lock()
 
-        world.queue {
-            world.remove(obj)
-            world.spawn(DynamicObject(obj, Objs.CANOE_STATION_12145))
-            wait(3)
-            world.remove(DynamicObject(obj, Objs.CANOE_STATION_12145))
-            world.spawn(DynamicObject(obj))
+        if (obj.tile.x == 3241 && obj.tile.z == 3235) {
+            player.walkTo(x = 3243, z = 3235, MovementQueue.StepType.FORCED_WALK)
+            wait(5)
+
+            if (player.tile.x == 3243 && player.tile.z == 3235) {
+                player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
+                action(player)
+                wait(1)
+                player.setVarp(674, 10)
+            }
         }
 
-        if (player.tile.x == 3243 && player.tile.z == 3235) {
-            player.setVarp(674, 10)
+        if (obj.tile.x == 3200 && obj.tile.z == 3341) {
+            player.walkTo(x = 3204, z = 3343, MovementQueue.StepType.FORCED_WALK)
+            wait(5)
+
+            if (player.tile.x == 3204 && player.tile.z == 3343) {
+                player.faceTile(player.tile.transform(Direction.SOUTH.getDeltaX(), Direction.SOUTH.getDeltaZ()))
+                action(player)
+                wait(1)
+                player.setVarbit(1840, 10)
+            }
         }
-        if (player.tile.x == 3202 && player.tile.z == 3343) {
-            player.setVarp(674, 2560)
+
+        if (obj.tile.x == 3110 && obj.tile.z == 3409) {
+            player.walkTo(x = 3112, z = 3409, MovementQueue.StepType.FORCED_WALK)
+            wait(5)
+
+            if (player.tile.x == 3112 && player.tile.z == 3409) {
+                player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
+                action(player)
+                wait(1)
+                player.setVarbit(1841, 10)
+            }
         }
-        if (player.tile.x == 3112 && player.tile.z == 3409) {
-            player.setVarp(674, 655360)
+
+        if (obj.tile.x == 3130 && obj.tile.z == 3508) {
+            player.walkTo(x = 3132, z = 3508, MovementQueue.StepType.FORCED_WALK)
+            wait(5)
+
+            if (player.tile.x == 3132 && player.tile.z == 3508) {
+                player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
+                action(player)
+                wait(1)
+                player.setVarbit(1842, 10)
+            }
         }
-        if (player.tile.x == 3132 && player.tile.z == 3508) {
-            player.setVarp(674, 167772160)
+
+        if (obj.tile.x == 3155 && obj.tile.z == 3628) {
+            player.walkTo(x = 3154, z = 3632, MovementQueue.StepType.FORCED_WALK)
+            wait(5)
+
+            if (player.tile.x == 3154 && player.tile.z == 3632) {
+                player.faceTile(player.tile.transform(Direction.EAST.getDeltaX(), Direction.EAST.getDeltaZ()))
+                action(player)
+                wait(1)
+                player.setVarbit(10527, 10)
+            }
         }
         player.unlock()
     }
 }
 
 on_obj_option(Objs.CANOE_STATION_12146, "Shape-Canoe") {
-    val pushStart = Tile(player.tile)
+    val obj = player.getInteractingGameObj()
+
     player.queue {
-        player.moveTo(pushStart.x, pushStart.z+2)
-        player.lock()
-        wait(2)
-        faceWest(player)
-        player.openInterface(interfaceId = 52, dest = InterfaceDestination.MAIN_SCREEN)
-        player.unlock()
+        if (obj.tile.x == 3241 && obj.tile.z == 3235) {
+            player.moveTo(x = 3243, z = 3237)
+            wait(2)
+            if (player.tile.x == 3243 && player.tile.z == 3237) {
+                player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
+            }
+        }
+        player.openInterface(interfaceId = 416, dest = InterfaceDestination.MAIN_SCREEN)
     }
 }
 
@@ -115,9 +149,9 @@ on_button(52, 24){
     log.forEach {
         if (player.tile == (it.tile)) {
             player.setVarp(674, it.inter674varp)
-        }
+        }//varbit 1839 1
     }
-    player.closeInterface(dest = InterfaceDestination.MAIN_SCREEN)
+    close(player)
 }
 on_button(52, 37) {
     player.message("dugout")
@@ -126,7 +160,7 @@ on_button(52, 37) {
             player.setVarp(674, it.inter674varp)
         }
     }
-    player.closeInterface(dest = InterfaceDestination.MAIN_SCREEN)
+    close(player)
 }
 on_button(52, 38) {
     player.message("stable dugout")
@@ -135,7 +169,7 @@ on_button(52, 38) {
             player.setVarp(674, it.inter674varp)
         }
     }
-    player.closeInterface(dest = InterfaceDestination.MAIN_SCREEN)
+    close(player)
 }
 on_button(52, 39) {
     player.message("waka")
@@ -144,11 +178,7 @@ on_button(52, 39) {
             player.setVarp(674, it.inter674varp)
         }
     }
-    player.closeInterface(dest = InterfaceDestination.MAIN_SCREEN)
-}
-
-on_interface_close(interfaceId = 52) {
-    player.animate(3289)
+    close(player)
 }
 
 class FloatCanoes (val inter674varp: Int, val tile: Tile)
@@ -178,18 +208,19 @@ val floatWaka = arrayOf (
 )
 
 on_obj_option(Objs.CANOE_STATION_12147, "float log") {
-    faceWest(player)
+    player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
     floatCanoe(player, Objs.CANOE_STATION_12151)
     player.message("float log")
     floatLog.forEach {
         if (player.tile == (it.tile)) {
             player.setVarbit(1843, 1)
+            //varbit 1839 5 - 11
             player.setVarp(674, it.inter674varp)
         }
     }
 }
 on_obj_option(Objs.CANOE_STATION_12148, "float canoe") {
-    faceWest(player)
+    player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
     floatCanoe(player, Objs.CANOE_STATION_12152)
     player.message("float dugout")
     floatDugout.forEach {
@@ -200,7 +231,7 @@ on_obj_option(Objs.CANOE_STATION_12148, "float canoe") {
     }
 }
 on_obj_option(Objs.CANOE_STATION_12149, "float canoe") {
-    faceWest(player)
+    player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
     floatCanoe(player, Objs.CANOE_STATION_12153)
     player.message("float stable dugout")
     floatStable.forEach {
@@ -211,7 +242,7 @@ on_obj_option(Objs.CANOE_STATION_12149, "float canoe") {
     }
 }
 on_obj_option(Objs.CANOE_STATION_12150, "float canoe") {
-    faceWest(player)
+    player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
     floatCanoe(player, Objs.CANOE_STATION_12154)
     player.message("float waka")
     floatWaka.forEach {
@@ -222,12 +253,13 @@ on_obj_option(Objs.CANOE_STATION_12150, "float canoe") {
     }
 }
 
-//interface 57 buttons
+//interface 647 buttons needs work
 class Paddle (val paddleObj: Int)
 class Destination(val name: String, val component: Int, val tile: Tile)
 val paddle = arrayOf(
-        Paddle(Objs.CANOE_STATION_12155),
+        Paddle(Objs.CANOE_STATION_12153),
         Paddle(Objs.CANOE_STATION_12156),
+        Paddle(Objs.CANOE_STATION_12155),
         Paddle(Objs.CANOE_STATION_12157),
         Paddle(Objs.CANOE_STATION_12158)
 )
@@ -239,21 +271,44 @@ val destinations = arrayOf(
         Destination("wilderness pond", 35, Tile(3141, 3796))
 )
 
+on_button(647, 15) {
+    player.message("test")
+}
+
 paddle.forEach {
     on_obj_option(it.paddleObj, "Paddle Canoe") {
         player.openInterface(57, InterfaceDestination.MAIN_SCREEN)
-    }
+    }//647 interface required 57 for now till fix
 }
 destinations.forEach{
-    on_button(57, it.component){
+    on_button(57, it.component){ //needs to be 647 needs click ids
         player.message(it.name)
         doCanoeAction(player, it.tile)
     }
 }
 
-fun faceWest(player: Player) {
-    val direction : Direction = Direction.WEST
-    player.faceTile(player.tile.transform(direction.getDeltaX(), direction.getDeltaZ()))
+fun action(player: Player) {
+    val obj = player.getInteractingGameObj()
+
+    player.queue {
+        wait(1)
+        player.animate(875)
+        wait(1)
+        player.animate(-1)
+        world.queue {
+            world.remove(obj)
+            world.spawn(DynamicObject(obj, Objs.CANOE_STATION_12145))
+            wait(3)
+            world.remove(DynamicObject(obj, Objs.CANOE_STATION_12145))
+            world.spawn(DynamicObject(obj))
+        }
+    }
+    return
+}
+
+fun close(player: Player) {
+    player.closeInterface(dest = InterfaceDestination.MAIN_SCREEN)
+    player.animate(3289)
 }
 
 fun floatCanoe(player: Player, canoe: Int) {
@@ -276,21 +331,22 @@ fun doCanoeAction(player: Player, finalMoveLocation: Tile) {
     player.moveTo(1817, 4515)
     player.animate(3302)
     player.queue {
-        faceWest(player)
+        player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
         wait(2)
 
         if (player.tile.x == 1817 && player.tile.z == 4515) {
             player.lock()
-            player.setVarp(id = 1021, value = 128)
-            player.setVarp(id = 1021, value = 192)
-            player.setVarp(id = 1021, value = 16576)
+            player.setVarbit(id = 4606, value = 1)
+            player.setVarbit(id = 542, value = 1)
             //player.write(CameraMoveToMessage(44, 51, 2500, 100, 100))
             //player.write(CameraMoveToMessage(44, 51, 255, 100, 100))
             //player.write(CameraLookAtMessage(49, 51, 225, 100, 100))
             player.queue {
                 wait(20)
                 player.setVarp(674, 0)
-                player.setVarp(id = 1021, value = 0)
+                player.setVarbit(10527, 0)
+                player.setVarbit(4606, 0)
+                player.setVarbit(542, 0)
                 player.animate(-1)
                 player.moveTo(finalMoveLocation)
                 //player.write(CameraResetMessage())
@@ -300,4 +356,7 @@ fun doCanoeAction(player: Player, finalMoveLocation: Tile) {
     }
 }
 
-on_logout { player.setVarp(id = 674, value = 0) }
+on_logout {
+    player.setVarp(674, 0)
+    player.setVarbit(10527, 0)
+}

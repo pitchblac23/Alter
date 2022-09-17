@@ -1,5 +1,8 @@
 package gg.rsmod.plugins.content.objs
 
+import gg.rsmod.plugins.content.objs.canoestation.Canoestation_plugin
+import gg.rsmod.plugins.content.skills.fishing.data.FishingSpots
+
 /**This is for testing objects without having to have a file*/
 //TODO: add some of this to main files
 
@@ -43,3 +46,36 @@ fun Player.jumpStile(movement: ForcedMovement) {
         forceMove(this, movement)
     }
 }*/
+
+on_obj_option(Objs.PUMP, option = "Operate") {
+
+    val obj = player.getInteractingGameObj()
+
+    player.queue {
+        wait(2)
+
+        player.walkTo(x = 1950, z = 4961, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
+        wait(2)
+        world.remove(obj)
+        player.message("You start pumping.")
+        player.animate(Animation.PUMP_FURNACE)
+        player.unlock()
+    }
+
+    world.queue {
+        wait(20)
+        world.spawn(DynamicObject(obj, Objs.PUMP))
+    }
+}
+
+on_obj_option(Objs.GROUP_STORAGE_43489, option = "open") {
+    player.openInterface(interfaceId = 724, dest = InterfaceDestination.MAIN_SCREEN)
+}
+
+on_button(707, 3) {
+    player.openInterface(7, dest = InterfaceDestination.CLAN_CHAT)
+}
+
+
+//player.message("You stop pumping.")
+//world.spawn(DynamicObject(obj, Objs.PUMP))

@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.mechanics.npcspawns
+package gg.rsmod.plugins.content.mechanics.npcs.npcspawns
 
 data class NpcSpawn(
     val id: Int = -1,

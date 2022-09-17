@@ -88,4 +88,10 @@ object Varbits {
     const val FLEX_EMOTE_VARBIT = 12062
     const val RELIC_UNLOCKED_EMOTE_VARBIT = 11757
     const val FRIEND_FACE_ID_VARBIT = 6516 //varbit for smiley or sad face.
+    const val CLAN_CHAT_CHANNEL = 13071 //varbit for clan icon change 0-3 4-6 group iron man
+    const val LUMBRIDGE_CANOE = 1839 //0-14 on all
+    const val CAMP_GUILD_CANOE = 1840
+    const val BARB_CANOE = 1841
+    const val EDGEVILLE_CANOE = 1842
+    const val ENCLAVE_CANOE = 10527
 }

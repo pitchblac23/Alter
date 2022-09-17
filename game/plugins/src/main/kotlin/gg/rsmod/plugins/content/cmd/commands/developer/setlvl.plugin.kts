@@ -23,6 +23,8 @@ on_command("setlvl", Privilege.DEV_POWER, description = "Set your level") {
                 "herb" -> name = "herblore"
                 "rc" -> name = "runecrafting"
                 "fm" -> name = "firemaking"
+                "wc" -> name = "woodcutting"
+                "agi" -> name = "agility"
             }
             skill = Skills.getSkillForName(world, player.getSkills().maxSkills, name)
         }

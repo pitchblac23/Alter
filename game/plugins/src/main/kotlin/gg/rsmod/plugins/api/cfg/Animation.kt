@@ -2,7 +2,7 @@ package gg.rsmod.plugins.api.cfg
 
 object Animation {
     const val RESET_CHARACTER = -1
-    const val PICKUP_FROM_TABLE = 832
+    const val PICKUP_DROPOFF = 832
     const val USE_ITEM_ON_OBJECT_THAT_CAN_STORE_OBJECTS = 832
     const val LOOK_AT_MINIMAP_WHEN_FULLSCREEN = 5354
     const val DIG_WITH_SPADE = 831
@@ -10,7 +10,6 @@ object Animation {
     const val OPEN_CONTAINER = 536
     const val CLOSE_CONTAINER = 535
     const val OPEN_WARDROBE = 545
-
     /**
      * Prayer Animations
      */
@@ -65,20 +64,30 @@ object Animation {
      */
     const val MINING_BRONZE_PICKAXE = 625
     const val MINING_IRON_PICKAXE = 626
-    const val MINING_STEEL_PICKAXE = 627
+    const val MINING_STEEL_PICKAXE_ROCK = 627
+    const val MINING_STEEL_PICKAXE_FLOOR = 6749
+    const val MINING_STEEL_PICKAXE_WALL = 6755
     const val MINING_BLACK_PICKAXE = 3873
     const val MINING_MITHRIL_PICKAXE = 629
     const val MINING_ADAMANT_PICKAXE = 628
-    const val MINING_RUNE_PICKAXE = 624
-    const val MINING_DRAGON_PICKAXE = 7139
+    const val MINING_RUNE_PICKAXE_ROCK = 624
+    const val MINING_RUNE_PICKAXE_2 = 6746
+    const val MINING_RUNE_PICKAXE_WALL = 6752
+    const val MINING_DRAGON_PICKAXE_O = 335
+    const val MINING_DRAGON_PICKAXE = 6758
+    const val MINING_DRAGON_PICKAXE_2 = 7139
+    const val MINING_DRAGON_PICKAXE_3 = 7140
     const val MINING_INFERNAL_PICKAXE = 4482
     const val MINING_THIRDAGE_PICKAXE = 7283
-    const val MINING_CRYSTAL_PICKAXE = 8347
+    const val MINING_CRYSTAL_PICKAXE = 8345
+    const val MINING_CRYSTAL_PICKAXE_2 = 8347
     /**
      * Smithing Animations
      */
+    //NOTE: if having imcando hammer trumps reg hammer animations
     const val SMITHING_HAMMER = 3676
-    const val SMITHING_ANVIL = 898
+    const val REGULAR_HAMMER = 898
+    const val IMCANDO_HAMMER = 8911
     const val SMITHING_SMELT = 896
     /**
      * Crafting Animations
@@ -169,11 +178,31 @@ object Animation {
     const val AGILITY_PIPE_START =746
     const val AGILITY_PIPE_CRAWL = 749
     const val AGILITY_PIPE_EXIT = 748
-
     /**
      * Ladder Animations
      */
     const val CLIMB_LADDER = 828
     const val CLIMB_DOWN = 827
-
+    /**
+     * Blast Furnace Animations
+     */
+    //NOTE: pipe repair is smithing animations.
+    const val PUMP_FURNACE = 2432
+    const val BELT_PEDAL = 2433
+    const val COKE_COLLECT = 2441
+    const val STOVE_FILL = 2442
+    const val STOVE_RESET = 2443
+    const val WATER_BARS = 2450
+    /**
+     * Giants Foundry
+     */
+    const val DUNK_SWORD = 827
+    const val COOL_SWORD = 832
+    const val FILL_CRUCIBLE = 4909
+    const val POUR_CRUCIBLE = 810
+    const val POLISH_START = 9452
+    const val WORK_HAMMER = 9455
+    const val HAMMER_START = 9453
+    const val WORK_SWORD = 9454
+    const val SWORD_FINISH = 9457
 }
