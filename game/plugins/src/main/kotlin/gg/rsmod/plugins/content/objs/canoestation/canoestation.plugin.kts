@@ -1,9 +1,5 @@
 package gg.rsmod.plugins.content.objs.canoestation
 
-import gg.rsmod.plugins.content.inter.equipstats.EquipmentStats
-import gg.rsmod.plugins.content.skills.woodcutting.Woodcutting
-import kotlinx.coroutines.delay
-
 /**Thanks to Ingot
  * for helping me get the face direction
  * and for making the functions
@@ -17,19 +13,16 @@ import kotlinx.coroutines.delay
  * add in fading interface and blackout minimap
  * add proper sounds
  * add in Camera settings
+ * fix interface issues
  * */
 
-//import gg.rsmod.game.message.impl.CameraLookAtMessage
-//import gg.rsmod.game.message.impl.CameraMoveToMessage
-//import gg.rsmod.game.message.impl.CameraResetMessage
+import gg.rsmod.game.message.impl.CamLookAtMessage
+import gg.rsmod.game.message.impl.CamMoveToMessage
+import gg.rsmod.game.message.impl.CamResetMessage
 
 //player.playSound(id = 2734, volume = 1, delay = 0) //tree falling
 //player.playSound(id = 2731, volume = 1, delay = 0) //canoe in water
 //player.playSound(id = 2728, volume = 16, delay = 0) //rowing canoe scene
-
-//varbit 1846 1 lumby
-//varbit 1844 1 when cutting 0 after
-
 
 on_obj_option(Objs.CANOE_STATION, "Chop-down") {
     val obj = player.getInteractingGameObj()
@@ -48,7 +41,7 @@ on_obj_option(Objs.CANOE_STATION, "Chop-down") {
                 player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
                 action(player)
                 wait(1)
-                player.setVarp(674, 10)
+                player.setVarbit(1839, 10)
             }
         }
 
@@ -338,9 +331,9 @@ fun doCanoeAction(player: Player, finalMoveLocation: Tile) {
             player.lock()
             player.setVarbit(id = 4606, value = 1)
             player.setVarbit(id = 542, value = 1)
-            //player.write(CameraMoveToMessage(44, 51, 2500, 100, 100))
-            //player.write(CameraMoveToMessage(44, 51, 255, 100, 100))
-            //player.write(CameraLookAtMessage(49, 51, 225, 100, 100))
+            player.write(CamMoveToMessage(44, 51, 2500, 100, 100))
+            player.write(CamMoveToMessage(44, 51, 255, 100, 100))
+            player.write(CamLookAtMessage(49, 51, 225, 100, 100))
             player.queue {
                 wait(20)
                 player.setVarp(674, 0)
@@ -349,7 +342,7 @@ fun doCanoeAction(player: Player, finalMoveLocation: Tile) {
                 player.setVarbit(542, 0)
                 player.animate(-1)
                 player.moveTo(finalMoveLocation)
-                //player.write(CameraResetMessage())
+                player.write(CamResetMessage())
                 player.unlock()
             }
         }

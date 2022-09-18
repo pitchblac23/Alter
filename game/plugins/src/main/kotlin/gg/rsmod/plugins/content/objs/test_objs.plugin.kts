@@ -76,6 +76,15 @@ on_button(707, 3) {
     player.openInterface(7, dest = InterfaceDestination.CLAN_CHAT)
 }
 
+on_command("login") {
+    player.openInterface(interfaceId = 110, dest = InterfaceDestination.WALKABLE)
+    player.openInterface(interfaceId = 378, dest = InterfaceDestination.OVERLAY)
+}
+on_button(interfaceId = 378, 78) {
+    player.closeInterface(interfaceId = 378)
+    player.closeInterface(interfaceId = 110)
+}
+
 
 //player.message("You stop pumping.")
 //world.spawn(DynamicObject(obj, Objs.PUMP))

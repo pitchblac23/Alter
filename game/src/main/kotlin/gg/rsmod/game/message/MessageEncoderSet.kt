@@ -65,6 +65,8 @@ class MessageEncoderSet {
         put(IfSetModelEncoder(), IfSetModelMessage::class.java)
         put(CamShakeEncoder(), CamShakeMessage::class.java)
         put(CameraResetEncoder(), CamResetMessage::class.java)
+        put(CamMoveToEncoder(), CamMoveToMessage::class.java)
+        put(CamLookAtEncoder(), CamLookAtMessage::class.java)
         put(LoadFriendListEncoder(), UpdateFriendListMessage::class.java)
         put(LoadIgnoreListEncoder(), UpdateIgnoreListMessage::class.java)
         put(LoadEmptyFriendsListEncoder(), FriendListLoadedMessage::class.java)

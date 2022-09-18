@@ -16,6 +16,7 @@ on_obj_option(obj = Objs.CHEST_26193, option = "Open") {
         world.spawn(DynamicObject(player.getInteractingGameObj(), Objs.CHEST_2418))
         wait(1)
         player.openInterface(dest = InterfaceDestination.MAIN_SCREEN, interfaceId = 265)
+        //player.openInterface(dest = InterfaceDestination.INVENTORY, interfaceId = 266)
         player.unlock()
     }
 }
@@ -42,7 +43,13 @@ arrayOf(Objs.OPEN_CHEST_378).forEach { search ->
 
 on_obj_option(obj = Objs.CHEST_2418, option = "Deposit") {
     player.openInterface(dest = InterfaceDestination.MAIN_SCREEN, interfaceId = 265)
+    //player.openInterface(dest = InterfaceDestination.INVENTORY, interfaceId = 266)
 }
+//TODO: change close interface to reg inventory
+/*on_interface_close(interfaceId = 265) {
+    player.closeInterface(266)
+    player.openInterface(interfaceId = 149, dest = InterfaceDestination.INVENTORY)
+}*/
 
 fun open(player: Player, container: Int) {
     val obj = player.getInteractingGameObj()

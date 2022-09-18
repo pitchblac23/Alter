@@ -1,11 +1,10 @@
-# server-packets: packets sent from server to client
-# client-packets:  packets sent from client to server
-# Stop confusing the shit out of me :lolbert: IN/OUT Simplify TOMM PLZ!
-
+# out-packets: packets sent from server to client
+# in-packets:  packets sent from client to server
 
 # TODO -> ZoneUpdates / Objects that should be added are added to wrong tiles [Either x / z is mixed up or it's due to zone update]
 # TODO -> Inv ServerPacket
 # TODO -> Bank does not display any items
+# TODO -> Need CamLookAt and CamMoveTO packets
 
 server-packets:
 
@@ -129,9 +128,6 @@ server-packets:
       - name: to
         type: INT
         order: LITTLE
-
-
-
 
   - message: gg.rsmod.game.message.impl.RebuildLoginMessage
     type: VARIABLE_SHORT
