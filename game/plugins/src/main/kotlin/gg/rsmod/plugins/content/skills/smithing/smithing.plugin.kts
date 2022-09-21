@@ -130,7 +130,7 @@ fun getBar(player: Player) : Bar? {
 fun openSmithingInterface(player: Player, bar: Bar) {
     player.setVarbit(smithingCurrentBarVarbit, smithingData.barIndices.getValue(bar.id))
     player.openInterface(interfaceId = smithingInterface, dest = InterfaceDestination.MAIN_SCREEN)
-    player.setVarp(2224, 20)
+    player.setVarp(2224, player.inventory.capacity)
 }
 
 /**
