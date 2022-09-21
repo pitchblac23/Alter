@@ -3,7 +3,7 @@ package gg.rsmod.plugins.content.skills.smithing.data
 import gg.rsmod.plugins.api.cfg.Items
 
 /**
- * @author Triston Plummer ("Dread')
+ * @author Triston Plummer ("Dread")
  *
  * Represents a bar that may be smelted, or smithed into an item
  *

@@ -26,6 +26,7 @@ enum class Feathered(val id: Int, val unfeathered: Int, val amount: Int = 10, va
     MITHRIL_DART(id = Items.MITHRIL_DART, unfeathered = Items.MITHRIL_DART_TIP, level = 52, fletchingXP = 11.2),
     ADAMANT_DART(id = Items.ADAMANT_DART, unfeathered = Items.ADAMANT_DART_TIP, level = 67, fletchingXP = 15.0),
     RUNE_DART(id = Items.RUNE_DART, unfeathered = Items.RUNE_DART_TIP, level = 81, fletchingXP = 18.8),
+    AMETHYST(id = Items.AMETHYST_DART, unfeathered = Items.AMETHYST_DART_TIP, level = 90, fletchingXP = 60.0),
     DRAGON_DART(id = Items.DRAGON_DART, unfeathered = Items.DRAGON_DART_TIP, level = 95, fletchingXP = 25.0);
 
 

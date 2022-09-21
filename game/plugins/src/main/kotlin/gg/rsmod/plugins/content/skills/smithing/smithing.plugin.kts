@@ -1,14 +1,15 @@
 package gg.rsmod.plugins.content.skills.smithing
 
-import gg.rsmod.game.model.attr.INTERACTING_OPT_ATTR
 import gg.rsmod.plugins.content.skills.smithing.action.SmithingAction
 import gg.rsmod.plugins.content.skills.smithing.data.Bar
 import gg.rsmod.plugins.content.skills.smithing.data.SmithingData
 import gg.rsmod.plugins.content.skills.smithing.data.SmithingMetaData
 import gg.rsmod.plugins.content.skills.smithing.data.typeForChild
 
+//TODO: Add in blurite smithing for limbs and bolts
+
 /**
- * The smithing meta data instance
+ * The smithing metadata instance
  */
 val smithingData = SmithingData(world.definitions)
 

@@ -19,6 +19,10 @@ on_obj_option(obj = Objs.DRAWERS_7194, option = "Open") {
     open(player, 7195)
 }
 
+on_obj_option(obj = Objs.DRAWERS_25766, option = "Open") {
+    open(player, 25767)
+}
+
 on_obj_option(obj = Objs.DRAWERS_40282, option = "Open") {
     player.message("I don't think the owner would be happy for you to look through their drawers.")
 }
@@ -42,10 +46,15 @@ on_obj_option(obj = Objs.DRAWERS_349, option = "Shut") {
     close(player, 348)
 }
 
+on_obj_option(obj = Objs.DRAWERS_25767, option = "Shut") {
+    close(player, 25766)
+}
+
 /**
  * Search
  */
-arrayOf(Objs.DRAWERS_23967, Objs.DRAWERS_351, Objs.DRAWERS_349, Objs.DRAWERS_7195).forEach { search ->
+arrayOf(Objs.DRAWERS_23967, Objs.DRAWERS_351, Objs.DRAWERS_349,
+        Objs.DRAWERS_7195, Objs.DRAWERS_25767).forEach { search ->
     on_obj_option(obj = search, option = "Search") {
         player.message("The drawers are empty.")
     }

@@ -10,6 +10,10 @@ on_obj_option(obj = Objs.CELL_DOOR_9563, option = "Open") {
     player.message("The door is securely locked.")
 }
 
+on_obj_option(obj = Objs.CAGE_20873, option = "Unlock") {
+    player.message("You can't unlock the pillory, you'll let all the criminals out!")
+}
+
 arrayOf(Objs.STILE_7527, Objs.STILE_12982, Objs.STILE, Objs.STILE_19222).forEach { stile ->
     on_obj_option(obj = stile, option = "climb-over") {
         player.message("place holder for Stiles")

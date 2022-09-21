@@ -6,6 +6,7 @@ import gg.rsmod.plugins.api.cfg.Items
  * @author momof513
  * @editor pitch blac23
  */
+
 enum class Leathers(val id: Int, val leatherOptions: Array<LeatherItem>) {
     LEATHER(id=Items.LEATHER, leatherOptions = arrayOf(LeatherItem.LEATHER_GLOVES, LeatherItem.LEATHER_BOOTS, LeatherItem.LEATHER_COWL, LeatherItem.LEATHER_VAMBRACES, LeatherItem.LEATHER_BODY, LeatherItem.LEATHER_CHAPS, LeatherItem.COIF)),
     HARD_LEATHER(id=Items.HARD_LEATHER, leatherOptions = arrayOf(LeatherItem.HARDLEATHER_BODY)),

@@ -105,6 +105,7 @@ internal fun typeForChild(child: Int, bar: Bar) : String? = when {
     }
     child == 35 -> when (bar) {
         Bar.BRONZE -> "limbs"
+        Bar.IRON -> "limbs"
         Bar.STEEL -> "limbs"
         Bar.MITHRIL ->"limbs"
         Bar.ADAMANT -> "ite limbs"

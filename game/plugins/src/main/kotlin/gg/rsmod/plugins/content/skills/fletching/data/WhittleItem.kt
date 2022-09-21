@@ -5,7 +5,7 @@ import gg.rsmod.plugins.api.cfg.Items
 enum class WhittleItem(val id: Int, val level: Int, val logCount: Int = 1, val amount: Int = 1, val ticks: Int = 3, val fletchingXP: Double) {
     // Logs
     ARROW_SHAFT_15(id = Items.ARROW_SHAFT, level = 1, amount = 15, fletchingXP = 0.5),
-    JAVELIN_SHAFT(id = Items.JAVELIN_SHAFT, level = 3, amount = 15, fletchingXP = 0.5),
+    JAVELIN_SHAFT(id = Items.JAVELIN_SHAFT_19584, level = 3, amount = 15, fletchingXP = 0.5),
     SHORTBOW_U(id = Items.SHORTBOW_U, level = 5, fletchingXP = 5.0),
     LONGBOW_U(id = Items.LONGBOW_U, level = 10, fletchingXP = 10.0),
     WOODEN_STOCK(id = Items.WOODEN_STOCK, level = 9, fletchingXP = 6.0),
@@ -36,7 +36,7 @@ enum class WhittleItem(val id: Int, val level: Int, val logCount: Int = 1, val a
     MAPLE_SHORTBOW_U(id = Items.MAPLE_SHORTBOW_U, level = 50, fletchingXP = 50.0),
     MAPLE_LONGBOW_U(id = Items.MAPLE_LONGBOW_U, level = 55, fletchingXP = 58.3),
     MAPLE_STOCK(id = Items.MAPLE_STOCK, level = 54, fletchingXP = 32.0),
-    MAPLE_SHIELD(id = Items.OAK_SHIELD, level = 57, ticks = 7, logCount = 2, fletchingXP = 116.5),
+    MAPLE_SHIELD(id = Items.MAPLE_SHIELD, level = 57, ticks = 7, logCount = 2, fletchingXP = 116.5),
 
     // Mahogany Logs
     MAHOGANY_STOCK(id = Items.MAHOGANY_STOCK, level = 61, fletchingXP = 41.0),

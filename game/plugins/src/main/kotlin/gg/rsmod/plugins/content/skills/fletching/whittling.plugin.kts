@@ -1,9 +1,9 @@
 package gg.rsmod.plugins.content.skills.fletching
 
-import gg.rsmod.plugins.content.skills.fletching.data.Log
-import gg.rsmod.plugins.content.skills.fletching.action.WhittlingAction
-import gg.rsmod.game.model.attr.OTHER_ITEM_ID_ATTR
 import gg.rsmod.game.model.attr.INTERACTING_ITEM_ID
+import gg.rsmod.game.model.attr.OTHER_ITEM_ID_ATTR
+import gg.rsmod.plugins.content.skills.fletching.action.WhittlingAction
+import gg.rsmod.plugins.content.skills.fletching.data.Log
 
 // ===========================================================================
 // Whittling Logs
@@ -41,7 +41,6 @@ fun cutLog(player: Player, log: Int) {
  * @param item      The item the player is trying to whittle the log into
  * @param amount    The number of items the player is trying to smelt
  */
-
 fun whittle(player: Player, item: Int, amount: Int) {
     val log = if(logDefs.containsKey(player.attr[INTERACTING_ITEM_ID])){
         player.attr[INTERACTING_ITEM_ID]

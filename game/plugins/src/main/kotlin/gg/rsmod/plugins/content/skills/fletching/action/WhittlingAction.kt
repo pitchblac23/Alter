@@ -84,7 +84,7 @@ class WhittlingAction(private val defs: DefinitionSet) {
      * @param task              The queued task
      * @param log               The log id being whittled
      * @param whittleItem       The whittleItem being created
-     * @param sendMessageBox    Whether or not to send the error message
+     * @param sendMessageBox    Whether to send the error message
      */
     private suspend fun canWhittle(task: QueueTask, log: Int, whittleItem: WhittleItem, sendMessageBox: Boolean = true) : Boolean {
         val player = task.player
