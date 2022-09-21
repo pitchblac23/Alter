@@ -107,7 +107,13 @@ on_obj_option(Objs.CANOE_STATION_12146, "Shape-Canoe") {
                 player.faceTile(player.tile.transform(Direction.WEST.getDeltaX(), Direction.WEST.getDeltaZ()))
             }
         }
+        player.runClientScript(2524, 3612928)
         player.openInterface(interfaceId = 416, dest = InterfaceDestination.MAIN_SCREEN)
+        player.setInterfaceEvents(416, 11, 0, 0,0)
+        player.setInterfaceEvents(416, 9, 0, 0,0)
+        player.setInterfaceEvents(416, 12, 0, 0,0)
+        player.setInterfaceEvents(416, 18, 0, 0,0)
+        player.setInterfaceEvents(416, 20, 0, 0,0)
     }
 }
 
@@ -246,7 +252,6 @@ on_obj_option(Objs.CANOE_STATION_12150, "float canoe") {
     }
 }
 
-//interface 647 buttons needs work
 class Paddle (val paddleObj: Int)
 class Destination(val name: String, val component: Int, val tile: Tile)
 val paddle = arrayOf(
@@ -264,17 +269,16 @@ val destinations = arrayOf(
         Destination("wilderness pond", 35, Tile(3141, 3796))
 )
 
-on_button(647, 15) {
-    player.message("test")
-}
-
 paddle.forEach {
     on_obj_option(it.paddleObj, "Paddle Canoe") {
         player.openInterface(57, InterfaceDestination.MAIN_SCREEN)
+        player.runClientScript(2524, 4535323)
+        //player.setInterfaceEvents(647, 16, 0, 0, 0)
+        //player.setInterfaceEvents(647, 17, 0, 0, 0)
     }//647 interface required 57 for now till fix
 }
 destinations.forEach{
-    on_button(57, it.component){ //needs to be 647 needs click ids
+    on_button(57, it.component){
         player.message(it.name)
         doCanoeAction(player, it.tile)
     }

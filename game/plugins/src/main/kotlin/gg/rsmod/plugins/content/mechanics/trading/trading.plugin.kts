@@ -37,6 +37,11 @@ on_player_option(option = "Trade with") {
         return@on_player_option
     }
 
+    if (player.getTradeSession() != null || player.isLocked()) {
+        player.message("Other player is busy at the moment.")
+        return@on_player_option
+    }
+
     // The set of players who have requested the player
     val requests = player.getTradeRequests()
 
@@ -52,8 +57,8 @@ on_player_option(option = "Trade with") {
     } else {
 
         // Remove the requests
-        player.getTradeRequests().remove(partner)
-        partner.getTradeRequests().remove(player)
+        player.getTradeRequests().clear()
+        partner.getTradeRequests().clear()
 
         // Initiate the trade
         initiate(player, partner)

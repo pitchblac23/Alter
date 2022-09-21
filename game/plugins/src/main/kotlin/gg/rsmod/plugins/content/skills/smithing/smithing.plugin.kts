@@ -25,7 +25,7 @@ val barIds = barDefs.keys
 /**
  * The smithing interface child components
  */
-val smithingInterfaceComponents = IntRange(2, 30)
+val smithingInterfaceComponents = IntRange(3, 35)
 
 /**
  * The smithing interface id
@@ -130,6 +130,7 @@ fun getBar(player: Player) : Bar? {
 fun openSmithingInterface(player: Player, bar: Bar) {
     player.setVarbit(smithingCurrentBarVarbit, smithingData.barIndices.getValue(bar.id))
     player.openInterface(interfaceId = smithingInterface, dest = InterfaceDestination.MAIN_SCREEN)
+    player.setVarp(2224, 20)
 }
 
 /**
@@ -137,6 +138,13 @@ fun openSmithingInterface(player: Player, bar: Bar) {
  */
 smithingInterfaceComponents.forEach { child ->
     on_button(interfaceId = smithingInterface, component = child) {
+        when (child) {
+            3 -> player.setVarp(2224, 1)
+            4 -> player.setVarp(2224, 5)
+            5 -> player.setVarp(2224, 10)
+            6 -> player.queue(TaskPriority.WEAK){ player.setVarp(2224, inputInt("Enter amount:")) }
+            7 -> player.setVarp(2224, player.inventory.capacity)
+        }
 
         // The bar being smithed
         val barId = smithingData.smithableBarsEnum.getInt(player.getVarbit(smithingCurrentBarVarbit))
@@ -160,17 +168,7 @@ smithingInterfaceComponents.forEach { child ->
             player.queue(TaskPriority.STRONG) {
 
                 // The number of items to smith
-                val amount = when (player.attr[INTERACTING_OPT_ATTR]) {
-                    1 -> 1
-                    2 -> 5
-                    3 -> 10
-                    4 -> inputInt("Enter amount:")
-                    5 -> player.inventory.capacity
-                    else -> {
-                        world.sendExamine(player, item.id, ExamineEntityType.ITEM)
-                        return@queue
-                    }
-                }
+                val amount = player.getVarp(2224)
 
                 // Close the smithing interface
                 player.closeInterface(smithingInterface)
@@ -180,5 +178,4 @@ smithingInterfaceComponents.forEach { child ->
             }
         }
     }
-
 }
