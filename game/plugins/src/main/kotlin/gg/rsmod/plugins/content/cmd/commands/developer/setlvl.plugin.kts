@@ -12,19 +12,22 @@ on_command("setlvl", Privilege.DEV_POWER, description = "Set your level") {
         } catch (e: NumberFormatException) {
             var name = values[0].toLowerCase()
             when (name) {
-                "con" -> name = "construction"
+                "att" -> name = "attack"
+                "str" -> name = "strength"
+                "def" -> name = "defence"
                 "hp" -> name = "hitpoints"
+                "pray" -> name = "prayer"
+                "mage" -> name = "magic"
+                "rc" -> name = "runecrafting"
+                "con" -> name = "construction"
+                "agi" -> name = "agility"
+                "herb" -> name = "herblore"
                 "craft" -> name = "crafting"
                 "hunt" -> name = "hunter"
                 "slay" -> name = "slayer"
-                "pray" -> name = "prayer"
-                "mage" -> name = "magic"
                 "fish" -> name = "fishing"
-                "herb" -> name = "herblore"
-                "rc" -> name = "runecrafting"
                 "fm" -> name = "firemaking"
                 "wc" -> name = "woodcutting"
-                "agi" -> name = "agility"
             }
             skill = Skills.getSkillForName(world, player.getSkills().maxSkills, name)
         }

@@ -26,10 +26,6 @@ suspend fun QueueTask.options() {
     }
 }
 
-fun open_shop(p: Player) {
-    p.openShop("Richard's Wilderness Cape Shop.")
-}
+fun open_shop(p: Player) { p.openShop("Richard's Wilderness Cape Shop.") }
 
-suspend fun QueueTask.no_thanks() {
-    chatPlayer("No thanks.", animation = 588)
-}
+suspend fun QueueTask.no_thanks() { chatPlayer("No thanks.", animation = 588) }

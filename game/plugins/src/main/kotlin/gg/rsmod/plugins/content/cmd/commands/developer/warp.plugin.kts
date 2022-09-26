@@ -5,7 +5,6 @@ import gg.rsmod.plugins.content.cmd.Commands_plugin
 
 val warps = mutableListOf<Tile>()
 
-
 on_world_init {
  // Read warp list
 }

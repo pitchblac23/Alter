@@ -1,8 +1,6 @@
 package gg.rsmod.plugins.content.area.edgeville.chat
 
-on_npc_option(npc = Npcs.LESSER_FANATIC, option = "talk-to") {
-    player.queue { chat() }
-}
+on_npc_option(npc = Npcs.LESSER_FANATIC, option = "talk-to") { player.queue { chat() } }
 
 suspend fun QueueTask.chat() {
     chatNpc("Hello!", animation = 567)

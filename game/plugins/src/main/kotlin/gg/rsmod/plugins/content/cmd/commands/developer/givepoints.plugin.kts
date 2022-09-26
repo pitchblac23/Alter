@@ -15,8 +15,8 @@ on_command("givebhp", Privilege.DEV_POWER, description = "Give Bountyhunter poin
     } else {
         player.message("Player ${username} not found")
     }
-
 }
+
 on_command("setbhp", Privilege.DEV_POWER, description = "Set Bountyhunter points"){
     val user = player.username
     val args = player.getCommandArgs()
@@ -31,6 +31,7 @@ on_command("setbhp", Privilege.DEV_POWER, description = "Set Bountyhunter points
         player.message("Player ${username} not found")
     }
 }
+
 on_command("checkbhp", description = "Check players Bountyhunter points"){
     val args = player.getCommandArgs()
     val username = args[0]
@@ -41,6 +42,7 @@ on_command("checkbhp", description = "Check players Bountyhunter points"){
         player.message("Player ${username} not found")
     }
 }
+
 on_command("bhp", description = "Check your Bountyhunter points"){
     player.message("You have ${player.getBHP()} Bounty hunter Points")
 }

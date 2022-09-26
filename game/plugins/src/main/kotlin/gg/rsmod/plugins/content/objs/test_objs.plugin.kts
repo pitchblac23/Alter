@@ -1,8 +1,5 @@
 package gg.rsmod.plugins.content.objs
 
-import gg.rsmod.plugins.content.objs.canoestation.Canoestation_plugin
-import gg.rsmod.plugins.content.skills.fishing.data.FishingSpots
-
 /**This is for testing objects without having to have a file*/
 //TODO: add some of this to main files
 

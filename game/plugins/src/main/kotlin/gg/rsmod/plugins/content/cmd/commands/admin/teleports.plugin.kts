@@ -2,6 +2,8 @@ package gg.rsmod.plugins.content.cmd.commands.admin
 
 import gg.rsmod.game.model.priv.Privilege
 
+//NOTE: Those that don't know, on the map just double click places.
+
 on_command("home", Privilege.ADMIN_POWER, description = "Teleports you home") {
     val home = world.gameContext.home
     player.moveTo(home)

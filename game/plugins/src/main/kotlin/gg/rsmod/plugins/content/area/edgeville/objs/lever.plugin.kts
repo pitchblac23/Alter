@@ -14,17 +14,16 @@ on_obj_option(Objs.LEVER_26761, "pull") {
             val pulled = DynamicObject(obj, 88)
             world.remove(obj)
             world.spawn(pulled)
-
+            //wait(10)
             world.remove(pulled)
             world.spawn(DynamicObject(obj))
         }
 
         wait(2)
-
         player.animate(714)
         player.graphic(111, 110)
-        wait(4)
 
+        wait(4)
         player.animate(-1)
         player.moveTo(3154, 3924)
         player.message("... and teleport into the Wilderness.")
