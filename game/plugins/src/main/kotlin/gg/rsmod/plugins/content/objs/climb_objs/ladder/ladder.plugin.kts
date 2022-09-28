@@ -4,7 +4,7 @@ package gg.rsmod.plugins.content.objs.climb_objs.ladder
 arrayOf(Objs.LADDER_9558, Objs.LADDER_12964, Objs.LADDER_12965,
         Objs.LADDER_16683, Objs.LADDER_16684, Objs.LADDER_60,
         Objs.LADDER_24070, Objs.LADDER_25938, Objs.LADDER_25941,
-        Objs.LADDER_26107).forEach { ladder_up ->
+        Objs.LADDER_26107, Objs.LADDER_12112).forEach { ladder_up ->
     on_obj_option(obj = ladder_up, option = "Climb-up") {
         climbupladder(player)
     }
@@ -52,7 +52,8 @@ arrayOf(Objs.LADDER_12965, Objs.LADDER_16684).forEach { ladder ->
 
 /**Climbing down a ladder.*/
 arrayOf(Objs.LADDER_9559, Objs.LADDER_12965, Objs.LADDER_12966,
-        Objs.LADDER_16684, Objs.LADDER_24085, Objs.LADDER_24071).forEach { ladder_down ->
+        Objs.LADDER_16684, Objs.LADDER_24085, Objs.LADDER_24071,
+        Objs.LADDER_12113).forEach { ladder_down ->
     on_obj_option(obj = ladder_down, option = "climb-down") {
         climbdownladder(player)
     }

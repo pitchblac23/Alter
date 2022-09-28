@@ -4,28 +4,31 @@ package gg.rsmod.plugins.content.objs.climb_objs.staircase
 arrayOf(Objs.STAIRCASE_24072, Objs.STAIRCASE_11888, Objs.STAIRCASE_16671,
         Objs.STAIRCASE_16672, Objs.STAIRCASE_12536, Objs.STAIRCASE_24075,
         Objs.STAIRCASE_9582, Objs.STAIRCASE_12537, Objs.STAIRCASE_11889,
-        Objs.STAIRCASE_11511, Objs.STAIRCASE_11789, Objs.STAIRCASE_25935).forEach { spiral_up ->
+        Objs.STAIRCASE_11511, Objs.STAIRCASE_11789, Objs.STAIRCASE_25935,
+        Objs.STAIRCASE_2608, Objs.STAIRCASE_2609).forEach { spiral_up ->
     on_obj_option(obj = spiral_up, option = "climb-up") {
         player.queue {
             //Height 0
-            if (player.getInteractingGameObj().tile == Tile(3204, 3207, 0)) { player.moveTo(3205, 3209, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2898, 3428, 0)) { player.moveTo(2898, 3427, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2954, 3338, 0)) { player.moveTo(2956, 3338, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2907, 3334, 0)) { player.moveTo(2908, 3336, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3103, 3159, 0)) { player.moveTo(3104, 3161, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3034, 3362, 0)) { player.moveTo(3035, 3364, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3048, 3352, 0)) { player.moveTo(3049, 3354, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2973, 3384, 0)) { player.moveTo(2972, 3385, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3026, 3248, 0)) { player.moveTo(3026, 3247, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3023, 3261, 0)) { player.moveTo(3025, 3261, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2931, 3282, 0)) { player.moveTo(2933, 3282, 1) }
-            if (player.getInteractingGameObj().tile == Tile(3255, 3421, 0)) { player.moveTo(3257, 3421, 1) }
-            if (player.getInteractingGameObj().tile == Tile(2698, 3496, 0)) { player.moveTo(2698, 3495, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3204, 3207)) { player.moveTo(3205, 3209, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2898, 3428)) { player.moveTo(2898, 3427, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2954, 3338)) { player.moveTo(2956, 3338, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2907, 3334)) { player.moveTo(2908, 3336, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3103, 3159)) { player.moveTo(3104, 3161, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3034, 3362)) { player.moveTo(3035, 3364, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3048, 3352)) { player.moveTo(3049, 3354, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2973, 3384)) { player.moveTo(2972, 3385, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3026, 3248)) { player.moveTo(3026, 3247, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3023, 3261)) { player.moveTo(3025, 3261, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2931, 3282)) { player.moveTo(2933, 3282, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3255, 3421)) { player.moveTo(3257, 3421, 1) }
+            if (player.getInteractingGameObj().tile == Tile(2698, 3496)) { player.moveTo(2698, 3495, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3144, 3447)) { player.moveTo(3144, 3449, 1) }
 
             //Height 1
             if (player.getInteractingGameObj().tile == Tile(2960, 3338, 1)) { player.moveTo(2959, 3339, 2) }
             if (player.getInteractingGameObj().tile == Tile(3204, 3207, 1)) { player.moveTo(3205, 3209, 2) }
             if (player.getInteractingGameObj().tile == Tile(3104, 3362, 1)) { player.moveTo(3105, 3364, 2) }
+            if (player.getInteractingGameObj().tile == Tile(3144, 3447, 1)) { player.moveTo(3144, 3446, 2) }
             if (player.getInteractingGameObj().tile == Tile(3103, 3159, 1)) { player.moveTo(player.tile.x, player.tile.z, 2) }
             if (player.getInteractingGameObj().tile == Tile(2907, 3334, 1)) { player.moveTo(player.tile.x, player.tile.z, 2) }
 
@@ -36,7 +39,7 @@ arrayOf(Objs.STAIRCASE_24072, Objs.STAIRCASE_11888, Objs.STAIRCASE_16671,
 }
 
 /**Interacting with multilevel spiral stairs*/
-on_obj_option(obj = Objs.STAIRCASE_16672, option = "climb") {
+on_obj_option(obj = Objs.STAIRCASE_16672, option = "Climb") {
     player.queue {
         when (options("Climb up the stairs.", "Climb down the stairs.", title = "Climb up or down the stairs?")) {
             1 -> if (player.tile.x == 3206 && player.tile.z == 3208 && player.tile.height == 1) {
@@ -49,7 +52,7 @@ on_obj_option(obj = Objs.STAIRCASE_16672, option = "climb") {
     }
 }
 
-on_obj_option(obj = Objs.STAIRCASE_12537, option = "climb") {
+on_obj_option(obj = Objs.STAIRCASE_12537, option = "Climb") {
     player.queue {
         when (options("Up", "Down", title = "Which way do you want to go?")) {
             1 -> climbupspiralstairs(player)
@@ -58,7 +61,7 @@ on_obj_option(obj = Objs.STAIRCASE_12537, option = "climb") {
     }
 }
 
-on_obj_option(obj = Objs.STAIRCASE_11889, option = "climb") {
+on_obj_option(Objs.STAIRCASE_11889, option = "Climb") {
     player.queue {
         when (options("Climb up", "Climb down")) {
             1 -> climbupspiralstairs(player)
@@ -67,11 +70,21 @@ on_obj_option(obj = Objs.STAIRCASE_11889, option = "climb") {
     }
 }
 
+on_obj_option(Objs.STAIRCASE_2609, option = "Climb") {
+    player.queue {
+        when (options("Climb up", "Climb down")) {
+            1 -> player.moveTo(3144, 3446, 2)
+            2 -> player.moveTo(player.tile.x, player.tile.z, player.tile.height -1)
+        }
+    }
+}
+
 /**Spiral Staircase Down*/
 arrayOf(Objs.STAIRCASE_24074, Objs.STAIRCASE_16672, Objs.STAIRCASE_16673,
         Objs.STAIRCASE_11889, Objs.STAIRCASE_11890, Objs.STAIRCASE_24076,
         Objs.STAIRCASE_9584, Objs.STAIRCASE_12537, Objs.STAIRCASE_12538,
-        Objs.STAIRCASE_11793, Objs.STAIRCASE_25801).forEach { spiral_down ->
+        Objs.STAIRCASE_11793, Objs.STAIRCASE_25801, Objs.STAIRCASE_2610,
+        Objs.STAIRCASE_2609).forEach { spiral_down ->
     on_obj_option(obj = spiral_down, option = "climb-down") {
         player.queue {
             //Height 1
@@ -87,12 +100,14 @@ arrayOf(Objs.STAIRCASE_24074, Objs.STAIRCASE_16672, Objs.STAIRCASE_16673,
             if (player.getInteractingGameObj().tile == Tile(3026, 3248, 1)) { player.moveTo(3025, 3248, 0) }
             if (player.getInteractingGameObj().tile == Tile(3255, 3421, 1)) { player.moveTo(3256, 3420, 0) }
             if (player.getInteractingGameObj().tile == Tile(2698, 3496, 1)) { player.moveTo(2697, 3496, 0) }
+            if (player.getInteractingGameObj().tile == Tile(3144, 3447, 1)) { player.moveTo(player.tile.x, player.tile.z, 0) }
             if (player.getInteractingGameObj().tile == Tile(3103, 3159, 1)) { player.moveTo(player.tile.x, player.tile.z, 0) }
 
             //Height 2
             if (player.getInteractingGameObj().tile == Tile(2960, 3339, 2)) { player.moveTo(2960, 3340, 1) }
             if (player.getInteractingGameObj().tile == Tile(3205, 3208, 2)) { player.moveTo(3206, 3208, 1) }
             if (player.getInteractingGameObj().tile == Tile(3105, 3363, 2)) { player.moveTo(3106, 3363, 1) }
+            if (player.getInteractingGameObj().tile == Tile(3144, 3447, 2)) { player.moveTo(3144, 3449, 1) }
             if (player.getInteractingGameObj().tile == Tile(2908, 3335, 2)) { player.moveTo(player.tile.x, player.tile.z, 1) }
             if (player.getInteractingGameObj().tile == Tile(3104, 3160, 2)) { player.moveTo(player.tile.x, player.tile.z, 1) }
 

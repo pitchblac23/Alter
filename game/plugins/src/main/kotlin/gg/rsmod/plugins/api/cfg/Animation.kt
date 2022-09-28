@@ -5,6 +5,8 @@ object Animation {
     const val PICKUP_DROPOFF = 832
     const val LOOK_AT_MINIMAP_WHEN_FULLSCREEN = 5354
     const val DIG_WITH_SPADE = 831
+    const val PUSH_CONTROLS = 3571
+    const val PUT_IN_HOPPER = 3572
 
     const val OPEN_CONTAINER = 536
     const val CLOSE_CONTAINER = 535
