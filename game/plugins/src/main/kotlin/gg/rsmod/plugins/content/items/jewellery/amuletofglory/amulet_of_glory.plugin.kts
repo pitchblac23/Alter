@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.items.amuletofglory
+package gg.rsmod.plugins.content.items.jewellery.amuletofglory
 
 /**
  * Thanks to Darkk98

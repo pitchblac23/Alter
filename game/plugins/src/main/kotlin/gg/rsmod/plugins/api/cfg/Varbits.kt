@@ -94,4 +94,6 @@ object Varbits {
     const val BARB_CANOE = 1841
     const val EDGEVILLE_CANOE = 1842
     const val ENCLAVE_CANOE = 10527
+    const val FLOUR_COLLECTABLE_VARBIT = 5325
+    const val FLOUR_AMOUNT_VARBIT = 4920
 }

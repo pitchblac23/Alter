@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.items.ringofwealth
+package gg.rsmod.plugins.content.items.jewellery.ringofwealth
 
 import gg.rsmod.plugins.content.magic.TeleportType
 import gg.rsmod.plugins.content.magic.canTeleport

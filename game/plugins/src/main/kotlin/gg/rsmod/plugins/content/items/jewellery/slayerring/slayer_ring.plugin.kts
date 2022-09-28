@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.items.slayerring
+package gg.rsmod.plugins.content.items.jewellery.slayerring
 
 import gg.rsmod.plugins.content.magic.TeleportType
 import gg.rsmod.plugins.content.magic.canTeleport

@@ -1,20 +1,56 @@
 [
   {
-    "opened": {
-      "hinge": 1559,
-      "extension": 1567
+    "closed": {
+      "hinge": 12986,
+      "extension": 12987
     },
+    "opened": {
+      "hinge": 12988,
+      "extension": 12989
+    }
+  },
+
+  {
     "closed": {
       "hinge": 1558,
       "extension": 1560
     },
     "opened": {
-      "hinge": 1563,
-      "extension": 1564
+      "hinge": 1559,
+      "extension": 1567
+    }
+  },
+
+  {
+    "closed": {
+      "hinge": 883,
+      "extension": 23917
     },
+    "opened": {
+      "hinge": 23918,
+      "extension": 23919
+    }
+  },
+
+  {
     "closed": {
       "hinge": 1561,
       "extension": 1562
+    },
+    "opened": {
+      "hinge": 1563,
+      "extension": 1564
+    }
+  },
+
+  {
+    "closed": {
+      "hinge": 15514,
+      "extension": 15516
+    },
+    "opened": {
+      "hinge": 15515,
+      "extension": 15517
     }
   }
 ]

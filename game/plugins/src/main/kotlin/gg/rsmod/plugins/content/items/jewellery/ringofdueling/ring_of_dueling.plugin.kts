@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.items.ring.ringofdueling
+package gg.rsmod.plugins.content.items.jewellery.ringofdueling
 
 import gg.rsmod.plugins.content.magic.TeleportType
 import gg.rsmod.plugins.content.magic.canTeleport

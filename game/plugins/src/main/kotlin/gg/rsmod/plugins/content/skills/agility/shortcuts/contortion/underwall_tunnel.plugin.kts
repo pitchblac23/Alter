@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.objs.underwall
+package gg.rsmod.plugins.content.skills.agility.shortcuts.contortion
 
 on_obj_option(16529, "climb-into") {
     player.climbIntoUnderwallwest()

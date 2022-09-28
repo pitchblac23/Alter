@@ -11,42 +11,11 @@ on_obj_option(obj = Objs.CAGE_20873, option = "Unlock") {
     player.message("You can't unlock the pillory, you'll let all the criminals out!")
 }
 
-arrayOf(Objs.STILE_7527, Objs.STILE_12982, Objs.STILE, Objs.STILE_19222).forEach { stile ->
-    on_obj_option(obj = stile, option = "climb-over") {
-        player.message("place holder for Stiles")
+arrayOf(Objs.GATE_20847, Objs.GATE_20848).forEach { hopper ->
+    on_obj_option(hopper, "Open") {
+        player.queue { messageBox("The gate is securely locked.") }
     }
 }
-
-on_obj_option(obj = Objs.STILE_19222, "Leave") {
-    player.message("place holder for leave option")
-}
-
-/* was orginal workings for stile needs redone for 1:1
-
-on_obj_option(12982, "climb-over") {
-    val stile = player.getInteractingGameObj()
-    val endTile: Tile
-    val directionAngle: Int
-    val southOfStile = player.tile.z < stile.tile.z
-
-    if (southOfStile) {
-        endTile = stile.tile.step(Direction.NORTH, 2)
-        directionAngle = Direction.NORTH.angle
-    } else {
-        endTile = stile.tile.step(Direction.SOUTH, 1)
-        directionAngle = Direction.SOUTH.angle
-    }
-
-    val movement = ForcedMovement.of(player.tile, endTile, clientDuration1 = 33, clientDuration2 = 60, directionAngle = directionAngle)
-    player.jumpStile(movement)
-}
-
-fun Player.jumpStile(movement: ForcedMovement) {
-    queue {
-        animate(839)
-        forceMove(this, movement)
-    }
-}*/
 
 on_obj_option(Objs.PUMP, option = "Operate") {
 
@@ -81,11 +50,11 @@ on_command("login") {
     player.openInterface(interfaceId = 110, dest = InterfaceDestination.WALKABLE)
     player.openInterface(interfaceId = 378, dest = InterfaceDestination.OVERLAY)
 }
+
 on_button(interfaceId = 378, 78) {
     player.closeInterface(interfaceId = 378)
     player.closeInterface(interfaceId = 110)
 }
-
 
 //player.message("You stop pumping.")
 //world.spawn(DynamicObject(obj, Objs.PUMP))

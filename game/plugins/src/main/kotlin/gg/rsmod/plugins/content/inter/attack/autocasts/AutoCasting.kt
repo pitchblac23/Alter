@@ -22,7 +22,6 @@ object AutoCasting {
         player.getEquipment(EquipmentType.WEAPON)?.let { getStaffSpellList(player, it) }?.let { player.setVarp(
             AUTO_CAST_SPELL_LIST_VARP, it) }
         player.setInterfaceEvents(interfaceId = INTERFACE_ID, component = 1, from = 0, to = 51, setting = 2)
-
     }
 
     private fun getStaffSpellList(player: Player, equipped_weapon : Item): Int {

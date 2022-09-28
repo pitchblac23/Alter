@@ -3,7 +3,9 @@ package gg.rsmod.plugins.content.skills.smithing.action
 import gg.rsmod.game.fs.DefinitionSet
 import gg.rsmod.game.fs.def.ItemDef
 import gg.rsmod.game.model.queue.QueueTask
+import gg.rsmod.plugins.api.EquipmentType
 import gg.rsmod.plugins.api.Skills
+import gg.rsmod.plugins.api.cfg.Items
 import gg.rsmod.plugins.api.ext.*
 import gg.rsmod.plugins.content.skills.smithing.data.Bar
 
@@ -12,6 +14,7 @@ import gg.rsmod.plugins.content.skills.smithing.data.Bar
  *
  * Handles the action of smelting bars at a furnace.
  */
+
 class SmeltingAction(private val defs: DefinitionSet) {
 
     /**
@@ -49,6 +52,28 @@ class SmeltingAction(private val defs: DefinitionSet) {
 
             player.animate(SMELT_ANIM)
             player.playSound(SMELT_SOUND)
+            if (bar.prefix == "bronze") {
+                player.filterableMessage("You smelt the copper and tin together in the furnace.")
+            }
+            else if (bar.prefix == "steel") {
+                player.filterableMessage("You place the iron and two heaps of coal into the furnace.")
+            }
+            else if (bar.prefix == "mithril") {
+                player.filterableMessage("You place the mithril and four heaps of coal into the furnace.")
+            }
+            else if (bar.prefix == "adamant") {
+                player.filterableMessage("You place the adamantite and six heaps of coal into the furnace.")
+            }
+            else if (bar.prefix == "rune") {
+                player.filterableMessage("You place the runite and eight heaps of coal into the furnace.")
+            }
+            else if (bar.primaryOre == Items.SILVER_ORE) {
+                    player.filterableMessage("You place a lump of silver in the furnace.")
+            }
+            else if (bar.primaryOre == Items.GOLD_ORE) {
+                player.filterableMessage("You place a lump of gold in the furnace.")
+            }
+            else player.filterableMessage("you smelt the ${bar.prefix} in the furnace.")
             task.wait(ANIMATION_CYCLE)
             player.lock()
             task.wait(ANIMATION_CYCLE)
@@ -61,10 +86,31 @@ class SmeltingAction(private val defs: DefinitionSet) {
             val removePrimary = inventory.remove(item = bar.primaryOre)
             val removeSecondary = inventory.remove(item = bar.secondaryOre, amount = bar.secondaryCount, assureFullRemoval = true)
 
-            if (removePrimary.hasSucceeded() && removeSecondary.hasSucceeded()) {
-                inventory.add(bar.id)
-                player.addXp(Skills.SMITHING, bar.smeltXp)
-            }
+            if (removePrimary.hasSucceeded() && bar.primaryOre == Items.IRON_ORE) {
+                if (player.hasEquipped(EquipmentType.RING, Items.RING_OF_FORGING)) {
+                    inventory.add(bar.id)
+                    player.addXp(Skills.SMITHING, bar.smeltXp)
+                    player.filterableMessage("you retrieve a bar of ${bar.prefix}")
+                } else
+                    when (player.world.random(1)) {
+                        0 -> {
+                            inventory.add(bar.id)
+                            player.addXp(Skills.SMITHING, bar.smeltXp)
+                            player.filterableMessage("you retrieve a bar of ${bar.prefix}")
+                        }
+                        1 -> {
+                            player.filterableMessage("The ore is too impure and you fail to refine it.")
+                        }
+                    }
+            } else
+                if (removePrimary.hasSucceeded() && removeSecondary.hasSucceeded()) {
+                    inventory.add(bar.id)
+                    player.addXp(Skills.SMITHING, bar.smeltXp)
+                    if (bar.primaryOre == Items.SILVER_ORE || bar.primaryOre == Items.GOLD_ORE) {
+                        player.filterableMessage("You retrieve a bar of ${bar.prefix} from the furnace.")
+                    } else
+                        player.filterableMessage("you retrieve a bar of ${bar.prefix}")
+                }
 
             player.unlock()
             task.wait(WAIT_CYCLE)
@@ -119,6 +165,6 @@ class SmeltingAction(private val defs: DefinitionSet) {
         /**
          * The number of ticks before automatically continuing the produce the next bar
          */
-        const val WAIT_CYCLE = 3
+        const val WAIT_CYCLE = 2
     }
 }

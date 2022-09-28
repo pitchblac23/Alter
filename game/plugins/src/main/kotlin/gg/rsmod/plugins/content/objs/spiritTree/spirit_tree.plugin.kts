@@ -5,7 +5,6 @@ package gg.rsmod.plugins.content.objs.spiritTree
  */
 
 val SPIRIT_TREES = arrayOf(Objs.SPIRIT_TREE_26260, Objs.SPIRIT_TREE_26261, Objs.SPIRIT_TREE_26263, Objs.SPIRIT_TREE_35950)
-val TALKING_TREES = arrayOf(Objs.SPIRIT_TREE_26259, Objs.SPIRIT_TREE_26262, Objs.SPIRIT_TREE_35949)
 
 on_login {
     //Unlock grand trees
@@ -14,29 +13,21 @@ on_login {
     player.setVarbit(598, 2)
 }
 
-TALKING_TREES.forEach { treeTalk ->
-    on_obj_option(treeTalk, option = "talk-to") {
-        if (treeTalk == 26259) {
-            player.queue(TaskPriority.STRONG) {
-                chatNpc("Need Npc Chat", npc = 4982)
-            }
-        } else {
-            player.queue(TaskPriority.STRONG) {
-                chatNpc("Need Npc Chat", npc = 4981)
-            }
-        }
-    }
-}
-
 SPIRIT_TREES.forEach { tree ->
-    on_obj_option(tree, "Travel") {
-        TreeTele(player)
-    }
+    on_obj_option(tree, "Travel") {TreeTele(player) }
+
     on_obj_option(tree, option = "talk-to") {
         if (tree == 26260 || tree == 26261) {
             player.queue(TaskPriority.STRONG) {
-                chatNpc("Hello gnome friend. Where would you like to go?", npc = 4982)
-                TreeTele(player)
+                chatNpc("You friend of gnome people, you friend of mine.<br><br>Would you like me to take you somewhere?", npc = 4982)
+                when (options("No thanks, old tree.", "Where can I go?")) {
+                    1 -> { chatPlayer("No thanks, old tree.") }
+                    2 -> {
+                        chatPlayer("Where can I go?")
+                        chatNpc("You can travel to the trees which are related to me.", npc = 4982)
+                        TreeTele(player)
+                    }
+                }
             }
         } else {
             player.queue(TaskPriority.STRONG) {
@@ -64,10 +55,10 @@ fun spiritTreeTele(player: Player, endTile : Tile) {
 fun TreeTele (player: Player) {
     player.queue(TaskPriority.STRONG) {
         when (interfaceOptions("Tree Gnome Village", "Gnome Stronghold", "Battlefield of Khazard", "Grand Exchange", "Feldip Hills", "Prifddinas", "<col=777777>Port Sarim</col>", "<col=777777>Etceteria</col>", "<col=777777>Brimhaven</col>", "<col=777777>Hosidius</col>", "<col=777777>Farming Guild</col>", "<col=777777>Your house</col>", "Cancel", title = "Spirit Tree Locations")) {
-            0 -> spiritTreeTele(player, Tile(2542, 3169, 0))
+            0 -> spiritTreeTele(player, Tile(2542, 3170, 0))
             1 -> spiritTreeTele(player, Tile(2461, 3444, 0))
-            2 -> spiritTreeTele(player, Tile(2557, 3260, 0))
-            3 -> spiritTreeTele(player, Tile(3183, 3508, 0))
+            2 -> spiritTreeTele(player, Tile(2555, 3259, 0))
+            3 -> spiritTreeTele(player, Tile(3185, 3508, 0))
             4 -> spiritTreeTele(player, Tile(2488, 2850, 0))
             5 -> spiritTreeTele(player, Tile(3274, 6123, 0))
             12 -> player.closeInterface(InterfaceDestination.MAIN_SCREEN)

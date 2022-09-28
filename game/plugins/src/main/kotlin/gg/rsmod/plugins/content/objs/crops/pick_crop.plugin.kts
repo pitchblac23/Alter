@@ -12,7 +12,7 @@ val crops = setOf(
 
     Crop("cabbage", setOf(Objs.CABBAGE_1161)) { player -> if (player.world.percentChance(5.0)) Items.CABBAGE_SEED else Items.CABBAGE },
 
-    Crop("wheat", setOf(Objs.WHEAT_15506, Objs.WHEAT_15507, Objs.WHEAT_15508)) { Items.GRAIN },
+    Crop("grain", setOf(Objs.WHEAT_15506, Objs.WHEAT_15507, Objs.WHEAT_15508)) { Items.GRAIN },
 
     Crop("potato", setOf(Objs.POTATO_312)) { Items.POTATO },
 
@@ -29,7 +29,7 @@ for (crop in crops) {
                 val route = player.walkTo(this, obj.tile)
                 if (route.success) {
                     if (player.inventory.isFull) {
-                        player.message("You don't have room for this ${crop.name}.")
+                        player.message("You can't carry any more ${crop.name}.")
                         return@queue
                     }
 
@@ -37,6 +37,7 @@ for (crop in crops) {
                         val item = crop.item(player)
                         player.animate(827)
                         player.inventory.add(item = item)
+                        player.message("you pick some ${crop.name}")
                         world.remove(obj)
                         world.queue {
                             wait(RESPAWN_DELAY)

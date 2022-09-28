@@ -1382,7 +1382,7 @@
 - id: 1231
   examine: "Nasty curling tendrils of a creeping plant."
 - id: 1276
-  examine: "One of the most common trees in RuneScape."
+  examine: "One of the most common trees in Gielinor."
 - id: 1277
   examine: "A healthy young tree."
 - id: 1278
@@ -12587,7 +12587,7 @@
 - id: 10819
   examine: "An ominous tree."
 - id: 10820
-  examine: "It's a looooooong way down!"
+  examine: "A beautiful old oak."
 - id: 10821
   examine: "Don't look down!"
 - id: 10822
@@ -12603,7 +12603,7 @@
 - id: 10829
   examine: "This would be easier if the rope were under more tension!"
 - id: 10831
-  examine: "For jumping large gaps."
+  examine: "These trees are found near water."
 - id: 10832
   examine: "Try not to belly-flop."
 - id: 10833
@@ -18157,7 +18157,7 @@
 - id: 15691
   examine: "A mysterious figure stands alone in this haunting image."
 - id: 15692
-  examine: "A wooden crate."
+  examine: "Some wooden crates."
 - id: 15693
   examine: "Wooden crates."
 - id: 15695
@@ -23136,9 +23136,9 @@
 - id: 20846
   examine: "Beehive part."
 - id: 20847
-  examine: "Beehive part."
+  examine: "A wooden gate."
 - id: 20848
-  examine: "Beehive part."
+  examine: "A wooden gate."
 - id: 20849
   examine: "Beehive part."
 - id: 20850
@@ -28741,11 +28741,11 @@
 - id: 27222
   examine: "A wooden barrel containing water."
 - id: 27223
-  examine: "A crate for storing food rations."
+  examine: "A crate for storing things."
 - id: 27224
-  examine: "A crate for storing food rations."
+  examine: "Some crates for storing things."
 - id: 27225
-  examine: "A crate for storing food rations."
+  examine: "Some crates for storing things."
 - id: 27226
   examine: "A crate for storing food rations."
 - id: 27227
@@ -35669,7 +35669,7 @@
 - id: 33578
   examine: "It's a Ancient Grave"
 - id: 33579
-  examine: "It's a Ancient Grave"
+  examine: "It's still intact despite its age."
 - id: 33583
   examine: "It's a Tree stump"
 - id: 33584
@@ -37119,7 +37119,7 @@
 - id: 34445
   examine: "It's a Water tap"
 - id: 34446
-  examine: "It's a Chest"
+  examine: "There's something intriguing about a locked chest."
 - id: 34463
   examine: "It's a Door"
 - id: 34464
