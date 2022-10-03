@@ -2,7 +2,6 @@ package gg.rsmod.plugins.content.objs.windmill
 
 import gg.rsmod.plugins.api.cfg.Varbits.FLOUR_AMOUNT_VARBIT
 import gg.rsmod.plugins.api.cfg.Varbits.FLOUR_COLLECTABLE_VARBIT
-import org.w3c.dom.Attr
 
 /**
  * Thanks to Desetude for the working windmill

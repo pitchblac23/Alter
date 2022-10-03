@@ -1,63 +1,12 @@
-package gg.rsmod.plugins.content.npcs.npcInfo.man
+package gg.rsmod.plugins.content.area.world_chats
 
-val civilian = arrayOf(Npcs.MAN_3108, Npcs.MAN_3107, Npcs.MAN_3106)
-
-civilian.forEach { civilian ->
-    on_npc_option(npc = civilian, option = "talk-to") {
-        player.queue { chat() }
-    }
-
-    set_combat_def(civilian) {
-        configs {
-            attackSpeed = 4
-            respawnDelay = 70
-        }
-
-        stats {
-            hitpoints = 7
-            attack = 1
-            defence = 1
-            strength = 1
-            magic = 1
-            ranged = 1
-        }
-
-        bonuses {
-            attackStab = 0
-            attackSlash = 0
-            attackCrush = 0
-            attackMagic = 0
-            attackRanged = 0
-
-            defenceStab = -21
-            defenceSlash = -21
-            defenceCrush = -21
-            defenceMagic = -21
-            defenceRanged = -21
-
-            attackBonus = 0
-            strengthBonus = 0
-            rangedStrengthBonus = 0
-            magicDamageBonus = 0
-        }
-
-        anims {
-            death = 836
-            block = 425
-            attack = 422
-        }
-    }
-
-    set_drop_table(civilian) {
-        droptable {
-            dropTableJSON = "man/man.drops.json"
-        }
-    }
+arrayOf(Npcs.MAN_3108, Npcs.MAN_3107, Npcs.MAN_3106).forEach { men ->
+    on_npc_option(npc = men, option = "talk-to") { player.queue { chat() } }
 }
 
 suspend fun QueueTask.chat() {
     chatPlayer("Hello, how's it going?", animation = 567)
-    when (world.random(22)) {
+    when (world.random(23)) {
         0 -> chatNpc("Not too bad thanks.", animation = 567)
         1 -> {
             chatNpc("I'm fine, how are you?", animation = 567)
@@ -122,5 +71,6 @@ suspend fun QueueTask.chat() {
             chatNpc("Are you asking for a fight?", animation = 614)
             npc.attack(player)
         }
+        22 -> chatNpc("Yo, wassup!")
     }
 }

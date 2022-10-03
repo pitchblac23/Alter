@@ -13,13 +13,12 @@ suspend fun QueueTask.dialog() {
     }
 }
 
-suspend fun QueueTask.no_thanks(){
-    chatPlayer("No, thank you.", animation = 588)
-    chatNpc("Very well. Saradomin be with you!")
-}
-
 suspend fun QueueTask.how_to_train(){
     chatPlayer("How can I train my prayer?")
+    if (player.getSkills().getCurrentLevel(Skills.PRAYER) >= 99) {
+        chatNpc("I think you should be teaching me a thing or two,<br><br>shouldn't you?")
+        chatNpc("Well, if you really want my advice...")
+    }
     chatNpc("The most common way to train prayer is by either<br>burying bones, or offering them to the gods at some<br>kind of an altar.")
     chatNpc("Lots of adventurers build such altars in their own<br>homes, or there are a few frequent places of warship<br>around the world.")
     chatNpc("Different kinds of bones will help you train faster.<br>Generally speaking, the bigger they are and the more<br>frightening a creature they come from, the better they are for it.")
@@ -44,4 +43,9 @@ suspend fun QueueTask.prayer_useful(){
         1 -> how_to_train()
         2 -> no_thanks()
     }
+}
+
+suspend fun QueueTask.no_thanks(){
+    chatPlayer("No, thank you.", animation = 588)
+    chatNpc("Very well. Saradomin be with you!")
 }
