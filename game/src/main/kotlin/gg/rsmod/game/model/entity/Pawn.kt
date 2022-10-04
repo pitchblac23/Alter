@@ -406,7 +406,12 @@ abstract class Pawn(val world: World) : Entity() {
         }
     }
 
-    fun walkTo(tile: Tile, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true) = walkTo(tile.x, tile.z, stepType, detectCollision)
+    /**Note:
+     * No stepType = uses player energy off/on walk/run
+     * No detectCollision = player will clip unless set false
+     * side note to no detectCollision will walk till found set x,z
+     * StepType.Forcewalk = walk, StepType.Forcerun = run, StepType.Normal = player energy on/off
+     */
 
     fun walkTo(x: Int, z: Int, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true) {
         /*
@@ -450,6 +455,8 @@ abstract class Pawn(val world: World) : Entity() {
         }
     }
 
+    fun walkTo(tile: Tile, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true) = walkTo(tile.x, tile.z, stepType, detectCollision)
+
     suspend fun walkTo(it: QueueTask, tile: Tile, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true) = walkTo(it, tile.x, tile.z, stepType, detectCollision)
 
     suspend fun walkTo(it: QueueTask, x: Int, z: Int, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true): Route {
@@ -479,6 +486,12 @@ abstract class Pawn(val world: World) : Entity() {
         return route
     }
     //TODO Add region change handler, to get rid of the teleport walking.
+    /**Note:
+     * MoveTo is a set walk if under +/- 2 to the x/z
+     * If +/- 2 on the x/z will detectCollision = false
+     * MoveTo teleports pawn if over +/- 3 to the x/z
+     */
+
     fun moveTo(x: Int, z: Int, height: Int = 0) {
         moved = true
         blockBuffer.teleport = !tile.isWithinRadius(x, z, height, Player.NORMAL_VIEW_DISTANCE)

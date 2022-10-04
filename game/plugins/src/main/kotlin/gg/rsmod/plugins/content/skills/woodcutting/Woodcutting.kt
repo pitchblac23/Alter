@@ -44,7 +44,6 @@ object Woodcutting {
         }
 
         val logName = p.world.definitions.get(ItemDef::class.java, tree.log).name
-        //val axe = AxeType.values.firstOrNull { p.getSkills().getBaseLevel(Skills.WOODCUTTING) >= it.level && (p.equipment.contains(it.item) || p.inventory.contains(it.item)) }!!
         val axe = AxeType.values.filter { p.getSkills().getBaseLevel(Skills.WOODCUTTING) >= it.level && (p.equipment.contains(it.item) || p.inventory.contains(it.item)) }.sortedBy { it.level }.last()
 
         p.filterableMessage("You swing your axe at the tree.")

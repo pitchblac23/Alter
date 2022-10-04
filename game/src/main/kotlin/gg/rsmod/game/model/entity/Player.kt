@@ -284,6 +284,10 @@ open class Player(world: World) : Pawn(world) {
         addBlock(UpdateBlockType.FORCE_MOVEMENT)
     }
 
+    /**Note:
+     * This will push player in x/z at idle animation unless set animation before
+     * detectCollision = false
+     */
     suspend fun forceMove(task: QueueTask, movement: ForcedMovement, cycleDuration: Int = movement.maxDuration / 30) {
         movementQueue.clear()
         lock = LockState.DELAY_ACTIONS
