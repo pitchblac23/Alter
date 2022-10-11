@@ -113,18 +113,16 @@ arrayOf(Objs.OBSTACLE_PIPE_23138, Objs.OBSTACLE_PIPE_23139).forEach { pipe ->
         if (player.getInteractingGameObj().tile == Tile(2484, 3435) || player.getInteractingGameObj().tile == Tile(2487, 3435)) { return@on_obj_option }
 
         player.queue {
-            player.lock()
             if (player.getInteractingGameObj().tile == Tile(2484, 3431)) { player.walkTo(2484, 3430, MovementQueue.StepType.FORCED_WALK) }
             if (player.getInteractingGameObj().tile == Tile(2487, 3431)) { player.walkTo(2487, 3430, MovementQueue.StepType.FORCED_WALK) }
             wait(2)
-            player.animate(749, 30)
-            player.forceMove(this, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
             player.lock()
+            player.forceMove(this, 749, 30, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
             wait(2)
             player.walkTo(player.tile.x, player.tile.z +1, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
             wait(1)
-            player.animate(749, 30)
-            player.forceMove(this, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
+            player.forceMove(this, 749, 30, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
+            player.unlock()
             player.addXp(Skills.AGILITY, 7.5)
 
             //Course completion add

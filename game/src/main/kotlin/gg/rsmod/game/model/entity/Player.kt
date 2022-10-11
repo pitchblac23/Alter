@@ -285,12 +285,18 @@ open class Player(world: World) : Pawn(world) {
     }
 
     /**Note:
-     * This will push player in x/z at idle animation unless set animation before
+     * This will push player in x/z setting animation from function
+     * CD1 = how long till you arrive at the first position
+     * CD2 = how long until you arrive at the second position
+     * this does not lock player can use player.lock(), player.unlock()
      * detectCollision = false
      */
-    suspend fun forceMove(task: QueueTask, movement: ForcedMovement, cycleDuration: Int = movement.maxDuration / 30) {
+    suspend fun forceMove(task: QueueTask, anim: Int = -1, delay: Int = 0, movement: ForcedMovement, cycleDuration: Int = movement.maxDuration / 30) {
         movementQueue.clear()
-        lock = LockState.DELAY_ACTIONS
+
+        blockBuffer.animation = anim
+        blockBuffer.animationDelay = delay
+        addBlock(UpdateBlockType.ANIMATION)
 
         lastTile = Tile(tile)
         moveTo(movement.finalDestination)
@@ -298,7 +304,6 @@ open class Player(world: World) : Pawn(world) {
         forceMove(movement)
 
         task.wait(cycleDuration)
-        lock = LockState.NONE
     }
 
     /**

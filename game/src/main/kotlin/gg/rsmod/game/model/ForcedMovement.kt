@@ -2,6 +2,8 @@ package gg.rsmod.game.model
 
 /**
  * @author Tom <rspsmods@gmail.com>
+ * CD1 = how long till you arrive at the first position
+ * CD2 = how long until you arrive at the second position
  */
 data class ForcedMovement internal constructor(private val initialTile: Tile, internal val destinations: Array<Tile>,
                                                internal val clientDuration1: Int, internal val clientDuration2: Int,
