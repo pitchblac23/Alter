@@ -16,7 +16,7 @@ on_obj_option(obj = Objs.LOG_BALANCE_23145, option = "Walk-across") {
         player.filterableMessage("you walk carefully across the slippery log...")
         wait(1)
         player.appearimate(763, 762, 762, 762, 762, 762, -1)
-
+        player.walkTo(x = 2474, player.tile.z -7, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
         wait(8)
         player.filterableMessage("...You make it safely to the other side.")
         player.appearimate(808, 823, 819, 820, 821, 822, 824)
