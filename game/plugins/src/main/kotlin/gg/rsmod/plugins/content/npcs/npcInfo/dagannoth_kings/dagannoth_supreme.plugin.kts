@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.npcs.dagannoth_kings
+package gg.rsmod.plugins.content.npcs.npcInfo.dagannoth_kings
 
 import gg.rsmod.game.model.combat.AttackStyle
 import gg.rsmod.game.model.combat.CombatClass

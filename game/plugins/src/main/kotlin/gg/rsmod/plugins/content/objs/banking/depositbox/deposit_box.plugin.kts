@@ -15,14 +15,10 @@ private val DEPOSIT_BOXES = setOf(
         Objs.BANK_DEPOSIT_BOX_34344)
 
 DEPOSIT_BOXES.forEach { box ->
-    on_obj_option(obj = box, option = "deposit") {
-        open_deposit_box(player)
-    }
+    on_obj_option(obj = box, option = "deposit") { open_deposit_box(player) }
 }
 
-on_interface_close(DEPOSIT_INTERFACE_ID) {
-    close_deposit_box(player)
-}
+on_interface_close(DEPOSIT_INTERFACE_ID) { close_deposit_box(player) }
 
 on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 2) {
     val slot = player.getInteractingSlot()
@@ -40,13 +36,9 @@ on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 2) {
     }
 }
 
-on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 4) {
-    deposit_inv(player)
-}
+on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 4) { deposit_inv(player) }
 
-on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 6) {
-    deposit_equipment(player)
-}
+on_button(interfaceId = DEPOSIT_INTERFACE_ID, component = 6) { deposit_equipment(player) }
 
 on_component_to_component_item_swap(
         srcInterfaceId = DEPOSIT_INTERFACE_ID, srcComponent = 2,

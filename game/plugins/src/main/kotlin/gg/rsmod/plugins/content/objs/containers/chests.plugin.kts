@@ -3,9 +3,7 @@ package gg.rsmod.plugins.content.objs.containers
 /**
  * Open
  */
-on_obj_option(obj = Objs.CLOSED_CHEST_375, option = "Open") {
-    open(player, 378)
-}
+on_obj_option(obj = Objs.CLOSED_CHEST_375, option = "Open") { open(player, 378) }
 
 on_obj_option(obj = Objs.CHEST_26193, option = "Open") {
     player.queue {
@@ -24,13 +22,9 @@ on_obj_option(obj = Objs.CHEST_26193, option = "Open") {
 /**
  * Close
  */
-on_obj_option(obj = Objs.OPEN_CHEST_378, option = "Shut") {
-    close(player, 375)
-}
+on_obj_option(obj = Objs.OPEN_CHEST_378, option = "Shut") { close(player, 375) }
 
-on_obj_option(obj = Objs.CHEST_2418, option = "Shut") {
-    close(player, 26193)
-}
+on_obj_option(obj = Objs.CHEST_2418, option = "Shut") { close(player, 26193) }
 
 /**
  * Search

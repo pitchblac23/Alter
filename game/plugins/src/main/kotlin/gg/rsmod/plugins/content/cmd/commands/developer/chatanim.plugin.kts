@@ -1,9 +1,6 @@
 package gg.rsmod.plugins.content.cmd.commands.developer
 
 import gg.rsmod.game.model.priv.Privilege
-import gg.rsmod.plugins.content.cmd.Commands_plugin
-import gg.rsmod.plugins.content.inter.bank.openBank
-
 
 on_command("chatanim", Privilege.DEV_POWER, description = "Chat dialogue test") {
     val args = player.getCommandArgs()

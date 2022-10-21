@@ -12,9 +12,7 @@ val LIMIT_TARGETS_VARBIT = 6503
 val SKULL_SHORT_DURATION = 500
 val SKULL_LONG_DURATION = 2000
 
-on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Talk-to") {
-    player.queue { chat() }
-}
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Talk-to") { player.queue { chat() } }
 
 on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") {
     player.queue { chatNpc(" I'm afraid I've retired my shop. I hurt my back lifting<br><br>bounty crates and I can't do it anymore.") }
@@ -22,10 +20,7 @@ on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") {
 
 //on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Rewards") { open_shop(player) }
 
-on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Coffer") {
-    player.queue {
-        coffer_option()
-    }
+on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "Coffer") { player.queue { coffer_option() }
 }
 
 on_npc_option(npc = Npcs.EMBLEM_TRADER, option = "skull") {
@@ -147,6 +142,4 @@ suspend fun QueueTask.coffer_option() {
     }
 }
 
-suspend fun QueueTask.leave_alone() {
-    chatPlayer("I'll leave you alone.", animation = 567)
-}
+suspend fun QueueTask.leave_alone() { chatPlayer("I'll leave you alone.", animation = 567) }

@@ -13,8 +13,6 @@ suspend fun QueueTask.dialog() {
             chatPlayer("Yeas please. What are you selling?")
             player.openShop("Lumbridge General Store")
         }
-        2 -> {
-            chatPlayer("No thanks.")
-        }
+        2 -> chatPlayer("No thanks.")
     }
 }

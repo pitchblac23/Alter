@@ -50,7 +50,6 @@ suspend fun QueueTask.dialog() {
 }
 
 suspend fun QueueTask.dialog2() {
-
     chatPlayer("Can I come through this gate?", animation = 588)
     chatNpc("You must pay a toll of 10 gold coins to pass.", animation = 590)
     when (options("No thank you, I'll walk around.", "Who does my money go to?", "Yes, ok.")) {

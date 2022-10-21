@@ -8,9 +8,7 @@ val SLASH = intArrayOf(
         Items.MITHRIL_SCIMITAR, Items.ADAMANT_SCIMITAR, Items.RUNE_SCIMITAR
 )
 
-on_obj_option(obj = Objs.WEB_733, option = "slash") {
-    slash(player, player.getInteractingGameObj())
-}
+on_obj_option(obj = Objs.WEB_733, option = "slash") { slash(player, player.getInteractingGameObj()) }
 
 on_item_on_obj(Objs.WEB_733, Items.KNIFE, 1) {
     when (world.random(1)) {

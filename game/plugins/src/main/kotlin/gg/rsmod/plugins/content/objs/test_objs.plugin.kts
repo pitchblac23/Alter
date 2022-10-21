@@ -3,27 +3,21 @@ package gg.rsmod.plugins.content.objs
 /**This is for testing objects without having to have a file*/
 //TODO: add some of this to main files
 
-on_obj_option(obj = Objs.CELL_DOOR_9563, option = "Open") {
-    player.message("The door is securely locked.")
-}
+on_obj_option(obj = Objs.CELL_DOOR_9563, option = "Open") { player.message("The door is securely locked.") }
 
-on_obj_option(obj = Objs.CAGE_20873, option = "Unlock") {
-    player.message("You can't unlock the pillory, you'll let all the criminals out!")
-}
+on_obj_option(obj = Objs.CAGE_20873, option = "Unlock") { player.message("You can't unlock the pillory, you'll let all the criminals out!") }
 
-arrayOf(Objs.GATE_20847, Objs.GATE_20848).forEach { hopper ->
-    on_obj_option(hopper, "Open") {
+arrayOf(Objs.GATE_20847, Objs.GATE_20848).forEach { gate ->
+    on_obj_option(gate, "Open") {
         player.queue { messageBox("The gate is securely locked.") }
     }
 }
 
 on_obj_option(Objs.PUMP, option = "Operate") {
-
     val obj = player.getInteractingGameObj()
 
     player.queue {
         wait(2)
-
         player.walkTo(x = 1950, z = 4961, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
         wait(2)
         world.remove(obj)
@@ -38,13 +32,9 @@ on_obj_option(Objs.PUMP, option = "Operate") {
     }
 }
 
-on_obj_option(Objs.GROUP_STORAGE_43489, option = "open") {
-    player.openInterface(interfaceId = 724, dest = InterfaceDestination.MAIN_SCREEN)
-}
+on_obj_option(Objs.GROUP_STORAGE_43489, option = "open") { player.openInterface(interfaceId = 724, dest = InterfaceDestination.MAIN_SCREEN) }
 
-on_button(707, 3) {
-    player.openInterface(7, dest = InterfaceDestination.CLAN_CHAT)
-}
+on_button(707, 3) { player.openInterface(7, dest = InterfaceDestination.CLAN_CHAT) }
 
 on_command("login") {
     player.openInterface(interfaceId = 110, dest = InterfaceDestination.WALKABLE)

@@ -14,7 +14,7 @@ fun Player.climbIntoUnderwallwest() {
             forceMove(this, anim = 2591, movement = ForcedMovement.of(player.tile, Tile(x = 3142, z = 3513), clientDuration1 = 15, clientDuration2 = 33, directionAngle = Direction.EAST.angle))
             wait(1)
             unlock()
-        } else { player.message("you need a agility level of 21 to use this shortcut.") }
+        } else { player.message("you need an Agility level of 21 to negotiate this tunnel.") }
     }
 }
 
@@ -28,6 +28,6 @@ fun Player.climbIntoUnderwalleast() {
             forceMove(this, anim = 2591, movement = ForcedMovement.of(player.tile, Tile(x = 3137, z = 3516), clientDuration1 = 15, clientDuration2 = 33, directionAngle = Direction.WEST.angle))
             wait(1)
             unlock()
-        } else { player.message("you need a agility level of 21 to use this shortcut.") }
+        } else { player.message("you need an Agility level of 21 to negotiate this tunnel.") }
     }
 }

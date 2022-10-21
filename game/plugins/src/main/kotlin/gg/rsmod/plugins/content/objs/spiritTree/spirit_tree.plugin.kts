@@ -21,7 +21,7 @@ SPIRIT_TREES.forEach { tree ->
             player.queue(TaskPriority.STRONG) {
                 chatNpc("You friend of gnome people, you friend of mine.<br><br>Would you like me to take you somewhere?", npc = 4982)
                 when (options("No thanks, old tree.", "Where can I go?")) {
-                    1 -> { chatPlayer("No thanks, old tree.") }
+                    1 -> chatPlayer("No thanks, old tree.")
                     2 -> {
                         chatPlayer("Where can I go?")
                         chatNpc("You can travel to the trees which are related to me.", npc = 4982)

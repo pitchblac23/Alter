@@ -1,6 +1,5 @@
 package gg.rsmod.game.model.shop
 
-import gg.rsmod.game.fs.def.ItemDef
 import gg.rsmod.game.model.PlayerUID
 import gg.rsmod.game.model.World
 import gg.rsmod.game.model.attr.CURRENT_SHOP_ATTR
@@ -71,8 +70,9 @@ data class Shop(val name: String, val stockType: StockType, val purchasePolicy: 
                  * When an item's initial [ShopItem.amount] is 0, it means that
                  * the item was not initially in the shop, but was added later.
                  * These items should be removed once they hit a quantity of 0.
+                 * TODO: needs better temp detection
                  */
-                if (amount == 0 && item.amount == 0) {
+                if (amount == -1 && item.amount == -1) {
                     items[i] = null
                 } else {
                     item.currentAmount = amount

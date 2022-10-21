@@ -3,16 +3,12 @@ package gg.rsmod.plugins.content.objs.containers
 /**
  * Open
  */
-on_obj_option(obj = Objs.CUPBOARD_2271, option = "Open") {
-    open(player, 2272)
-}
+on_obj_option(obj = Objs.CUPBOARD_2271, option = "Open") { open(player, 2272) }
 
 /**
  * Close
  */
-on_obj_option(obj = Objs.CUPBOARD_2272, option = "Shut") {
-    close(player, 2271)
-}
+on_obj_option(obj = Objs.CUPBOARD_2272, option = "Shut") { close(player, 2271) }
 
 /**
  * Search

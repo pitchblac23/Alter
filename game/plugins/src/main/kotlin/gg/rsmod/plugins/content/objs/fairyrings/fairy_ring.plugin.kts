@@ -46,33 +46,19 @@ for (ZanarisRing in 29561 until 29624) {
     }
 }
 
-on_button(398, 19) {
-    player.setVarbit(3985, player.getVarbit(3985).plus(1))
-}
+on_button(398, 19) { player.setVarbit(3985, player.getVarbit(3985).plus(1)) }
 
-on_button(398, 20) {
-    player.setVarbit(3985, player.getVarbit(3985).minus(1))
-}
+on_button(398, 20) { player.setVarbit(3985, player.getVarbit(3985).minus(1)) }
 
-on_button(398, 21) {
-    player.setVarbit(3986, player.getVarbit(3986).plus(1))
-}
+on_button(398, 21) { player.setVarbit(3986, player.getVarbit(3986).plus(1)) }
 
-on_button(398, 22) {
-    player.setVarbit(3986, player.getVarbit(3986).minus(1))
-}
+on_button(398, 22) { player.setVarbit(3986, player.getVarbit(3986).minus(1)) }
 
-on_button(398, 23) {
-    player.setVarbit(3987, player.getVarbit(3987).plus(1))
-}
+on_button(398, 23) { player.setVarbit(3987, player.getVarbit(3987).plus(1)) }
 
-on_button(398, 24) {
-    player.setVarbit(3987, player.getVarbit(3987).minus(1))
-}
+on_button(398, 24) { player.setVarbit(3987, player.getVarbit(3987).minus(1)) }
 
-on_button(398, 26) {
-    teleportToFairyRingLocation(player)
-}
+on_button(398, 26) { teleportToFairyRingLocation(player) }
 
 class Locations(val name: String, val component: Int, val dial1: Int, val dial2: Int, val dial3: Int)
 val FairyRings = arrayOf(

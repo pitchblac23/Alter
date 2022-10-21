@@ -16,6 +16,4 @@ suspend fun QueueTask.dialog() {
     }
 }
 
-fun open_shop(p: Player) {
-    p.openShop("Zaff's Superior Staffs!")
-}
+fun open_shop(p: Player) { p.openShop("Zaff's Superior Staffs!") }

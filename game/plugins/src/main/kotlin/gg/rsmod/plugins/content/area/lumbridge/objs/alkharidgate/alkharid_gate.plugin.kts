@@ -4,6 +4,12 @@ package gg.rsmod.plugins.content.area.lumbridge.objs.alkharidgate
  * Thanks to Desetude for gate open and close code
 */
 
+/** TODO:
+ * make different walking from multi tiles
+ * make block for multi accounts
+ * add in after quest dialog & open gate freely
+ */
+
 val GATES = intArrayOf(Objs.GATE_44052, Objs.GATE_44053)
 
 GATES.forEach { obj ->
@@ -50,11 +56,8 @@ GATES.forEach { obj ->
             player.queue { dialog() }
     }
 
-    on_obj_option(obj, "open") {
-        player.queue { dialog() }
-    }
+    on_obj_option(obj, "open") { player.queue { dialog() } }
 }
-
 
 suspend fun QueueTask.dialog() {
 
@@ -71,14 +74,6 @@ suspend fun QueueTask.dialog() {
             chatPlayer("Who does my money go to?", animation = 554)
             chatNpc(npc = guard, message = "The money goes to the city of Al-Kharid.", animation = 590)
         }
-        3 -> {
-                chatPlayer("Yes, ok.", animation = 554)
-
-                /** TODO
-                 * make different walking from multi tiles
-                 * make block for multi accounts
-                 * add in after quest dialog & open gate freely
-                 * */
-            }
+        3 -> chatPlayer("Yes, ok.", animation = 554)
         }
     }

@@ -3,23 +3,17 @@ package gg.rsmod.plugins.content.objs.containers
 /**
  * Open
  */
-on_obj_option(obj = Objs.WARDROBE, option = "Open") {
-    open(player, 389)
-}
+on_obj_option(obj = Objs.WARDROBE, option = "Open") { open(player, 389) }
 
 /**
  * Close
  */
-on_obj_option(obj = Objs.WARDROBE_389, option = "Close") {
-    close(player, 388)
-}
+on_obj_option(obj = Objs.WARDROBE_389, option = "Close") { close(player, 388) }
 
 /**
  * Search
  */
-on_obj_option(obj = Objs.WARDROBE_389, option = "Search") {
-    player.message("The wardrobe is empty.")
-}
+on_obj_option(obj = Objs.WARDROBE_389, option = "Search") { player.message("The wardrobe is empty.") }
 
 fun open(player: Player, container: Int) {
     val obj = player.getInteractingGameObj()

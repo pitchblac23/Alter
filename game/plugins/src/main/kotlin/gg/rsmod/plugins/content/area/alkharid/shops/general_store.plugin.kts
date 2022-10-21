@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.areas.alkharid.shops
+package gg.rsmod.plugins.content.area.alkharid.shops
 
 import gg.rsmod.plugins.content.mechanics.shops.CoinCurrency
 

@@ -12,9 +12,7 @@ suspend fun QueueTask.dialog() {
                     chatPlayer("How do you know i killed it?", animation = 588)
                     chatNpc("you forget. I'm good at knowing things.", animation = 588)
                 }
-                2 -> {
-                    chatPlayer("Thanks.", animation = 588)
-                }
+                2 -> chatPlayer("Thanks.", animation = 588)
                 3 -> {
                     chatPlayer("Stop calling me that!", animation = 588)
                     chatNpc("In the scheme of things you are very young.", animation = 588)

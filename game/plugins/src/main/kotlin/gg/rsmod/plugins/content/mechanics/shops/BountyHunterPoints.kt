@@ -69,7 +69,7 @@ open class BountyHunterPoints() : ShopCurrency {
             return
         }
 
-        val moreThanStock = amount > shopItem.currentAmount
+        //val moreThanStock = amount > shopItem.currentAmount
 
         amount = Math.min(amount, shopItem.currentAmount)
 
@@ -78,9 +78,7 @@ open class BountyHunterPoints() : ShopCurrency {
             return
         }
 
-        if (moreThanStock) {
-            p.message("The shop has run out of stock.")
-        }
+        //if (moreThanStock) { p.message("The shop has run out of stock.") }
 
         val totalCost = currencyCost.toLong() * amount.toLong()
         if (totalCost > Int.MAX_VALUE) {

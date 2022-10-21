@@ -12,7 +12,6 @@ on_world_init {
 on_command("addwarp", Privilege.DEV_POWER, description = "Add varp") {
     val args = player.getCommandArgs()
     Commands_plugin.Command.tryWithUsage(player, args, "Invalid format! Example of proper command <col=801700>::addwarp edgeville</col> or <col=801700>::addwarp edgeville 3086 3500 0</col>") { values ->
-
     }
 }
 

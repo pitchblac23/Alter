@@ -8,7 +8,7 @@ on_npc_option(npc = Npcs.ELLIS, option = "trade") {
 }
 
 suspend fun QueueTask.dialog() {
-    chatNpc("Greetings friend. I am a manufacturer of leather.", animation = 567)
+    chatNpc("Greetings friend. I am a manufacturer of leather.", animation = DEFAULT)
     if (player.inventory.getItemCount(Items.COWHIDE) >= 1) {
         chatNpc("I see you have brought me a hide. Would you like me to tan it for you?", animation = 567)
         when (options("Yes please.", "No thanks.")) {

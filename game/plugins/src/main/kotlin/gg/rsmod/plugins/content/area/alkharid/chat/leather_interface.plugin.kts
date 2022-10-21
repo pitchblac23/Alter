@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.areas.alkharid.chat
+package gg.rsmod.plugins.content.area.alkharid.chat
 
 val INTERFACE_ID = 324
 

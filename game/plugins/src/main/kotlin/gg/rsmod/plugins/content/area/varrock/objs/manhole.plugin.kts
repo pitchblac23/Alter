@@ -2,13 +2,9 @@ package gg.rsmod.plugins.content.area.varrock.objs
 
 val OPEN_SFX = 54
 
-on_obj_option(obj = Objs.MANHOLE, option = "open") {
-    open(player, player.getInteractingGameObj())
-}
+on_obj_option(obj = Objs.MANHOLE, option = "open") { open(player, player.getInteractingGameObj()) }
 
-on_obj_option(obj = Objs.MANHOLE_882, option = "close") {
-    close(player, player.getInteractingGameObj())
-}
+on_obj_option(obj = Objs.MANHOLE_882, option = "close") { close(player, player.getInteractingGameObj()) }
 
 on_obj_option(obj = Objs.MANHOLE_882, option = "climb-down") {
     val direction : Direction = Direction.SOUTH

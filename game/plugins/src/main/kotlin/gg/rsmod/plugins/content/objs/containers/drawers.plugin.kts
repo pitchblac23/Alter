@@ -3,52 +3,30 @@ package gg.rsmod.plugins.content.objs.containers
 /**
  * Open
  */
-on_obj_option(obj = Objs.DRAWERS_23966, option = "Open") {
-    open(player, 23967)
-}
+on_obj_option(obj = Objs.DRAWERS_23966, option = "Open") { open(player, 23967) }
 
-on_obj_option(obj = Objs.DRAWERS_350, option = "Open") {
-    open(player, 351)
-}
+on_obj_option(obj = Objs.DRAWERS_350, option = "Open") { open(player, 351) }
 
-on_obj_option(obj = Objs.DRAWERS, option = "Open") {
-    open(player, 349)
-}
+on_obj_option(obj = Objs.DRAWERS, option = "Open") { open(player, 349) }
 
-on_obj_option(obj = Objs.DRAWERS_7194, option = "Open") {
-    open(player, 7195)
-}
+on_obj_option(obj = Objs.DRAWERS_7194, option = "Open") { open(player, 7195) }
 
-on_obj_option(obj = Objs.DRAWERS_25766, option = "Open") {
-    open(player, 25767)
-}
+on_obj_option(obj = Objs.DRAWERS_25766, option = "Open") { open(player, 25767) }
 
-on_obj_option(obj = Objs.DRAWERS_40282, option = "Open") {
-    player.message("I don't think the owner would be happy for you to look through their drawers.")
-}
+on_obj_option(obj = Objs.DRAWERS_40282, option = "Open") { player.message("I don't think the owner would be happy for you to look through their drawers.") }
 
 /**
  * Close
  */
-on_obj_option(obj = Objs.DRAWERS_23967, option = "Close") {
-    close(player, 23966)
-}
+on_obj_option(obj = Objs.DRAWERS_23967, option = "Close") { close(player, 23966) }
 
-on_obj_option(obj = Objs.DRAWERS_7195, option = "Close") {
-    close(player, 7194)
-}
+on_obj_option(obj = Objs.DRAWERS_7195, option = "Close") { close(player, 7194) }
 
-on_obj_option(obj = Objs.DRAWERS_351, option = "Shut") {
-    close(player, 350)
-}
+on_obj_option(obj = Objs.DRAWERS_351, option = "Shut") { close(player, 350) }
 
-on_obj_option(obj = Objs.DRAWERS_349, option = "Shut") {
-    close(player, 348)
-}
+on_obj_option(obj = Objs.DRAWERS_349, option = "Shut") { close(player, 348) }
 
-on_obj_option(obj = Objs.DRAWERS_25767, option = "Shut") {
-    close(player, 25766)
-}
+on_obj_option(obj = Objs.DRAWERS_25767, option = "Shut") { close(player, 25766) }
 
 /**
  * Search

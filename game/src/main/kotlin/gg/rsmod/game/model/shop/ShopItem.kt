@@ -34,7 +34,7 @@ data class ShopItem(val item: Int, val amount: Int, val sellPrice: Int? = null, 
 
     /**
      * @return True if the item was not in the original shop stock.
+     * TODO: needs better isTemp finding
      */
-    val isTemporary: Boolean
-        get() = amount == 0
+    val isTemporary: Boolean get() = amount == -1
 }

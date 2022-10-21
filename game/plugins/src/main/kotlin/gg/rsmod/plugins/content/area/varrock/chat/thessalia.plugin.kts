@@ -4,7 +4,7 @@ on_npc_option(npc = Npcs.THESSALIA, option = "talk-to") { player.queue { dialog(
 
 on_npc_option(npc = Npcs.THESSALIA, option = "trade") { open_shop(player) }
 
-on_npc_option(npc = Npcs.THESSALIA, option = "makeover") { }
+on_npc_option(npc = Npcs.THESSALIA, option = "makeover") { /**TODO:*/ }
 
 suspend fun QueueTask.dialog() {
     chatNpc("Do you want to buy any fine clothes? Or would you like your scythe or bunny ears back?", animation = 567)
@@ -20,9 +20,7 @@ suspend fun QueueTask.dialog() {
                     chatNpc("It costs only 500 coins. Tired of always wearing the same old outfit, day in, day out? This is the service for you!", animation = 588)
                     chatNpc("So what do you say? Interested? We can change either your top or your legwear!", animation = 588)
                 }
-                2 -> {
-                    open_shop(player)
-                }
+                2 -> open_shop(player)
             }
         }
         2 -> {
@@ -32,6 +30,4 @@ suspend fun QueueTask.dialog() {
     }
 }
 
-fun open_shop(p: Player) {
-    p.openShop("Thessalia's Fine Clothes.")
-}
+fun open_shop(p: Player) { p.openShop("Thessalia's Fine Clothes.") }

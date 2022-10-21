@@ -3,11 +3,7 @@ package gg.rsmod.plugins.content.objs.search_objs.bookcase
 arrayOf(Objs.BOOKCASE_380, Objs.BOOKCASE_381, Objs.BOOKCASE_9611,
         Objs.OLD_BOOKSHELF_7327, Objs.BOOKCASE_9523, Objs.BOOKCASE_9609,
         Objs.OLD_BOOKSHELF_25782, Objs.BOOKCASE_25927, Objs.BOOKCASE_25607).forEach { bookcase ->
-    on_obj_option(obj = bookcase, option = "search") {
-        player.queue {
-            search(this, player)
-        }
-    }
+    on_obj_option(obj = bookcase, option = "search") { player.queue { search(this, player) } }
 }
 
 suspend fun search(it: QueueTask, p: Player) {

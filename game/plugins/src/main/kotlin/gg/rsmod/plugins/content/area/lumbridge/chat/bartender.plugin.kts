@@ -19,6 +19,5 @@ suspend fun QueueTask.dialog() {
             chatNpc("One of the patrons here is looking for treasure<br><br>apparently. A chap byu the name of Veos.")
         }
         3 -> chatPlayer("Nothing, I'm fine.")
-
     }
 }

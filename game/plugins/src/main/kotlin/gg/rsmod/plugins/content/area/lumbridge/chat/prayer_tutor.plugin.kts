@@ -9,7 +9,6 @@ suspend fun QueueTask.dialog() {
         1 -> how_to_train()
         2 -> prayer_useful()
         3 -> no_thanks()
-
     }
 }
 
