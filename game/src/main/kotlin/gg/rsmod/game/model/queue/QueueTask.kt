@@ -1,5 +1,6 @@
 package gg.rsmod.game.model.queue
 
+import gg.rsmod.game.model.MovementQueue
 import gg.rsmod.game.model.Tile
 import gg.rsmod.game.model.entity.Pawn
 import gg.rsmod.game.model.entity.Player
@@ -112,8 +113,24 @@ data class QueueTask(val ctx: Any, val priority: TaskPriority) : Continuation<Un
      * of [Pawn] and that the height of the [tile] and [Pawn.tile] must be equal,
      * as well as the x and z coordinates.
      */
-    suspend fun waitTile(tile: Tile): Unit = suspendCoroutine {
-        nextStep = SuspendableStep(TileCondition((ctx as Pawn).tile, tile), it)
+    suspend fun waitTile(tile: Tile, entity: Pawn? = null) {
+        try {
+            val player = entity ?: ctx as Pawn
+            while (player.tile.x != tile.x || player.tile.z != tile.z) {
+                wait(1)
+            }
+        } catch (t: Throwable) {
+            t.printStackTrace()
+        }
+    }
+
+    /**
+     * Function for player waitTile
+     * thanks to @Kris for making this and work on waitTile
+     */
+    suspend fun Player.forceWalkTo(x: Int, z: Int) {
+        walkTo(x = x, z = z, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
+        waitTile(Tile(x, z, tile.height), this)
     }
 
     /**

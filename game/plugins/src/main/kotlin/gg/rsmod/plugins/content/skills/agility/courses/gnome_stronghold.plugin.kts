@@ -13,14 +13,13 @@ val GnomeStronghold = AttributeKey<Int>("Gnome Stronghold")
 on_obj_option(obj = Objs.LOG_BALANCE_23145, option = "Walk-across") {
     player.queue {
         player.lock()
+        wait(1)
         player.filterableMessage("you walk carefully across the slippery log...")
         wait(1)
-        player.appearimate(763, 762, 762, 762, 762, 762, -1)
-        player.walkTo(x = 2474, player.tile.z -7, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
-        wait(8)
-        player.filterableMessage("...You make it safely to the other side.")
-        player.appearimate(808, 823, 819, 820, 821, 822, 824)
+        player.crossover(2474, 3429)
+        wait(1)
         player.unlock()
+        player.filterableMessage("...You make it safely to the other side.")
         player.addXp(Skills.AGILITY, 7.5)
     }
 }
@@ -62,13 +61,11 @@ on_obj_option(obj = Objs.TREE_BRANCH_23559, option = "Climb") {
 //Npc Shout "Come on scaredy cat, get across that rope!"
 on_obj_option(obj = Objs.BALANCING_ROPE_23557, option = "Walk-on"){
     player.queue {
+        player.lock()
         wait(1)
         player.filterableMessage("You carefully cross the tightrope.")
-        player.lock()
-        player.appearimate(763, 762, 762, 762, 762, 762, -1)
-        player.walkTo(x = 2483, z = 3420, stepType = MovementQueue.StepType.FORCED_WALK, detectCollision = false)
-        wait(7)
-        player.appearimate(808, 823, 819, 820, 821, 822, 824)
+        player.crossover(2483, 3420)
+        wait(1)
         player.unlock()
         player.addXp(Skills.AGILITY, 7.5)
     }
@@ -113,14 +110,13 @@ arrayOf(Objs.OBSTACLE_PIPE_23138, Objs.OBSTACLE_PIPE_23139).forEach { pipe ->
         if (player.getInteractingGameObj().tile == Tile(2484, 3435) || player.getInteractingGameObj().tile == Tile(2487, 3435)) { return@on_obj_option }
 
         player.queue {
-            if (player.getInteractingGameObj().tile == Tile(2484, 3431)) { player.walkTo(2484, 3430, MovementQueue.StepType.FORCED_WALK) }
-            if (player.getInteractingGameObj().tile == Tile(2487, 3431)) { player.walkTo(2487, 3430, MovementQueue.StepType.FORCED_WALK) }
-            wait(2)
+            if (player.getInteractingGameObj().tile == Tile(2484, 3431)) { player.forceWalkTo(2484, 3430) }
+            if (player.getInteractingGameObj().tile == Tile(2487, 3431)) { player.forceWalkTo(2487, 3430) }
             player.lock()
+            wait(2)
             player.forceMove(this, 749, 30, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
             wait(2)
-            player.walkTo(player.tile.x, player.tile.z +1, MovementQueue.StepType.FORCED_WALK, detectCollision = false)
-            wait(1)
+            player.forceWalkTo(player.tile.x, player.tile.z +1)
             player.forceMove(this, 749, 30, ForcedMovement.of(player.tile, Tile(x = player.tile.x, z = player.tile.z +3), clientDuration1 = 33, clientDuration2 = 126, directionAngle = Direction.NORTH.angle))
             player.unlock()
             player.addXp(Skills.AGILITY, 7.5)

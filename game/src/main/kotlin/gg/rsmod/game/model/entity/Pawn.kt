@@ -485,13 +485,13 @@ abstract class Pawn(val world: World) : Entity() {
         walkPath(route.path, stepType, detectCollision)
         return route
     }
+
     //TODO Add region change handler, to get rid of the teleport walking.
     /**Note:
      * MoveTo is a set walk if under +/- 2 to the x/z
      * If +/- 2 on the x/z will detectCollision = false
      * MoveTo teleports pawn if over +/- 3 to the x/z
      */
-
     fun moveTo(x: Int, z: Int, height: Int = 0) {
         moved = true
         blockBuffer.teleport = !tile.isWithinRadius(x, z, height, Player.NORMAL_VIEW_DISTANCE)

@@ -197,7 +197,7 @@ open class Player(world: World) : Pawn(world) {
     /**
      * A flag to indicate whether [anims] should be sent
      *  in place of the default animation appearance
-     *   Note| "forced" because it's embedded in the [PlayerUpdateBlock]
+     *   Note: "forced" because it's embedded in the [PlayerUpdateBlock]
      */
     private var appearimation = false
 
@@ -250,6 +250,11 @@ open class Player(world: World) : Pawn(world) {
         anims[5] = walkRightSequence
         anims[6] = runSequence
         appearimation = true
+        addBlock(UpdateBlockType.APPEARANCE)
+    }
+
+    fun appearimate_reset() {
+        appearimation = false
         addBlock(UpdateBlockType.APPEARANCE)
     }
 
@@ -535,6 +540,18 @@ open class Player(world: World) : Pawn(world) {
             attr[LEVEL_UP_INCREMENT] = increment
             attr[LEVEL_UP_OLD_XP] = oldXp
             world.plugins.executeSkillLevelUp(this)
+        }
+    }
+
+    /**
+     * Handles any crossing objs in game
+     * forceWalkTo has a waitTile to x, z
+     */
+    fun crossover(x: Int, z: Int) {
+        queue {
+            appearimate(763, 762, 762, 762, 762, 762, -1)
+            forceWalkTo(x, z)
+            appearimate(808, 823, 819, 820, 821, 822, 824)
         }
     }
 
