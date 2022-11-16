@@ -34,22 +34,25 @@ on_button(interfaceId = 399, component = 11) {
     player.openInterface(interfaceId = QuestTab.QUEST_SETTINGS_INTERFACE_ID, dest = InterfaceDestination.MAIN_SCREEN)
 }
 
+on_button(interfaceId = 399, component = 7) {
+    player.closeInterface(119)
+    player.openInterface(119, dest = InterfaceDestination.MAIN_SCREEN)
+    player.runClientScript(2523, 0, 3)
+    openGuide(player)
+}
+
 fun openQuestTab(player: Player){
     player.openInterface(InterfaceDestination.QUEST_ROOT)
     when(player.getVarbit(Varbits.PLAYER_SUMMARY_FOCUS_TAB)){
-        0 -> { // Character summary ->
-        }
+        0 -> {} // Character summary
         1 -> { // Quests lists -> 399
             player.openInterface(629, 2, 399, type = 2)
             player.setInterfaceEvents(interfaceId = 399, component = 6, from = 0, to = 20, setting = 2)
             player.setInterfaceEvents(interfaceId = 399, component = 7, from = 0, to = 121, setting = 2)
             player.setInterfaceEvents(interfaceId = 399, component = 8, from = 0, to = 12, setting = 2)
         }
-        2 -> { // Achievement diary
-        }
-        3 -> { // kourend favor
-            player.openInterface(629, 2, 245, type = 1)
-        }
+        2 -> {} // Achievement diary
+        3 -> player.openInterface(629, 2, 245, type = 1) // kourend favor
         else -> { // all else fails show quests
             player.setVarbit(Varbits.PLAYER_SUMMARY_FOCUS_TAB, 1)
             openQuestTab(player)

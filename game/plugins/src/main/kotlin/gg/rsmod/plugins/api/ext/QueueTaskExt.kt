@@ -239,7 +239,7 @@ suspend fun QueueTask.messageBox(message: String, lineSpacing: Int = 31, continu
  * @title
  * The title of the dialog, if left as null, the npc's name will be used.
  */
-suspend fun QueueTask.chatNpc(message: String, npc: Int = -1, animation: Int = 588, title: String? = null) {
+suspend fun QueueTask.chatNpc(message: String, animation: Int = 588, npc: Int = -1, title: String? = null) {
     val npcId = if (npc != -1) npc else player.attr[INTERACTING_NPC_ATTR]?.get()?.getTransform(player) ?: throw RuntimeException("Npc id must be manually set as the player is not interacting with an npc.")
     val dialogTitle = title ?: player.world.definitions.get(NpcDef::class.java, npcId).name
 

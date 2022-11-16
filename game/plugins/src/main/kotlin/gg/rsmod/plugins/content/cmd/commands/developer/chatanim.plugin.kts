@@ -8,7 +8,7 @@ on_command("chatanim", Privilege.DEV_POWER, description = "Chat dialogue test") 
     val npcId = args[1].toInt()
 
     player.queue {
-        chatNpc("Hello World", npcId, animation = key, "hi")
+        chatNpc("Hello World", animation = key, npcId, "hi")
     }
     player.message("$key opened in a dialog", ChatMessageType.ENGINE)
 }
