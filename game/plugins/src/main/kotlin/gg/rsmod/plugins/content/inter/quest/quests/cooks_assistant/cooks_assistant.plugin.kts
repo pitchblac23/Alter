@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.inter.quest.quests
+package gg.rsmod.plugins.content.inter.quest.quests.cooks_assistant
 
 var asked = 0
 var takenItems = 0

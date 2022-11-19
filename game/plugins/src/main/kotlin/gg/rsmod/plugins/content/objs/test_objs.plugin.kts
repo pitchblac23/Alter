@@ -50,5 +50,5 @@ on_button(interfaceId = 378, 78) {
 //world.spawn(DynamicObject(obj, Objs.PUMP))
 
 on_command("test") {
-
+//Animation(id = 839, delay = 30)
 }

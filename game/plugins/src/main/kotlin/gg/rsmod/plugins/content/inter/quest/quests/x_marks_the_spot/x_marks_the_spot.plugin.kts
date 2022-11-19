@@ -1,4 +1,4 @@
-package gg.rsmod.plugins.content.inter.quest.quests
+package gg.rsmod.plugins.content.inter.quest.quests.x_marks_the_spot
 
 /**
  * TODO:

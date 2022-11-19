@@ -96,4 +96,5 @@ object Varbits {
     const val ENCLAVE_CANOE = 10527
     const val FLOUR_COLLECTABLE_VARBIT = 5325
     const val FLOUR_AMOUNT_VARBIT = 4920
+    const val QUESTS_COMPLETED = 6347
 }

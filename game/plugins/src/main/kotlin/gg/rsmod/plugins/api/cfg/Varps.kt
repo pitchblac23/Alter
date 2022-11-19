@@ -30,4 +30,8 @@ object Varps {
     const val NPC_ATTACK_PRIORITY_VARP = 1306
 
     const val WEAPON_ATTACK_STYLE = 43
+
+    // Quests
+    const val QUEST_POINTS = 101
+    const val SHEEP_SHEARER = 179
 }

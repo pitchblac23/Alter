@@ -1,6 +1,9 @@
 package gg.rsmod.plugins.api
 
 const val NEUTRAL_DIALOGEXPR = 554
+const val UNKNOWN = 567
+const val UNKNOWN_2 = 569
+const val RAISED_EYEBROW = 576
 const val HAPPY = 588
 const val CALM = 589
 const val CALM_CONTINUED = 590
@@ -11,6 +14,7 @@ const val DELIGHTED_EVIL = 594
 const val ANNOYED = 595
 const val DISTRESSED = 596
 const val DISTRESSED_CONTINUED = 597
+const val UNKNOWN_3 = 598
 const val DISORIENTED_LEFT = 600
 const val DISORIENTED_RIGHT = 601
 const val UNINTERESTED = 602
