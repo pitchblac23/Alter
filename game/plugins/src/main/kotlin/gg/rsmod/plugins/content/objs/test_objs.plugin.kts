@@ -48,7 +48,8 @@ on_button(interfaceId = 378, 78) {
 
 //player.message("You stop pumping.")
 //world.spawn(DynamicObject(obj, Objs.PUMP))
+//Animation(id = 839, delay = 30)
 
 on_command("test") {
-//Animation(id = 839, delay = 30)
+
 }

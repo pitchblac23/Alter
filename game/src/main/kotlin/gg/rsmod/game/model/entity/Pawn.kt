@@ -412,7 +412,6 @@ abstract class Pawn(val world: World) : Entity() {
      * side note to no detectCollision will walk till found set x,z
      * StepType.Forcewalk = walk, StepType.Forcerun = run, StepType.Normal = player energy on/off
      */
-
     fun walkTo(x: Int, z: Int, stepType: MovementQueue.StepType = MovementQueue.StepType.NORMAL, detectCollision: Boolean = true) {
         /*
          * Already standing on requested destination.
@@ -505,26 +504,26 @@ abstract class Pawn(val world: World) : Entity() {
     }
 
     fun animate(id: Int, delay: Int = 0) {
-        animateSend(-1, 0)
-        animateSend(id, delay)
-    }
-    fun graphic(id: Int, height: Int = 0, delay: Int = 0) {
-        graphicSend(-1, 0, 0)
-        graphicSend(id, height, delay)
-    }
-
-
-    fun animateSend(id: Int, delay: Int = 0) {
         blockBuffer.animation = id
         blockBuffer.animationDelay = delay
         addBlock(UpdateBlockType.ANIMATION)
     }
 
-    fun graphicSend(id: Int, height: Int = 0, delay: Int = 0) {
+    fun animateSet(id: Int, delay: Int = 0) {
+        animate(-1, 0)
+        animate(id, delay)
+    }
+
+    fun graphic(id: Int, height: Int = 0, delay: Int = 0) {
         blockBuffer.graphicId = id
         blockBuffer.graphicHeight = height
         blockBuffer.graphicDelay = delay
         addBlock(UpdateBlockType.GFX)
+    }
+
+    fun graphicSet(id: Int, height: Int = 0, delay: Int = 0) {
+        graphic(-1, 0, 0)
+        graphic(id, height, delay)
     }
 
     fun graphic(graphic: Graphic) {
